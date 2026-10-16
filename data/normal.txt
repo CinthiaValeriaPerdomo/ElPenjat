@@ -1,0 +1,33 @@
+El client vol només un petit canvi
+Anem a la platja aquest diumenge
+Cal fer un fetch a l'API del temps
+Qui dia passa, any empeny sense parar.
+Al mal temps, bona cara i endavant.
+El DOM és com un arbre de nodes HTML
+HTML sense CSS és com una casa buida
+Qui té boca s'equivoca de tant en tant.
+No diguis blat fins que sigui al sac.
+A cavall regalat no li miris el dentat
+El meu codi funciona per algun motiu
+Qui sembra vents recull tempestats.
+Has de fer un commit abans del push
+He corregit un error i n'han aparegut cinc
+El CSS no s'aplica correctament al mòbil
+Vols un gelat de xocolata o de maduixa?
+Un margin més i abandono el projecte
+El localhost és l'únic lloc on tot funciona
+Avui toca fer truita de patates per sopar.
+La consola té més secrets que el meu mòbil
+Perdre el fil és fàcil, trobar-lo costa més.
+Demà agafarem el primer tren cap a Girona.
+Cal validar el formulari abans d'enviar
+La base de dades guarda les dades dels usuaris
+Els ocells canten cada matí de primavera
+Avui no estic per romanços ni per històries.
+A la taula del menjador hi ha un llibre vell
+No posis mai les contrasenyes al codi font
+Val més prevenir que curar sempre que puguis.
+Si funciona en producció, millor no tocar res
+Qui juga amb foc, acaba cremant-se els dits.
+El veí toca la trompeta cada diumenge al matí.
+La porta grinyola cada vegada que algú entra.

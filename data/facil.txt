@@ -1,0 +1,32 @@
+El CSS m'odia
+On és el meu cafè?
+El bug ha tornat
+Fer-ne cinc cèntims.
+Qui sembra, recull
+Avui fa un dia de gos.
+Estar com una cabra.
+Més val tard que mai
+Pagant Sant Pere canta
+Avui no compila res
+Qui no arrisca, no pisca
+A poc a poc i bona lletra.
+A qui matina, Déu l'ajuda
+Qui tot ho vol, tot ho perd
+El div s'ha descontrolat
+Qui no arrisca, no programa
+Qui no corre, sempre vola.
+Tinc molta gana i poc temps
+De mica en mica s'omple la pica.
+El gat dorm al sofà tot el dia
+PHP ha decidit no funcionar
+He fet deploy i ara tinc por
+Fa més el que vol que el que pot.
+El codi té un error a la línia deu
+La funció retorna un valor nul
+M'agrada el cafè calent al matí
+El servidor respon amb error 404
+El servidor necessita vacances
+Quan plou, tots els gats es mullen.
+La ciutat s'il·lumina quan cau la nit
+No hi ha mal que per bé no vingui
+Avui toca lluitar amb el flexbox
