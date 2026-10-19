@@ -75,7 +75,7 @@ th, td {
 }
 
 .container {
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.85);
     width: 60%;
     height: 60%;
     margin: auto;
@@ -135,7 +135,15 @@ th, td {
 /* - - - Estils gameover.php - - - */
 /***********************************/
 
+#game-win {
+  color: greenyellow;
+  text-shadow: 0 4px 8px forestgreen;
+}
 
+#game-loss {
+    color: darkred;
+    text-shadow: 0 4px 8px coral;
+}
 
 /**********************************/
 /* - - - Estils ranking.php - - - */

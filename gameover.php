@@ -20,7 +20,13 @@
     (temporal, esborrar cada spec segons s'acabin i el comentari en acabar totes)
     -->
     <div class="container">
-        <h1>Fi de partida</h1>
+        <?php 
+        echo $_SESSION["guanyat"] 
+            ? '<h1 id="game-win">'."\n" 
+            : '<h1 id="game-loss">'."\n";
+        ?>
+            Fi de partida
+        </h1>
         <h6 class="gold-text">
             <?php 
             echo $_SESSION["guanyat"] 
