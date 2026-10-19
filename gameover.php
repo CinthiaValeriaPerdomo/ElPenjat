@@ -1,3 +1,14 @@
+<?php
+    session_start();
+
+    // Redirecció
+    if (!isset($_SESSION["acces_correcte"])) {
+        header('Location: error403.php');
+        die();
+    } else {
+        unset($_SESSION["acces_correcte"]);
+    }
+?>
 <!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -7,9 +18,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <?php
-        session_start();
-    ?>
     <!-- 
     Specs d'aquesta pàgina:
     

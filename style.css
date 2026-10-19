@@ -14,7 +14,7 @@ body {
 
 h1 {
     font-size: 60px;
-    margin-bottom: 30px;
+    margin: 24px 0;
     font-family: 'UnifrakturCook', serif;
     text-shadow: 1px 0 10px black;
 }
@@ -23,6 +23,7 @@ h6 {
     font-size: 20px; 
     font-weight: normal;
     font-style: italic;
+    margin: 16px 0;
 }
 
 label { 
@@ -55,6 +56,7 @@ button.secondary, a.link-button.secondary {
 a.link-button {
     display: inline-block;
     text-decoration: none;
+    margin-top: 16px;
 }
 
 table {
@@ -78,11 +80,10 @@ th, td {
     background-color: rgba(0, 0, 0, 0.85);
     width: 60%;
     height: 60%;
-    margin: auto;
+    margin: 40px auto;
     border-radius: 10px;
-    padding: 30px;
+    padding: 32px;
     text-align: center;
-    margin-top: 110px;
     box-shadow: 0 0 60px 50px black;
 }
 
@@ -160,4 +161,18 @@ thead {
     color: black;
     font-weight: bold;
 }
+
+/***********************************/
+/* - - - Estils error403.php - - - */
+/***********************************/
+
+#stop-hand {
+    width: 200px;
+    height: 200px;
+}
+
+/***********************************/
+/* - - - Estils error404.php - - - */
+/***********************************/
+
 
