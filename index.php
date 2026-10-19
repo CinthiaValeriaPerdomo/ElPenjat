@@ -6,12 +6,7 @@
     <title>El Penjat</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<<<<<<< HEAD
 <body id="index">
-=======
-<body>
-
->>>>>>> Valeria
     <!-- 
     Specs d'aquesta pàgina:
     
