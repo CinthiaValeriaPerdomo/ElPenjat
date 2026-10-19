@@ -9,7 +9,7 @@ body {
     background-size: cover;
     font-family: Georgia, "Times New Roman", serif;
     color: white;
-    font-size: 22px;
+    font-size: 18px;
 }
 
 h1 {
@@ -19,15 +19,16 @@ h1 {
     text-shadow: 1px 0 10px black;
 }
 
-h6 { 
-    font-size: 20px; 
+h6 {
+    font-size: 20px;
     font-weight: normal;
     font-style: italic;
 }
 
-label { 
-    display: block;  /* posa les labels a dalt dels inputs */ 
-} 
+label {
+    display: block;
+    /* posa les labels a dalt dels inputs */
+}
 
 button {
     padding: 8px;
@@ -39,8 +40,10 @@ button {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 20px;
 }
+
 button.secondary {
-    background-color: rgb(51, 51, 51); /* color gris treu ènfasi al botó */
+    background-color: rgb(51, 51, 51);
+    /* color gris treu ènfasi al botó */
 }
 
 .flex-center {
@@ -50,55 +53,105 @@ button.secondary {
 }
 
 .container {
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.724);
     width: 60%;
-    height: 60%;
     margin: auto;
     border-radius: 10px;
     padding: 30px;
     text-align: center;
-    margin-top: 110px;
-    box-shadow: 0 0 60px 50px black;
+    margin-top: 130px;
+    box-shadow: 0 0 300px 50px rgb(0, 0, 0);
 }
 
-.gold-text { color: goldenrod }
+.gold-text {
+    color: goldenrod
+}
 
 /********************************/
 /* - - - Estils index.php - - - */
 /********************************/
+.imagen-titulo {
+    position: relative;
+    /*para la imagen*/
+    display: inline-block;
+    /*se ajusta al cancho de h1*/
 
-#description{
+}
+
+.img {
+    position: absolute;
+    /*se posicionara segun el contenedor*/
+    top: -12px;
+    /*arriba*/
+    left: 170px;
+    /* espacio a izquierda*/
+    width: 50%;
+}
+
+.jugar {
+    margin-top: 40px;
     margin-bottom: 40px;
-    margin-top: 70px;
-    justify-content: justify;
+}
+
+#description {
+    margin-bottom: 25px;
+    margin-top: 25px;
 }
 
 #description p {
+    font-family: Georgia, "Times New Roman", serif;
     margin-bottom: 10px;
     margin-top: 10px;
-    text-align: justify;
-    padding: 0 40px 0 40px;
+    text-align: left;
+    padding: 0 100px 10px 100px;
+    /*margenes izq/der*/
+    line-height: 1.5;
+    font-size: 25px;
 }
 
-#linea{
+#description .gold-text {
+    color: goldenrod;
+    font-style: italic;
+    /*cursiva*/
+}
+
+#linea {
     width: 100%;
     height: 1px;
     background-color: rgba(85, 85, 80, 0.419);
     margin-bottom: 20px;
 }
 
-#nom{
+#nom {
     width: 300px;
-    height: 40px;
+    height: 50px;
     border-radius: 5px;
+    font-size: 15px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    color: #e8e8e8;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    /*borde fino*/
+    background-color: rgba(25, 20, 35, 0.9);
 }
 
-#nivell{
-    width: 300px;
-    height: 40px;
+#nivell {
+    width: 250px;
+    height: 50px;
     border-radius: 5px;
+    font-size: 15px;
+    color: rgb(108, 107, 107);
+    font-family: Georgia, "Times New Roman", serif;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    /*borde fino */
+    background-color: rgba(25, 20, 35, 0.9);
 }
 
+#nivell option {
+    background-color: #1a1423;
+    /* si no, el desplegable sigue en blanco en algunos navegadores */
+    color: #e8e8e8;
+}
 
 /*******************************/
 /* - - - Estils play.php - - - */
@@ -115,5 +168,3 @@ button.secondary {
 /**********************************/
 /* - - - Estils ranking.php - - - */
 /**********************************/
-
-
