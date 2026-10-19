@@ -6,7 +6,7 @@
     <title>Penjat - Partida</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="play">
     <!-- 
     Specs d'aquesta pàgina:
     

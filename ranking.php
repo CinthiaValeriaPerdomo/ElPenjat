@@ -20,7 +20,7 @@ if ($_POST["resposta"] == "S") {
     <title>Penjat - Rànking</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="ranking">
     <!-- 
     Specs d'aquesta pàgina:
     

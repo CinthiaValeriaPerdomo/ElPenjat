@@ -6,7 +6,7 @@
     <title>Penjat - Error 403</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="error403">
     <!-- 
     Specs d'aquesta pàgina:
     

@@ -6,7 +6,7 @@
     <title>Penjat - Error 404</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="error404">
     <!-- 
     Specs d'aquesta pàgina:
     

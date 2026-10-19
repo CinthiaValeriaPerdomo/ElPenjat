@@ -6,7 +6,7 @@
     <title>El Penjat</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="index">
     <!-- 
     Specs d'aquesta pàgina:
     

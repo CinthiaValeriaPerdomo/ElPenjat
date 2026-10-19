@@ -17,7 +17,7 @@
     <title>Penjat - Fi de partida</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="gameover">
     <!-- 
     Specs d'aquesta pàgina:
     
