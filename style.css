@@ -123,7 +123,7 @@ th, td {
 .img {
     position: absolute;
     /*se posicionara segun el contenedor*/
-    top: -12px;
+    top: -30px;
     /*arriba*/
     left: 170px;
     /* espacio a izquierda*/
