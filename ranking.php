@@ -1,3 +1,17 @@
+<?php
+session_start();
+$lastRecord = "";
+
+if ($_POST["resposta"] == "S") {
+    $lastRecord = [
+        $_SESSION("nom"),
+        $_SESSION("puntuacio"),
+        $_SESSION("data")
+    ];
+    file_put_contents("records.txt", implode(",", $lastRecord)."\n", FILE_APPEND);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -15,5 +29,42 @@
     
     (temporal, esborrar cada spec segons s'acabin i el comentari en acabar totes)
     -->
+    <div class="container">
+        <h1>Taula de classificacions</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Puntuació</th>
+                    <th>Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $recordsStr = explode("\n", file_get_contents("records.txt"));
+
+                $records = [];
+                for ($i=0; $i < count($recordsStr); $i++) {
+                    $records[] = explode(",", $recordsStr[$i]);
+                }
+                sort($records);
+                
+                foreach ($records as $i => $record) {
+                    if ($record == []) continue;
+
+                    echo $record == $lastRecord 
+                        ? '<tr id="last-record">'."\n" 
+                        : "<tr>\n";
+                    foreach ($record as $i => $field) {
+                        echo "<td>".$field."</td>\n";
+                    }
+                    echo "</tr>\n";
+                }
+                ?>
+            </tbody>
+        </table>
+        
+        <a href="index.php" class="link-button">Tornar a inici</a>
+    </div>
 </body>
 </html>
