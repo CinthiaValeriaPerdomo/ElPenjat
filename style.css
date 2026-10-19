@@ -14,7 +14,8 @@ body {
     border-radius: 10px;
     padding: 30px;
     text-align: center;
-    box-shadow: 0 0 40px 40px rgb(0, 0, 0); /* sombreado al container */
+    margin-top: 110px;
+    box-shadow: 0 0 60px 50px rgba(0, 0, 0, 0.5);
 }
 
 .container h1 {
@@ -26,7 +27,7 @@ body {
 }
 
 .description{
-    margin-bottom: 70px;
+    margin-bottom: 40px;
     margin-top: 70px;
     justify-content: justify;
 }
@@ -42,17 +43,39 @@ body {
 
 .description .pregunta{
     color: rgba(241, 233, 140, 0.681);
+    font-style: italic;
+}
+
+.linea{
+    width: 100%;
+    height: 1px;
+    background-color: rgba(85, 85, 80, 0.419);
+    margin-bottom: 20px;
 }
 
 .camps{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-right: 100px;
+    text-align: justify;
 
 }
 
 .form{
     color: white;
     font-size: 25px;
-    display: block;
+    display: block; /* me envia los campos hacia abajo */   
 }
+
+#nom{
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+#nivell{
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+ }

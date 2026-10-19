@@ -28,13 +28,13 @@
             <div class="camps">
             
                 <div>
-                    <label for="nom" class="form">Nom </label>
+                    <label for="nom" class="form">Nom: </label>
                     <input type="text" id="nom" placeholder="El teu nom" name="nom">
                 </div>
                 
                 <div>
-                    <label for="nivell" class="form">Nivell </label>
-                    <select name="nivell">
+                    <label for="nivell" class="form">Dificultat: </label>
+                    <select name="nivell" id="nivell">
                         <option>Facil</option>
                         <option selected>Normal</option>
                         <option>Dificil</option>
