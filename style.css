@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+body {
+    background: url("assets/images/gloomy_manor.jpg") no-repeat center center fixed;
+    background-size: cover;
+    font-family: Georgia, "Times New Roman", serif;
+    
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 60%;
+    height: 60%;
+    margin: auto;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 0 40px 40px rgb(0, 0, 0); /* sombreado al container */
+}
+
+.container h1 {
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 60px;
+    margin-bottom: 30px;
+    font-family:'UnifrakturCook', serif;
+    text-shadow: 1px 0 10px rgb(0, 0, 0);
+}
+
+.description{
+    margin-bottom: 70px;
+    margin-top: 70px;
+    justify-content: justify;
+}
+
+.description p{
+    color: rgba(255, 255, 255, 0.784);
+    font-size: 25px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: justify;
+    padding: 0 40px 0 40px;
+}
+
+.description .pregunta{
+    color: rgba(241, 233, 140, 0.681);
+}
+
+.camps{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.form{
+    color: white;
+    font-size: 25px;
+    display: block;
+}
