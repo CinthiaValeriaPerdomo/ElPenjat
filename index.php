@@ -28,13 +28,13 @@
             <div class="flex-center">
             
                 <div>
-                    <label for="nom">Nom </label>
+                    <label for="nom">Nom:<label>
                     <input type="text" id="nom" placeholder="El teu nom" name="nom">
                 </div>
                 
                 <div>
-                    <label for="nivell">Nivell </label>
-                    <select name="nivell">
+                    <label for="nivell">Dificultat: </label>
+                    <select name="nivell" id="nivell">
                         <option>Facil</option>
                         <option selected>Normal</option>
                         <option>Dificil</option>
