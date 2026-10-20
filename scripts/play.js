@@ -9,6 +9,30 @@ const teclas =document.getElementsByClassName("tecla");
 const conAcento = "ÀÁÈÉÍÏÒÓÚÜÇ";
 const sinAcento = "AAEEIIOOUUC";
 
+const inicio = Date.now();
+
+function calcularPunctuacion(guanyat){
+    if (!guanyat) {
+        return 0; 
+    }
+
+    let letras =0;
+    for (let i = 0; i < fraseBase.length; i++) {
+        if (fraseBase[i] >= "A" && fraseBase[i] <= "Z") {
+            letras++;
+        }
+    }
+
+    let ahora = Date.now();
+    let segundos = Math.round((ahora - inicio)/1000);
+    let puntos = (letras*10) - (errors*15) -segundos;
+
+    if (puntos < 0) {
+            return 0;
+    }
+
+    return puntos;
+}
 
 function lletraBase(lletra) {
     let pos = conAcento.indexOf(lletra);
@@ -70,6 +94,7 @@ function comprovarFinal() {
 
 function acabar(guanyat) {
     document.getElementById("guanyat").value = guanyat ? "1" : "0";
+    document.getElementById("puntuacio").value =calcularPunctuacion(guanyat);
     setTimeout(function () {
         document.getElementById("form-fi").submit();
     }, 1000);
