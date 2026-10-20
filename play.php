@@ -1,16 +1,15 @@
 <?php
     session_start();
 
-
     if (isset($_POST["fi"])) {
         $_SESSION["guanyat"] = ($_POST["guanyat"] == "1");
         $_SESSION["acces_correcte"] = true;
         header("Location: gameover.php");
-        die();
+        exit();
     }
     if (!isset($_POST["nom"])) {
         header("Location: index.php");
-        die();
+        exit();
     }
 
     $_SESSION["nom"] = $_POST["nom"];
