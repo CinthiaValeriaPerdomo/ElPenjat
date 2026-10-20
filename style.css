@@ -29,7 +29,8 @@ label {
     /* posa les labels a dalt dels inputs */
 }
 
-button, a.link-button {
+button,
+a.link-button {
     padding: 8px;
     min-width: 120px;
     border-radius: 4px;
@@ -39,13 +40,18 @@ button, a.link-button {
     font-weight: bold;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 20px;
+
     &:hover {
         background-color: purple;
         cursor: pointer;
     }
 }
-button.secondary, a.link-button.secondary {
-    background-color: rgb(51, 51, 51); /* color gris treu ènfasi al botó */
+
+button.secondary,
+a.link-button.secondary {
+    background-color: rgb(51, 51, 51);
+
+    /* color gris treu ènfasi al botó */
     &:hover {
         background-color: dimgray;
         cursor: pointer;
@@ -61,10 +67,12 @@ a.link-button {
 table {
     width: 80%;
     margin: 32px auto;
-    border-collapse: collapse; 
-    font-size: 20px;  
+    border-collapse: collapse;
+    font-size: 20px;
 }
-th, td {
+
+th,
+td {
     border: 2px solid white;
     padding: 8px;
 }
@@ -94,7 +102,9 @@ th, td {
 /* - - - Imatges de fons - - - */
 /*******************************/
 
-#index, #error403, #error404 {
+#index,
+#error403,
+#error404 {
     background: url("assets/images/manor_outdoors.jpg") no-repeat center center fixed;
     background-size: cover;
 }
@@ -104,7 +114,8 @@ th, td {
     background-size: cover;
 }
 
-#gameover, #ranking {
+#gameover,
+#ranking {
     background: url("assets/images/manor_foyer.jpg") no-repeat center center fixed;
     background-size: cover;
 }
@@ -195,6 +206,10 @@ th, td {
     color: #e8e8e8;
 }
 
+#errorNombre {
+    color: red;
+}
+
 /*******************************/
 /* - - - Estils play.php - - - */
 /*******************************/
@@ -211,8 +226,8 @@ body#gameover {
 }
 
 #game-win {
-  color: greenyellow;
-  text-shadow: 0 4px 8px forestgreen;
+    color: greenyellow;
+    text-shadow: 0 4px 8px forestgreen;
 }
 
 #game-loss {
@@ -253,5 +268,3 @@ thead {
 /***********************************/
 /* - - - Estils error404.php - - - */
 /***********************************/
-
-
