@@ -32,7 +32,7 @@ function jugar(tecla) {
     } else {
         tecla.classList.add("incorrecta");
         errors++;
-        imatge.src = "assets/images/penjat" + errors + ".png";
+        pImg.src = "assets/images/penjat-" + errors + ".png";
     }
     comprovarFinal();
 }

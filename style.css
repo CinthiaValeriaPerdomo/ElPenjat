@@ -223,10 +223,10 @@ th, td {
     color: #6B3F7A;
 }
 
-.tecla.correcta {
+#teclat button.correcta {
     background-color: green;
 }
-.tecla.incorrecta {
+#teclat button.incorrecta {
     background-color: darkred;
 }
 
