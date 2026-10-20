@@ -4,7 +4,7 @@
     // Redirecció
     if (!isset($_SESSION["acces_correcte"])) {
         header('Location: error403.php');
-        die();
+        exit();
     } else {
         unset($_SESSION["acces_correcte"]);
     }
