@@ -5,8 +5,6 @@ const pFrase = document.getElementById("frase");
 const pImg =document.getElementById("penjat");
 const teclas =document.getElementsByClassName("tecla");
 
-<<<<<<< HEAD
-=======
 const conAcento = "ÀÁÈÉÍÏÒÓÚÜÇ";
 const sinAcento = "AAEEIIOOUUC";
 
@@ -49,7 +47,6 @@ for (let i = 0; i < frase.length; i++) {
 }
 
 
->>>>>>> Ibtissam
 function mostrarFrase() {
     let text = "";
     for (let i = 0; i < frase.length; i++) {
