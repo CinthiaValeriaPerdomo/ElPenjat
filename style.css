@@ -4,14 +4,33 @@
 /* - - - Estils globals - - - */
 /******************************/
 
+html, body, noscript {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    min-width: 100%;
+}
 body {
     font-family: Georgia, "Times New Roman", serif;
     color: white;
     font-size: 22px;
+    float: left; /* per prevenir que cap marge d'un element fill s'estengui més enllà del seu contorn (prevenir colapsament de marges)*/
+}
+
+noscript {
+    position: fixed;
+    z-index: 1; /*es mostra en una capa devant de la resta d'elements*/
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 h1 {
     font-size: 60px;
+    margin: 24px 0;
+    font-family: 'UnifrakturCook', serif;
+    text-shadow: 1px 0 10px black;
+}
+h3 {
+    font-size: 40px;
     margin: 24px 0;
     font-family: 'UnifrakturCook', serif;
     text-shadow: 1px 0 10px black;
@@ -78,7 +97,7 @@ th, td {
     background-color: rgba(0, 0, 0, 0.75);
     width: 60%;
     height: 60%;
-    margin: 40px auto;
+    margin: 80px auto;
     border-radius: 10px;
     padding: 32px;
     text-align: center;

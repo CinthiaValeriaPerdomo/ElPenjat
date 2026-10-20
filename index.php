@@ -12,10 +12,17 @@
     
      7. Pàgina index.php            | HTML+CSS
      8. Funcionalitat botó Iniciar  | JS
-    14. Missatge <noscript>         | HTML
     
     (temporal, esborrar cada spec segons s'acabin i el comentari en acabar totes)
     -->
+    <noscript class="flex-center">
+        <div>
+            <h3>! JavaScript desactivat !</h3>
+            <p class="gold-text">És necessari el JavaScript per jugar a aquest joc.</p>
+            <p>Activa'l al teu navegador.</p>
+        </div>
+    </noscript>
+
     <div class="container">
         <h1>El Penjat</h1>
         <div id="description">

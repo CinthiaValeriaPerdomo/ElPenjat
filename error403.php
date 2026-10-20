@@ -7,13 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="error403">
-    <!-- 
-    Specs d'aquesta pàgina:
-    
-    17. Error 403  | HTML+CSS
-    
-    (temporal, esborrar el comentari en acabar la spec)
-    -->
     <div class="container">
         <h1>Accés denegat</h1>
         <h6 class="gold-text">Prohibit el pas! Entra a la mansió per on toca!</h6>

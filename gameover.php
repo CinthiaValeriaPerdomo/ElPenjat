@@ -23,7 +23,6 @@
     
     13. Enregistrar récord  | HTML+CSS, PHP
     15. Efectes de sons     | JS 
-    17. Error 403           | PHP
     
     (temporal, esborrar cada spec segons s'acabin i el comentari en acabar totes)
     -->
