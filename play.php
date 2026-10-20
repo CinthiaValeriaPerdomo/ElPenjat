@@ -2,6 +2,17 @@
     session_start();
 
 
+    if (isset($_POST["fi"])) {
+        $_SESSION["guanyat"] = ($_POST["guanyat"] == "1");
+        $_SESSION["acces_correcte"] = true;
+        header("Location: gameover.php");
+        die();
+    }
+    if (!isset($_POST["nom"])) {
+        header("Location: index.php");
+        die();
+    }
+
     $_SESSION["nom"] = $_POST["nom"];
     $nivell = $_POST["nivell"];
 

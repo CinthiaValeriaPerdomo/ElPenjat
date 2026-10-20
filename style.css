@@ -202,7 +202,7 @@ th, td {
 }
 
 #teclat td{
-    border: 2px solid #A28B6E;
+    border: none;
 }
 
 #teclat button {
@@ -219,8 +219,20 @@ th, td {
     color: #6B3F7A;
 }
 
+.container h1{
+    color: #6B3F7A;
+}
 
+.tecla.correcta {
+    background-color: green;
+}
+.tecla.incorrecta {
+    background-color: darkred;
+}
 
+.tecla:disabled {
+    cursor: default;
+}
 /***********************************/
 /* - - - Estils gameover.php - - - */
 /***********************************/
