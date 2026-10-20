@@ -4,9 +4,9 @@ $lastRecord = "";
 
 if ($_POST["resposta"] == "S") {
     $lastRecord = [
-        $_SESSION("nom"),
-        $_SESSION("puntuacio"),
-        $_SESSION("data")
+        $_SESSION["nom"],
+        $_SESSION["puntuacio"],
+        $_SESSION["data"]
     ];
     file_put_contents("records.txt", implode(",", $lastRecord)."\n", FILE_APPEND);
 }

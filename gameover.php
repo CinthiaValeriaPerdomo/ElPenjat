@@ -4,7 +4,7 @@
     // Redirecció
     if (!isset($_SESSION["acces_correcte"])) {
         header('Location: error403.php');
-        die();
+        exit();
     } else {
         unset($_SESSION["acces_correcte"]);
     }
@@ -23,7 +23,6 @@
     
     13. Enregistrar récord  | HTML+CSS, PHP
     15. Efectes de sons     | JS 
-    17. Error 403           | PHP
     
     (temporal, esborrar cada spec segons s'acabin i el comentari en acabar totes)
     -->

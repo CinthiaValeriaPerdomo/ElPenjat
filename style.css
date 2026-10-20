@@ -1,17 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
 
 /******************************/
 /* - - - Estils globals - - - */
 /******************************/
 
+html, body, noscript {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    min-width: 100%;
+}
 body {
     font-family: Georgia, "Times New Roman", serif;
     color: white;
     font-size: 18px;
+    float: left; /* per prevenir que cap marge d'un element fill s'estengui més enllà del seu contorn (prevenir colapsament de marges)*/
+}
+
+noscript {
+    position: fixed;
+    z-index: 1; /*es mostra en una capa devant de la resta d'elements*/
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 h1 {
     font-size: 60px;
+    margin: 24px 0;
+    font-family: 'UnifrakturCook', serif;
+    text-shadow: 1px 0 10px black;
+}
+h3 {
+    font-size: 40px;
     margin: 24px 0;
     font-family: 'UnifrakturCook', serif;
     text-shadow: 1px 0 10px black;
@@ -29,7 +49,8 @@ label {
     /* posa les labels a dalt dels inputs */
 }
 
-button, a.link-button {
+button,
+a.link-button {
     padding: 8px;
     min-width: 120px;
     border-radius: 4px;
@@ -39,13 +60,18 @@ button, a.link-button {
     font-weight: bold;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 20px;
+
     &:hover {
         background-color: purple;
         cursor: pointer;
     }
 }
-button.secondary, a.link-button.secondary {
-    background-color: rgb(51, 51, 51); /* color gris treu ènfasi al botó */
+
+button.secondary,
+a.link-button.secondary {
+    background-color: rgb(51, 51, 51);
+
+    /* color gris treu ènfasi al botó */
     &:hover {
         background-color: dimgray;
         cursor: pointer;
@@ -60,10 +86,12 @@ a.link-button {
 
 table {
     margin: 32px auto;
-    border-collapse: collapse; 
-    font-size: 20px;  
+    border-collapse: collapse;
+    font-size: 20px;
 }
-th, td {
+
+th,
+td {
     border: 2px solid white;
     padding: 8px;
 }
@@ -77,7 +105,7 @@ th, td {
 .container {
     background-color: rgba(0, 0, 0, 0.724);
     width: 60%;
-    margin: auto;
+    margin: 80px auto;
     border-radius: 10px;
     padding: 32px;
     text-align: center;
@@ -93,7 +121,9 @@ th, td {
 /* - - - Imatges de fons - - - */
 /*******************************/
 
-#index, #error403, #error404 {
+#index,
+#error403,
+#error404 {
     background: url("assets/images/manor_outdoors.jpg") no-repeat center center fixed;
     background-size: cover;
 }
@@ -103,7 +133,8 @@ th, td {
     background-size: cover;
 }
 
-#gameover, #ranking {
+#gameover,
+#ranking {
     background: url("assets/images/manor_foyer.jpg") no-repeat center center fixed;
     background-size: cover;
 }
@@ -194,6 +225,10 @@ th, td {
     color: #e8e8e8;
 }
 
+#errorNombre {
+    color: red;
+}
+
 /*******************************/
 /* - - - Estils play.php - - - */
 /*******************************/
@@ -266,8 +301,8 @@ body#gameover {
 }
 
 #game-win {
-  color: greenyellow;
-  text-shadow: 0 4px 8px forestgreen;
+    color: greenyellow;
+    text-shadow: 0 4px 8px forestgreen;
 }
 
 #game-loss {
@@ -297,16 +332,22 @@ thead {
 }
 
 /***********************************/
-/* - - - Estils error403.php - - - */
+/* - - - Estils error403.php - - - */ 
+/* - - -        error404.php - - - */
 /***********************************/
 
-#stop-hand {
-    width: 200px;
-    height: 200px;
+.error-image {
+    width: 100px;
+    height: 100px;
 }
 
-/***********************************/
-/* - - - Estils error404.php - - - */
-/***********************************/
-
+.note-from-witch {
+    background: url("assets/images/witch-note.png") no-repeat center center;
+    background-size: 100% 100%;
+    font-family: "Cookie";
+    font-size: 30px;
+    color: black;
+    width: fit-content;
+    padding: 32px;
+}
 
