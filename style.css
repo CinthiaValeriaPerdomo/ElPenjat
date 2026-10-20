@@ -209,29 +209,52 @@ th, td {
     min-width: 0;
     width: 48px;
     height: 48px;
-    background-color:#4B2A5A;
+    background-color:#120918;
     border:1px solid #332A3A;
     border-radius: 5px;
-    color: black;
+    color: #eccc91;
 }
 
-.container h1{
-    color: #6B3F7A;
+#container-play h1{
+    color: #eccc91;
 }
-
-.container h1{
-    color: #6B3F7A;
+#container-play h6{
+    color: #462d2a;
+    font-weight: bold;
 }
-
-#teclat button.correcta {
-    background-color: green;
+#teclat button.correcta {   
+    background-color: rgb(2, 75, 2);
 }
 #teclat button.incorrecta {
-    background-color: darkred;
+    background-color: rgb(87, 3, 3);
 }
 
 .tecla:disabled {
-    cursor: default;
+    position: relative;
+    top: 5px;
+}
+
+#frase {
+    font-size: 32px;
+}
+
+.casilla {
+    display: inline-block;
+    width: 40px;
+    height: 48px;
+    border: 2px solid #120918;
+    color: #eccc91;
+}
+
+.signo {
+    display: inline-block;
+    margin: 0 3px;
+    color:#220511 ;
+}
+
+.espacio {
+    display: inline-block;
+    width: 30px;
 }
 /***********************************/
 /* - - - Estils gameover.php - - - */
