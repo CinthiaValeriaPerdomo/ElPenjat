@@ -258,7 +258,7 @@ td {
     font-weight: bold;
 }
 #teclat button.correcta {   
-    background-color: rgb(2, 75, 2);
+    background-color: rgb(2, 53, 2);
 }
 #teclat button.incorrecta {
     background-color: rgb(87, 3, 3);
@@ -268,28 +268,40 @@ td {
     position: relative;
     top: 5px;
 }
+#teclat button:disabled {   
+    cursor: default;
+}
 
 #frase {
-    font-size: 32px;
+    font-size: 28px;
 }
 
 .casilla {
     display: inline-block;
-    width: 40px;
-    height: 48px;
-    border: 2px solid #120918;
+    width: 34px;
+    height: 42px;
+    border: 2px solid #21112c;
+    /*border: 2px solid #8a2a4a;*/
     color: #eccc91;
+    box-sizing: border-box;
+    line-height: 38px;
+    text-align: center;
+    margin: 6px 5px;
+    vertical-align: middle;
+
 }
 
 .signo {
     display: inline-block;
-    margin: 0 3px;
-    color:#220511 ;
+    margin: 0 6px;
+    color:#220511;
+    vertical-align: middle;
 }
 
 .espacio {
     display: inline-block;
     width: 30px;
+    vertical-align: middle;
 }
 /***********************************/
 /* - - - Estils gameover.php - - - */

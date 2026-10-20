@@ -63,7 +63,7 @@ function jugar(tecla) {
 function comprovarFinal() {
     if (errors == maxErrores) {
         acabar(false);
-    } else if (!pFrase.textContent.includes("_")) {
+    } else if (quedan ==0) {
         acabar(true);
     }
 }
