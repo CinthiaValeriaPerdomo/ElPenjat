@@ -59,7 +59,6 @@ a.link-button {
 }
 
 table {
-    width: 80%;
     margin: 32px auto;
     border-collapse: collapse; 
     font-size: 20px;  
@@ -87,7 +86,7 @@ th, td {
 }
 
 .gold-text {
-    color: goldenrod
+    color:#A28B6E;
 }
 
 /*******************************/
@@ -198,6 +197,27 @@ th, td {
 /*******************************/
 /* - - - Estils play.php - - - */
 /*******************************/
+#teclat {
+    width: 50%;
+}
+
+#teclat td{
+    border: 2px solid #A28B6E;
+}
+
+#teclat button {
+    min-width: 0;
+    width: 48px;
+    height: 48px;
+    background-color:#4B2A5A;
+    border:1px solid #332A3A;
+    border-radius: 5px;
+    color: black;
+}
+
+.container h1{
+    color: #6B3F7A;
+}
 
 
 
