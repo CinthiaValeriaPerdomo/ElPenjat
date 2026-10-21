@@ -61,7 +61,6 @@ a.link-button {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 23px;
     margin-top: 50px;
-    height: 26px;
 
     &:hover {
         background-color: purple;
@@ -296,6 +295,10 @@ td {
 }
 #teclat button:disabled {   
     cursor: default;
+}
+
+#teclat button {
+    margin-top: 0;
 }
 
 #frase {

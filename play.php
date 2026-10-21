@@ -7,11 +7,11 @@
         $_SESSION["puntuacio"] = $_POST["puntuacio"];
         $_SESSION["data"] = date('Y-m-d H:i:s') ;
         header("Location: gameover.php");
-        die();
+        exit();
     }
     if (!isset($_POST["nom"])) {
         header("Location: index.php");
-        die();
+        exit();
     }
 
     $_SESSION["nom"] = $_POST["nom"];
