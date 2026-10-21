@@ -5,7 +5,7 @@
 /* - - - Estils globals - - - */
 /******************************/
 
-html, body, noscript {
+html, body {
     margin: 0;
     padding: 0;
     min-height: 100%;
@@ -19,9 +19,12 @@ body {
 }
 
 noscript {
-    position: fixed;
-    z-index: 1; /*es mostra en una capa devant de la resta d'elements*/
-    background-color: rgba(0, 0, 0, 0.9);
+    margin: 0;
+    min-width: 100%;
+    background-color: rgb(79, 0, 13);
+    & h3 {
+        color: red;
+    }
 }
 
 h1 {
@@ -115,7 +118,7 @@ td {
 }
 
 .gold-text {
-    color:#A28B6E;
+    color:goldenrod;
 }
 
 /*******************************/
@@ -180,7 +183,6 @@ td {
 }
 
 #description .gold-text {
-    color: goldenrod;
     font-style: italic;
     /*cursiva*/
 }

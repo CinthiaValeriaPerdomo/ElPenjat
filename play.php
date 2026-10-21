@@ -72,7 +72,7 @@
 
     <div class="container" id="container-play">
         <h1>LA MANSIÓ EMBRUIXADA</h1>
-        <h6 class="gold-text">DESCOBREIX EL MISTERI</h6>
+        <h6>DESCOBREIX EL MISTERI</h6>
         <p id="frase"></p>
         <img id="penjat" src="assets/images/penjat-0.png" alt="Penjat" width="200">
         <table id="teclat">

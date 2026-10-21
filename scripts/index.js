@@ -1,5 +1,5 @@
 const formulario = document.getElementById('formulario'); // tengo mi formulario del index
-
+formulario.querySelector('.jugar').disabled = false;
 
 // event es el clic del usuario en el boton Jugar
 formulario.addEventListener('submit', function (evento) {
