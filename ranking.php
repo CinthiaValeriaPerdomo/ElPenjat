@@ -31,14 +31,14 @@ if ($_POST["resposta"] == "S") {
     <div class="container">
         <h1>Taula de classificacions</h1>
         <table>
-            <thead>
+            <thead id="ranking-header">
                 <tr>
                     <th>Nom</th>
                     <th>Puntuació</th>
                     <th>Data</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="ranking-rows">
                 <?php
                 $recordsStr = explode("\n", file_get_contents("records.txt"));
 
