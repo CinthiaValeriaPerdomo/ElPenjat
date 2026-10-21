@@ -22,6 +22,7 @@
             </p>
         </div>
         <a href="index.php" class="link-button">Tornar a inici</a>
+        <a id="a-ranking" href="ranking.php">Veure Ranking</a>
     </div>
 </body>
 </html>
