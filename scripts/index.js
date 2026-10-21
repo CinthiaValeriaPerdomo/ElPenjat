@@ -7,8 +7,9 @@ formulario.addEventListener('submit', function (evento) {
     let esValido = false;
 
     // obtenemos los valores y no dejamos espacios en blanco
-    const nombre = document.getElementById('nom').value.trim();
-
+    const nom = document.getElementById('nom');
+    const nombre = nom.value.trim();
+    
 
     // cojo los errores
     const errorNombre = document.getElementById('errorNombre');
@@ -18,6 +19,7 @@ formulario.addEventListener('submit', function (evento) {
         errorNombre.style.display = 'block';
         errorNombre.textContent = 'El camp està buit';
         esValido = false;
+        nom.focus();  
     } else {
         errorNombre.style.display = 'none';
         esValido = true;
