@@ -51,6 +51,25 @@
             <p>Activa'l al teu navegador.</p>
         </div>
     </noscript>
+
+    <audio><source src="assets/audio/encert1.wav" type="audio/wav"></audio>
+    <audio><source src="assets/audio/encert2.wav" type="audio/wav"></audio>
+    <audio><source src="assets/audio/encert3.wav" type="audio/wav"></audio>
+    <audio><source src="assets/audio/error1.wav"  type="audio/wav"></audio>
+    <audio><source src="assets/audio/error2.wav"  type="audio/wav"></audio>
+    <audio><source src="assets/audio/error3.wav"  type="audio/wav"></audio>
+    <audio><source src="assets/audio/riure-de-bruixa1.wav" type="audio/wav"></audio>
+    <audio><source src="assets/audio/riure-de-bruixa2.wav" type="audio/wav"></audio>
+    <audio><source src="assets/audio/riure-de-bruixa3.wav" type="audio/wav"></audio>
+    <audio><source src="assets/audio/riure-de-bruixa4.wav" type="audio/wav"></audio>
+    <audio><source src="assets/audio/riure-de-bruixa5.wav" type="audio/wav"></audio>
+    <audio><source src="assets/audio/riure-de-bruixa6.wav" type="audio/wav"></audio>
+    <audio><source src="assets/audio/riure-de-bruixa7.wav" type="audio/wav"></audio>
+    <audio><source src="assets/audio/riure-de-bruixa8.wav" type="audio/wav"></audio>
+    <audio><source src="assets/audio/riure-de-bruixa9.wav" type="audio/wav"></audio>
+    <audio><source src="assets/audio/bach.wav"        type="audio/wav"></audio>
+    <audio><source src="assets/audio/aplaudiment.wav" type="audio/wav"></audio>
+
     <div class="container" id="container-play">
         <h1>LA MANSIÓ EMBRUIXADA</h1>
         <h6 class="gold-text">DESCOBREIX EL MISTERI</h6>
