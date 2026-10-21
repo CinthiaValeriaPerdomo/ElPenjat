@@ -263,6 +263,7 @@ input[type="text"] {
     background-color: dimgray;
     &:hover {
         background-color: dimgray;
+        cursor: not-allowed;
     }
 }
 
