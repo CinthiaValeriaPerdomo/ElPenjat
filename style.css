@@ -61,7 +61,6 @@ a.link-button {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 23px;
     margin-top: 50px;
-    height: 26px;
 
     &:hover {
         background-color: purple;
@@ -270,29 +269,67 @@ td {
     min-width: 0;
     width: 48px;
     height: 48px;
-    background-color:#4B2A5A;
+    background-color:#120918;
     border:1px solid #332A3A;
     border-radius: 5px;
-    color: black;
+    color: #eccc91;
 }
 
-.container h1{
-    color: #6B3F7A;
+#container-play h1{
+    color: #eccc91;
 }
-
-.container h1{
-    color: #6B3F7A;
+#container-play h6{
+    color: #462d2a;
+    font-weight: bold;
 }
-
-.tecla.correcta {
-    background-color: green;
+#teclat button.correcta {   
+    background-color: rgb(2, 53, 2);
 }
-.tecla.incorrecta {
-    background-color: darkred;
+#teclat button.incorrecta {
+    background-color: rgb(87, 3, 3);
 }
 
 .tecla:disabled {
+    position: relative;
+    top: 5px;
+}
+#teclat button:disabled {   
     cursor: default;
+}
+
+#teclat button {
+    margin-top: 0;
+}
+
+#frase {
+    font-size: 28px;
+}
+
+.casilla {
+    display: inline-block;
+    width: 34px;
+    height: 42px;
+    border: 2px solid #422456;
+    color: #eccc91;
+    box-sizing: border-box;
+    line-height: 38px;
+    text-align: center;
+    margin: 6px 5px;
+    vertical-align: middle;
+
+}
+
+.signo {
+    display: inline-block;
+    margin: 0 6px;
+    color:#eccc91;
+    vertical-align: middle;
+}
+
+.espacio {
+    display: inline-block;
+    width: 30px;
+    vertical-align: middle;
 }
 /***********************************/
 /* - - - Estils gameover.php - - - */

@@ -1,16 +1,17 @@
 <?php
     session_start();
 
-
     if (isset($_POST["fi"])) {
         $_SESSION["guanyat"] = ($_POST["guanyat"] == "1");
         $_SESSION["acces_correcte"] = true;
+        $_SESSION["puntuacio"] = $_POST["puntuacio"];
+        $_SESSION["data"] = date('Y-m-d H:i:s') ;
         header("Location: gameover.php");
-        die();
+        exit();
     }
     if (!isset($_POST["nom"])) {
         header("Location: index.php");
-        die();
+        exit();
     }
 
     $_SESSION["nom"] = $_POST["nom"];
@@ -78,6 +79,7 @@
         <form id="form-fi" action="play.php" method="post">
             <input type="hidden" name="fi" value="1">
             <input type="hidden" name="guanyat" id="guanyat" value="0">
+            <input type="hidden" name="puntuacio" id="puntuacio" value="0">
         </form>
     </div>
 
