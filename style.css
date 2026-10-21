@@ -82,6 +82,16 @@ a.link-button.secondary {
     }
 }
 
+button:disabled {
+    cursor: default;
+    color: silver;
+    border-color: silver;
+    background-color: dimgray;
+    &:hover {
+        background-color: dimgray;
+    }
+}
+
 a.link-button {
     display: inline-block;
     text-decoration: none;
