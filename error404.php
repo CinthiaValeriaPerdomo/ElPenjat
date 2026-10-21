@@ -21,7 +21,8 @@
                 - Sincerament, Bruixa Penny Jatty
             </p>
         </div>
-        <a href="index.php" class="link-button">Tornar a inici</a>
+        <a href="index.php" class="link-button">Tornar a inici</a><br><br>
+        <a id="a-ranking" href="ranking.php">Veure Ranking</a>
     </div>
 </body>
 </html>
