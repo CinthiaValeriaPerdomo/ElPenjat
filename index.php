@@ -1,10 +1,3 @@
-<php
-
-
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -16,14 +9,6 @@
     <script src="./scripts/index.js" defer></script> 
 </head>
 <body id="index">
-    <!-- 
-    Specs d'aquesta pàgina:
-    
-     7. Pàgina index.php            | HTML+CSS
-     8. Funcionalitat botó Iniciar  | JS
-    
-    (temporal, esborrar cada spec segons s'acabin i el comentari en acabar totes)
-    -->
     <noscript class="flex-center">
         <div>
             <h3>! JavaScript desactivat !</h3>

@@ -11,7 +11,6 @@ if ($_POST["resposta"] == "S") {
     file_put_contents("records.txt", implode(",", $lastRecord)."\n", FILE_APPEND);
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="ca">
 <head>

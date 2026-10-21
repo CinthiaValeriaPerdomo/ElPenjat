@@ -27,9 +27,7 @@
     $frases = file($fitxer, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
     $frase = mb_strtoupper($frases[array_rand($frases)], "UTF-8");
 
-
 ?>
-
 <!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -42,10 +40,6 @@
     <!-- 
     Specs d'aquesta pàgina:
     
-     9. Pàgina play.php         | HTML+CSS, PHP, JS
-    10. Gestió mecànica bàsica  | JS
-    11. Gestió final del joc    | JS
-    12. Puntuació               | JS
     15. Efectes de sons         | JS 
     
     (temporal, esborrar cada spec segons s'acabin i el comentari en acabar totes)

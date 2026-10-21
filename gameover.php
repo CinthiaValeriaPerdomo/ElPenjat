@@ -21,7 +21,6 @@
     <!-- 
     Specs d'aquesta pàgina:
     
-    13. Enregistrar récord  | HTML+CSS, PHP
     15. Efectes de sons     | JS 
     
     (temporal, esborrar cada spec segons s'acabin i el comentari en acabar totes)

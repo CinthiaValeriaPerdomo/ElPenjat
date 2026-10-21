@@ -7,13 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="error404">
-    <!-- 
-    Specs d'aquesta pàgina:
-    
-    16. Error 404  | HTML+CSS
-    
-    (temporal, esborrar el comentari en acabar la spec)
-    -->
     <div class="container">
         <div class="flex-center">
             <img class="error-image" src="./assets/images/where.png" alt="Senyal groc d'advertència amb ?"/>
