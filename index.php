@@ -48,7 +48,7 @@
                 </div>
             </div>
             
-            <button type="submit" class="jugar">JUGAR</button>
+            <button type="submit" class="jugar" disabled>JUGAR</button>
             
 
         </form>
