@@ -16,6 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Penjat - Fi de partida</title>
     <link rel="stylesheet" href="style.css">
+    <script src="scripts/gameover.js" defer></script>
 </head>
 <body id="gameover">
     <!-- 
@@ -25,6 +26,9 @@
     
     (temporal, esborrar cada spec segons s'acabin i el comentari en acabar totes)
     -->
+
+    <audio><source src="assets/audio/segellar.wav" type="audio/wav"></audio>
+
     <div class="container">
         <?php 
         echo $_SESSION["guanyat"] 
@@ -44,8 +48,9 @@
         <form action="ranking.php" method="post">
             <p>Vols enregistrar el teu récord?</p>
             <div class="flex-center">
-                <button type="submit" name="resposta" value="S">Sí</button>
-                <button type="submit" name="resposta" value="N" class="secondary">No, gràcies.</button>
+                <button type="submit" value="S">Sí</button>
+                <button type="submit" value="N" class="secondary">No, gràcies.</button>
+                <input type="hidden" name="resposta" id="resposta">
             </div>
         </form>
     </div>

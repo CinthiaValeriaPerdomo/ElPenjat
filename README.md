@@ -1,41 +1,41 @@
 # El Penjat
 
-Juego web del ahorcado con temática de mansión encantada, hecho con PHP (servidor), JavaScript (cliente), HTML/CSS y Apache.
+Joc web del penjat amb temàtica de mansió encantada, fet amb PHP (servidor), JavaScript (client), HTML/CSS i Apache.
 
-## Descripción
+## Descripció
 
-El jugador explora una mansión encantada y la bruja, dueña del lugar, lo acorrala y lo condena a vivir con sus espíritus para siempre. Su única salida es adivinar la frase oculta antes de agotar sus 6 errores. Si gana, escapa de la mansión. Si pierde, se convierte en uno de sus espíritus.
+El jugador explora una mansió encantada i la bruixa, propietària del lloc, l'acorrala i vol condemnar-lo a viure amb els seus esperits per sempre. La seva única sortida és endevinar la frase oculta abans d'esgotar els seus 6 errors. Si gana, escapa de la mansió. Si perd, es converteix en un dels seus esperits.
 
-Al terminar la partida, el jugador puede registrar su récord y ver el ranking.
+En acabar la partida, el jugador pot registrar el seu rècord i veure el rànquing.
 
-## Instalación
+## Instal·lació
 
-Requisitos: servidor Apache con PHP (por ejemplo XAMPP, MAMP o una pila LAMP).
+Requisits: servidor Apache amb PHP (per exemple XAMPP, MAMP o una pila LAMP).
 
-1. Clonar el repositorio:
+1. Clonar el repositori:
 
-   git clone https://github.com/CinthiaValeriaPerdomo/ElPenjat
+git clone https://github.com/CinthiaValeriaPerdomo/ElPenjat
 
-2. Copiar el proyecto a la carpeta pública de Apache:
-   - XAMPP / MAMP: `htdocs/elpenjat`
-   - Linux (LAMP): `/var/www/html/elpenjat`
+2. Copiar el projecte a la carpeta pública d'Apache:
+- XAMPP / MAMP: `htdocs/*ElPenjat`
+- Linux (LAMP): `/var/www/html/*ElPenjat`
 
-3. Dar permiso de escritura a `records.txt` (Apache debe poder escribir en él). En Linux:
+3. Donar permís d'escriptura a `records.txt` (Apache ha de poder escriure en ell). En Linux:
 
-   sudo chown www-data:www-data records.txt
-   sudo chmod 664 records.txt
+sudo chown www-data:www-data records.txt
+sudo chmod 664 records.txt
 
-## Puesta en marcha
+## Posada en marxa
 
-Reiniciar Apache si es necesario:
+Reiniciar Apache si és necessari:
 
-   sudo systemctl restart apache2
+sudo systemctl restart apache2
 
-Abrir el juego en el navegador: `http://localhost/elpenjat/`
+Obrir el joc en el navegador: `http://localhost/index.php/`
 
-## Inicio del juego
+## Inici del joc
 
-1. En la página de inicio, escribir el nombre (obligatorio).
-2. Elegir la dificultad: Fácil, Normal o Difícil.
-3. Pulsar **JUGAR**.
-4. Pulsar las letras del teclado para adivinar la frase. Se pierde con 6 errores.
+1. En la pàgina d'inici, escriure el nom (obligatori).
+2. Triar la dificultat: Fàcil, Normal o Difícil.
+3. Prémer *JUGAR**.
+4. Prémer les lletres del teclat per a endevinar la frase. Es perd amb 6 errors.

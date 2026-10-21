@@ -11,7 +11,12 @@ const sinAcento = "AAEEIIOOUUC";
 
 const inicio = Date.now();
 
-
+const audios = document.getElementsByTagName("audio");
+const audiosEncert = Array.from(audios).slice(0,3);
+const audiosError  = Array.from(audios).slice(3,6);
+const audiosRiure  = Array.from(audios).slice(6,15);
+const audioBach = audios[15];
+const audioAplaudiment = audios[16];
 
 function lletraBase(lletra) {
     let pos = conAcento.indexOf(lletra);
@@ -53,10 +58,16 @@ function jugar(tecla) {
 
     if (fraseBase.includes(lletra)) {
         tecla.classList.add("correcta");
+        const audioEncert = audiosEncert[Math.floor(Math.random()*audiosEncert.length)];
+        audioEncert.play();
+
         acertadas.push(lletra);
         mostrarFrase();
     } else {
         tecla.classList.add("incorrecta");
+        const audioError = audiosError[Math.floor(Math.random()*audiosError.length)];
+        audioError.play();
+
         errors++;
         pImg.src = "assets/images/penjat-" + errors + ".png";
     }
@@ -77,7 +88,7 @@ function calcularPunctuacion(guanyat){
         return 0; 
     }
 
-    let letras =0;
+    let letras = 0;
     for (let i = 0; i < fraseBase.length; i++) {
         if (fraseBase[i] >= "A" && fraseBase[i] <= "Z") {
             letras++;
@@ -97,14 +108,24 @@ function calcularPunctuacion(guanyat){
 
 function acabar(guanyat) {
     document.getElementById("guanyat").value = guanyat ? "1" : "0";
-    document.getElementById("puntuacio").value =calcularPunctuacion(guanyat);
-    setTimeout(function () {
+    document.getElementById("puntuacio").value = calcularPunctuacion(guanyat);
+
+    const audioRiure = audiosRiure[Math.floor(Math.random()*audiosRiure.length)];
+    if (guanyat) {
+        audioAplaudiment.play();
+    } else {
+        audioRiure.play();
+        audioBach.play();
+    }
+
+    const timeout = 1000 * (guanyat ? audioAplaudiment.duration : audioRiure.duration);
+    setTimeout(() => {
         document.getElementById("form-fi").submit();
-    }, 1000);
+    }, timeout);
 }
 
 for (let i = 0; i < teclas.length; i++) {
-    teclas[i].addEventListener("click", function () {
+    teclas[i].addEventListener("click", () => {
         jugar(teclas[i]);
     });
 }
