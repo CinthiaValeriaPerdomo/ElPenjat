@@ -11,7 +11,6 @@ if ($_POST["resposta"] == "S") {
     file_put_contents("records.txt", implode(",", $lastRecord)."\n", FILE_APPEND);
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -45,13 +44,18 @@ if ($_POST["resposta"] == "S") {
 
                 $records = [];
                 for ($i=0; $i < count($recordsStr); $i++) {
+                    $record = explode(",", $recordsStr[$i]);
+                
+                    if ($record == [] || $record == [""] || $record[1] == "") continue;
+
                     $records[] = explode(",", $recordsStr[$i]);
                 }
-                sort($records);
+
+                usort($records, function ($a, $b) {
+                    return $b[1] - $a[1];
+                });
                 
                 foreach ($records as $i => $record) {
-                    if ($record == []) continue;
-
                     echo $record == $lastRecord 
                         ? '<tr id="last-record">'."\n" 
                         : "<tr>\n";
