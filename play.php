@@ -26,9 +26,7 @@
     }
     $frases = file($fitxer, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
     $frase = mb_strtoupper($frases[array_rand($frases)], "UTF-8");
-
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="ca">
 <head>
     <meta charset="UTF-8">
@@ -38,6 +36,7 @@
 </head>
 <body id="play">
     <!-- 
+
     Specs d'aquesta pàgina:
     
     15. Efectes de sons         | JS 
@@ -83,10 +82,10 @@
                         echo " <tr>"; 
                     }
                     echo '<td><button type="button" class="tecla">' . $l . '</button></td>';
-                    if (($i - 65) % 13 == 12) { 
+                    if (($i - 65) % 13 == 12) {
                         echo "</tr>\n";
                     }
-                } 
+                }
             ?>
         </table>
         <form id="form-fi" action="play.php" method="post">
@@ -97,7 +96,8 @@
     </div>
 
     <script>
-        const frase = "<?= $frase ?>";
+        const frase = "<?php echo $frase; ?>";
+        console.log("test frase:",frase);
     </script>
     <script src="scripts/play.js"></script>
 </body>
