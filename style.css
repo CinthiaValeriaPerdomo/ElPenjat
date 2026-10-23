@@ -5,6 +5,8 @@
 /* - - - Estils globals - - - */
 /******************************/
 
+/* - - - Document - - - */
+
 html, body {
     margin: 0;
     padding: 0;
@@ -18,14 +20,7 @@ body {
     float: left; /* per prevenir que cap marge d'un element fill s'estengui més enllà del seu contorn (prevenir colapsament de marges)*/
 }
 
-noscript {
-    margin: 0;
-    min-width: 100%;
-    background-color: rgb(79, 0, 13);
-    & h3 {
-        color: red;
-    }
-}
+/* - - - Títols - - - */
 
 h1 {
     font-size: 60px;
@@ -47,10 +42,37 @@ h6 {
     margin: 16px 0;
 }
 
+/* - - - Formularis - - - */
+
 label {
-    display: block;
-    /* posa les labels a dalt dels inputs */
+    display: block; 
+    /* posa les labels damunt dels inputs */
+    font-size: 25px;
 }
+
+input[type="text"],
+select {
+    width: 250px;
+    height: 50px;
+    border-radius: 5px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+    
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    /*vora fina*/
+    background-color: rgba(25, 20, 35, 0.9);
+    padding-left: 10px;
+}
+
+input[type="text"] {
+    color: #e8e8e8;
+    pointer-events: auto;
+}
+select {
+    color: #666;
+}
+
+/* - - - Botons - - - */
 
 button,
 a.link-button {
@@ -75,19 +97,34 @@ button.secondary,
 a.link-button.secondary {
     background-color: rgb(51, 51, 51);
 
-    /* color gris treu ènfasi al botó */
     &:hover {
         background-color: dimgray;
         cursor: pointer;
     }
+    /* colors grisos treuen ènfasi al botó */
 }
 
+button:disabled, 
+a.link-button:disabled {
+    cursor: not-allowed;
+    color: silver;
+    border-color: silver;
+    background-color: dimgray;
+    
+    &:hover {
+        background-color: dimgray;
+        cursor: not-allowed;
+    }
+    /* grisos amb contraste reduït treuen encara més ènfasi */
+}
 
 a.link-button {
     display: inline-block;
     text-decoration: none;
     margin-top: 16px;
 }
+
+/* - - - Taules - - - */
 
 table {
     margin: 32px auto;
@@ -99,6 +136,30 @@ th,
 td {
     border: 2px solid white;
     padding: 8px;
+}
+
+thead {
+    background-color: rgb(85, 0, 102);
+    color: white;
+}
+
+tbody.zebra-rows tr:nth-child(odd) {
+    background-color: black;
+}
+tbody.zebra-rows tr:nth-child(even) {
+    background-color: #333;
+}
+
+
+/* - - - Altres - - - */
+
+noscript {
+    margin: 0;
+    min-width: 100%;
+    background-color: rgb(79, 0, 13);
+    & h3 {
+        color: red;
+    }
 }
 
 .flex-center {
@@ -147,24 +208,28 @@ td {
 /********************************/
 /* - - - Estils index.php - - - */
 /********************************/
-.imagen-titulo {
+
+/* - - - Títol - - - */
+
+#game-title {
     position: relative;
-    /*para la imagen*/
+    /*per a la imatge*/
     display: inline-block;
-    /*se ajusta al cancho de h1*/
+    /*s'ajusta a l'amplada de h1*/
 
 }
 
-.img {
+#img-barret {
     position: absolute;
-    /*se posicionara segun el contenedor*/
+    /*es posicionarà segons el contenidor*/
     top: -30px;
-    /*arriba*/
+    /*amunt*/
     left: 170px;
-    /* espacio a izquierda*/
+    /*espai a l'esquerra*/
     width: 50%;
 }
 
+/* - - - Descripció - - - */
 
 #description {
     margin-bottom: 25px;
@@ -177,7 +242,7 @@ td {
     margin-top: 10px;
     text-align: left;
     padding: 0 100px 10px 100px;
-    /*margenes izq/der*/
+    /*marges esquerra/dreta*/
     line-height: 1.5;
     font-size: 25px;
 }
@@ -193,57 +258,27 @@ td {
     background-color: rgba(85, 85, 80, 0.419);
     margin-bottom: 20px;
 }
-#label {
-    font-size: 25px;
-}
-#nom {
-    width: 250px;
-    height: 50px;
-    border-radius: 5px;
-    font-size: 15px;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 20px;
-    color: #e8e8e8;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    /*borde fino*/
-    background-color: rgba(25, 20, 35, 0.9);
-    padding-left: 10px;
-}
+
+/* - - - Formulari - - - */
+
 #nom:focus {
     color: rgb(234, 226, 226);
     outline: 2px solid red;
 }
-input[type="text"] {
-    pointer-events: auto;
-}
-
-#nivell {
-    width: 250px;
-    height: 50px;
-    border-radius: 5px;
-    font-size: 20px;
-    color: rgb(108, 107, 107);
-    font-family: Georgia, "Times New Roman", serif;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    /*borde fino */
-    background-color: rgba(25, 20, 35, 0.9);
-    padding-left: 10px;
-}
 
 #nivell option {
     background-color: #1a1423;
-    /* si no, el desplegable sigue en blancos */
+    /* si no, el desplegable segueix en blancs */
     color: #e8e8e8;
 }
 
-#errorNombre {
+#error-nombre {
     color: red;
 }
 
-#formulario button {
+#form-jugar button {
     margin-top: 50px;
     height: 50px;
-    border: 3px solid rgba(255, 255, 255, 0.46);
     &:hover {
         background-color: purple;
         cursor: pointer;
@@ -256,67 +291,19 @@ input[type="text"] {
     font-size: 23px;
 }
 
-#jugar:disabled {
-    cursor: not-allowed;
-    color: silver;
-    border-color: silver;
-    background-color: dimgray;
-    &:hover {
-        background-color: dimgray;
-        cursor: not-allowed;
-    }
-}
-
-#a-ranking {
-    font-size: 25px;
-}
-
 /*******************************/
 /* - - - Estils play.php - - - */
 /*******************************/
-#teclat {
-    width: 50%;
-}
 
-#teclat td{
-    border: none;
-}
-
-#teclat button {
-    min-width: 0;
-    width: 48px;
-    height: 48px;
-    background-color:#120918;
-    border:1px solid #332A3A;
-    border-radius: 5px;
+#container-play h1 {
     color: #eccc91;
 }
-
-#container-play h1{
-    color: #eccc91;
-}
-#container-play h6{
+#container-play h6 {
     color: #462d2a;
     font-weight: bold;
 }
-#teclat button.correcta {   
-    background-color: rgb(2, 53, 2);
-}
-#teclat button.incorrecta {
-    background-color: rgb(87, 3, 3);
-}
 
-.tecla:disabled {
-    position: relative;
-    top: 5px;
-}
-#teclat button:disabled {   
-    cursor: default;
-}
-
-#teclat button {
-    margin-top: 0;
-}
+/* - - - Frase - - - */
 
 #frase {
     font-size: 28px;
@@ -348,20 +335,49 @@ input[type="text"] {
     width: 30px;
     vertical-align: middle;
 }
+
+/* - - - Teclat - - - */
+
+#teclat {
+    width: 50%;
+}
+
+#teclat td {
+    border: none;
+}
+
+#teclat button {
+    min-width: 0;
+    margin-top: 0;
+    width: 48px;
+    height: 48px;
+    background-color:#120918;
+    border:1px solid #332A3A;
+    border-radius: 5px;
+    color: #eccc91;
+
+    &.correcta {
+        background-color: rgb(2, 53, 2);
+    }
+    &.incorrecta {
+        background-color: rgb(87, 3, 3);
+    }
+
+    &:disabled {
+        cursor: default;
+        position: relative;
+        top: 5px;
+    }
+}
+
 /***********************************/
 /* - - - Estils gameover.php - - - */
 /***********************************/
-
-body#gameover {
-    background: url("assets/images/manor_foyer.jpg") no-repeat center center fixed;
-    background-size: cover;
-}
 
 #game-win {
     color: greenyellow;
     text-shadow: 0 4px 8px forestgreen;
 }
-
 #game-loss {
     color: darkred;
     text-shadow: 0 4px 8px coral;
@@ -371,28 +387,11 @@ body#gameover {
 /* - - - Estils ranking.php - - - */
 /**********************************/
 
-body#ranking {
-    background: url("assets/images/manor_foyer.jpg") no-repeat center center fixed;
-    background-size: cover;
-}
-
-#ranking-header {
-    background-color: rgb(85, 0, 102);
-    color: white;
-}
-
-#ranking-rows tr#last-record {
+#last-record {
     background-color: rgba(255, 217, 0, 0.75);
     box-shadow: 0 0 5px 5px darkgoldenrod;
     color: black;
     font-weight: bold;
-}
-
-#ranking-rows tr:nth-child(odd) {
-    background-color: black;
-}
-#ranking-rows tr:nth-child(even) {
-    background-color: rgb(51,51,51);
 }
 
 /***********************************/
@@ -414,4 +413,3 @@ body#ranking {
     width: fit-content;
     padding: 32px;
 }
-

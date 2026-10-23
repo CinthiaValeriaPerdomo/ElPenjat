@@ -19,14 +19,6 @@
     <script src="scripts/gameover.js" defer></script>
 </head>
 <body id="gameover">
-    <!-- 
-    Specs d'aquesta pàgina:
-    
-    15. Efectes de sons     | JS 
-    
-    (temporal, esborrar cada spec segons s'acabin i el comentari en acabar totes)
-    -->
-
     <audio><source src="assets/audio/segellar.wav" type="audio/wav"></audio>
 
     <div class="container">
