@@ -1,4 +1,4 @@
-const MAX_ERRORES = 6;
+/*const MAX_ERRORES = 6;
 
 let errores = 0;
 
@@ -36,4 +36,8 @@ while (errores <= MAX_ERRORES){
     }
 }
 
+*/
 
+function cambarTexto() {
+    document.getElementById("mensaje").innerHTML = "ESTE TEXTO NO ES EL ORIGINAL";
+}
