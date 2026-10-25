@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php
+    session_start();
+    //print_r($_SESSION);
+
+
+?><!DOCTYPE html>
 <html lang="ca">
 <head>
     <meta charset="UTF-8">
@@ -33,16 +38,16 @@
             
                 <div>
                     <label for="nom" id="label">Nom:</label>
-                    <input type="text" id="nom" placeholder="El teu nom ..." name="nom">
+                    <input type="text" id="nom" placeholder="El teu nom ..." name="nom" value="<?php echo $_SESSION["nom"] ?? ""; ?>">
                     <div id = "errorNombre"></div>
                 </div>
                 
                 <div>
                     <label for="nivell" id="label">Dificultat: </label>
                     <select name="nivell" id="nivell">
-                        <option value="facil">Fàcil</option>
-                        <option  value="normal" selected>Normal</option>
-                        <option value="dificil">Dificil</option>
+                        <option value="Fàcil">Fàcil</option>
+                        <option  value="Normal" selected>Normal</option>
+                        <option value="Dificil">Dificil</option>
                     </select>
 
                 </div>

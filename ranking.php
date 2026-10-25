@@ -1,5 +1,6 @@
 <?php
 session_start();
+//print_r($_SESSION);
 $lastRecord = [];
 
 if ($_POST["resposta"] == "S") {
