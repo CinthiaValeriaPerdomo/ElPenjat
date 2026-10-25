@@ -95,6 +95,13 @@
             <input type="hidden" name="puntuacio" id="puntuacio" value="0">
         </form>
     </div>
+    <div id="mensaje-error" class="alerta oculto">
+        <span id="texto-alerta">REQUISITOS DE ENTRADA: <br>
+            El patrón debe contener tres consonantes consecutivas seguidas de una vocal (ejemplo: "trpA"). <br>
+            Por favor, ingrese o seleccione según el formato indicado.
+        </span>
+        <button onclick="cerrarMensaje()" class="btn-cerrar">X</button>
+    </div>
 
     <script>
         const frase = "<?= $frase ?>";
