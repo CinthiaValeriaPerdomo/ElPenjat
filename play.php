@@ -30,9 +30,7 @@
     }
     $frases = file($fitxer, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
     $frase = mb_strtoupper($frases[array_rand($frases)], "UTF-8");
-
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="ca">
 <head>
     <meta charset="UTF-8">
@@ -42,6 +40,7 @@
 </head>
 <body id="play">
     <!-- 
+
     Specs d'aquesta pàgina:
     
     15. Efectes de sons         | JS 
@@ -76,7 +75,7 @@
 
     <div class="container" id="container-play">
         <h1>LA MANSIÓ EMBRUIXADA</h1>
-        <h6 class="gold-text">DESCOBREIX EL MISTERI</h6>
+        <h6>DESCOBREIX EL MISTERI</h6>
         <p id="frase"></p>
         <img id="penjat" src="assets/images/penjat-0.png" alt="Penjat" width="200">
         <table id="teclat">
@@ -87,10 +86,10 @@
                         echo " <tr>"; 
                     }
                     echo '<td><button type="button" class="tecla">' . $l . '</button></td>';
-                    if (($i - 65) % 13 == 12) { 
+                    if (($i - 65) % 13 == 12) {
                         echo "</tr>\n";
                     }
-                } 
+                }
             ?>
         </table>
         <form id="form-fi" action="play.php" method="post">
@@ -101,7 +100,8 @@
     </div>
 
     <script>
-        const frase = "<?= $frase ?>";
+        const frase = "<?php echo $frase; ?>";
+        console.log("test frase:",frase);
     </script>
     <script src="scripts/play.js"></script>
 </body>

@@ -5,7 +5,7 @@
 /* - - - Estils globals - - - */
 /******************************/
 
-html, body, noscript {
+html, body {
     margin: 0;
     padding: 0;
     min-height: 100%;
@@ -19,9 +19,12 @@ body {
 }
 
 noscript {
-    position: fixed;
-    z-index: 1; /*es mostra en una capa devant de la resta d'elements*/
-    background-color: rgba(0, 0, 0, 0.9);
+    margin: 0;
+    min-width: 100%;
+    background-color: rgb(79, 0, 13);
+    & h3 {
+        color: red;
+    }
 }
 
 h1 {
@@ -79,6 +82,7 @@ a.link-button.secondary {
     }
 }
 
+
 a.link-button {
     display: inline-block;
     text-decoration: none;
@@ -115,7 +119,7 @@ td {
 }
 
 .gold-text {
-    color:#A28B6E;
+    color:goldenrod;
 }
 
 /*******************************/
@@ -162,7 +166,6 @@ td {
 }
 
 
-
 #description {
     margin-bottom: 25px;
     margin-top: 25px;
@@ -180,7 +183,6 @@ td {
 }
 
 #description .gold-text {
-    color: goldenrod;
     font-style: italic;
     /*cursiva*/
 }
@@ -248,12 +250,22 @@ input[type="text"] {
     }
 }
 
-.jugar {
+#jugar {
     margin-top: 40px;
     margin-bottom: 40px;
     font-size: 23px;
 }
 
+#jugar:disabled {
+    cursor: not-allowed;
+    color: silver;
+    border-color: silver;
+    background-color: dimgray;
+    &:hover {
+        background-color: dimgray;
+        cursor: not-allowed;
+    }
+}
 
 #a-ranking {
     font-size: 25px;
@@ -364,16 +376,23 @@ body#ranking {
     background-size: cover;
 }
 
-thead {
+#ranking-header {
     background-color: rgb(85, 0, 102);
     color: white;
 }
 
-#last-record {
+#ranking-rows tr#last-record {
     background-color: rgba(255, 217, 0, 0.75);
     box-shadow: 0 0 5px 5px darkgoldenrod;
     color: black;
     font-weight: bold;
+}
+
+#ranking-rows tr:nth-child(odd) {
+    background-color: black;
+}
+#ranking-rows tr:nth-child(even) {
+    background-color: rgb(51,51,51);
 }
 
 /***********************************/
