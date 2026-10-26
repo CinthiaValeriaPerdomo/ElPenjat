@@ -204,7 +204,7 @@ noscript {
     background: url("assets/images/manor_foyer.jpg") no-repeat center center fixed;
     background-size: cover;
 }
-#index-admin {
+#delete-admin {
     background: url("assets/images/bg_admin.png") no-repeat center center fixed;
     background-size: 100% 100%;
 }
@@ -497,22 +497,22 @@ noscript {
 /********************************** */
 /* - - - Estils admin/index.php - - */
 /***********************************/
-#index-admin .container{
+#delete-admin .container{
     background: none;
     box-shadow: none;
     position: relative;
     left: -120px;
 }
-#index-admin table,
-#index-admin th,
-#index-admin td,
-#index-admin button,
-#index-admin tr:nth-child(odd) {
+#delete-admin table,
+#delete-admin th,
+#delete-admin td,
+#delete-admin button,
+#delete-admin tr:nth-child(odd) {
     color: #FFF2F5;
     border: 1px solid #A18191;
     font-family:'Times New Roman', Times, serif;
 }
-#index-admin table {
+#delete-admin table {
     width: 100%;
     table-layout: fixed;
     background-color: #765579;
