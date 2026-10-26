@@ -16,7 +16,7 @@
 
     $_SESSION["nom"] = $_POST["nom"];
     $nivell = $_POST["nivell"];
-
+    
     if ($nivell == "Fàcil") {
         $fitxer = "data/facil.txt";
     } elseif ($nivell == "Normal") {

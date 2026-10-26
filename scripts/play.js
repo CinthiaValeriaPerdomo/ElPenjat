@@ -56,7 +56,29 @@ function mostrarFrase() {
 
 
 const letrasFrase = [...new Set(frase.replaceAll(" ", ""))];
+
+
 let contador_consonantes = 0;
+
+
+function acierto(tecla, lletra) {
+    tecla.classList.add("correcta");
+    const audioEncert = audiosEncert[Math.floor(Math.random()*audiosEncert.length)];
+    audioEncert.play();
+    acertadas.push(lletra);
+    mostrarFrase();
+}
+
+function fallo(tecla) {
+    tecla.classList.add("incorrecta");
+    const audioError = audiosError[Math.floor(Math.random()*audiosError.length)];
+    audioError.play();
+
+    errors++;
+    pImg.src = "assets/images/penjat-" + errors + ".png";
+}
+
+
 function jugar(tecla) {
     const lletra = tecla.textContent;
     tecla.disabled = true;
@@ -67,35 +89,18 @@ function jugar(tecla) {
     if (consonantes.includes(lletra)){
         contador_consonantes += 1;
         if (fraseBase.includes(lletra)) {
-            tecla.classList.add("correcta");
-            const audioEncert = audiosEncert[Math.floor(Math.random()*audiosEncert.length)];
-            audioEncert.play();
-            acertadas.push(lletra);
-            mostrarFrase();
+            acierto(tecla, lletra);
         } else {
-            tecla.classList.add("incorrecta");
-            const audioError = audiosError[Math.floor(Math.random()*audiosError.length)];
-            audioError.play();
-
-            errors++;
-            pImg.src = "assets/images/penjat-" + errors + ".png";
+            fallo(tecla);
         }
     } else if (vocales.includes(lletra)){
         if (contador_consonantes >= 3){
+            contador_consonantes = 0;
             if (fraseBase.includes(lletra)) {
-                tecla.classList.add("correcta");
-                const audioEncert = audiosEncert[Math.floor(Math.random()*audiosEncert.length)];
-                audioEncert.play();
-                acertadas.push(lletra);
-                mostrarFrase();
-                contador_consonantes = 0;
+                acierto(tecla, lletra);
+                
             } else {
-                contador_consonantes = 0;
-                tecla.classList.add("incorrecta");
-                const audioError = audiosError[Math.floor(Math.random()*audiosError.length)];
-                audioError.play();
-                errors++;
-                pImg.src = "assets/images/penjat-" + errors + ".png";
+                fallo(tecla);
             } 
              
         } else {
