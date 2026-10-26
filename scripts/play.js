@@ -53,7 +53,7 @@ function mostrarFrase() {
 }
 
 
-
+// VALERIA HACER ESTA FUNCION MAS CORTA USANDO OTRAS FUNCIONES
 
 const letrasFrase = [...new Set(frase.replaceAll(" ", ""))];
 let contador_consonantes = 0;
