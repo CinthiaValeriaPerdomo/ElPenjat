@@ -55,26 +55,74 @@ for (let i = 0; i < frase.length; i++) {
 }
 
 
+
+
+
+const letrasFrase = [...new Set(frase.replaceAll(" ", ""))];
+let contador_consonantes = 0;
 function jugar(tecla) {
     const lletra = tecla.textContent;
     tecla.disabled = true;
 
-    if (fraseBase.includes(lletra)) {
-        tecla.classList.add("correcta");
-        const audioEncert = audiosEncert[Math.floor(Math.random()*audiosEncert.length)];
-        audioEncert.play();
+    const consonantes = "BCDFGHJKLMNÑPQRSTVWXYZ";
+    const vocales = "AEIOU";
+    
+    if (consonantes.includes(lletra)){
+        contador_consonantes += 1;
+        if (fraseBase.includes(lletra)) {
+            tecla.classList.add("correcta");
+            const audioEncert = audiosEncert[Math.floor(Math.random()*audiosEncert.length)];
+            audioEncert.play();
+            acertadas.push(lletra);
+            mostrarFrase();
+        } else {
+            tecla.classList.add("incorrecta");
+            const audioError = audiosError[Math.floor(Math.random()*audiosError.length)];
+            audioError.play();
 
-        acertadas.push(lletra);
-        mostrarFrase();
-    } else {
-        tecla.classList.add("incorrecta");
-        const audioError = audiosError[Math.floor(Math.random()*audiosError.length)];
-        audioError.play();
-
-        errors++;
-        pImg.src = "assets/images/penjat-" + errors + ".png";
+            errors++;
+            pImg.src = "assets/images/penjat-" + errors + ".png";
+        }
+    } else if (vocales.includes(lletra)){
+        if (contador_consonantes >= 3){
+            if (fraseBase.includes(lletra)) {
+                tecla.classList.add("correcta");
+                const audioEncert = audiosEncert[Math.floor(Math.random()*audiosEncert.length)];
+                audioEncert.play();
+                acertadas.push(lletra);
+                mostrarFrase();
+                contador_consonantes = 0;
+            } else {
+                contador_consonantes = 0;
+                tecla.classList.add("incorrecta");
+                const audioError = audiosError[Math.floor(Math.random()*audiosError.length)];
+                audioError.play();
+                errors++;
+                pImg.src = "assets/images/penjat-" + errors + ".png";
+            } 
+             
+        } else {
+            mostrarError("DEBE INGRESAR COMO MINIMO TRES CONSONANTES ANTES DE UNA VOCAL");
+            tecla.disabled = false;
+        }
+    
     }
+
     comprovarFinal();
+}
+
+function mostrarError(texto){
+    const alerta = document.getElementById("mensaje-error");
+    const textoAlerta = document.getElementById("texto-alerta");
+
+    textoAlerta.textContent = texto;
+    alerta.classList.remove("oculto")
+}
+
+
+function cerrarMensaje(){
+    const alerta = document.getElementById("mensaje-error");
+    alerta.classList.add("oculto");
 }
 
 function comprovarFinal() {
