@@ -23,7 +23,7 @@
                 
                 foreach ($frasesStr as $i => $frase) {
                     echo "<tr>";
-                    echo "<td>$i</td>";
+                    echo "<td>" . $i+1 ."</td>";
                     echo "<td>$frase</td>";
                     echo "<td></td>";
                     echo "<td><button class='btnEliminar'>Eliminar</button></td>";
@@ -33,6 +33,5 @@
             </tbody>
         </table>
     </div>
-    
 </body>
 </html>
