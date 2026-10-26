@@ -19,7 +19,7 @@
             </thead>
             <tbody id="phrases-rows">
                 <?php
-                $frasesStr = explode("\n", file_get_contents("../sentences_ca_temp.txt"));
+                $frasesStr = explode("\n", file_get_contents("../sentences_ca.txt"));
                 
                 foreach ($frasesStr as $i => $frase) {
                     echo "<tr>";
@@ -29,8 +29,6 @@
                     echo "<td><button class='btnEliminar'>Eliminar</button></td>";
                     echo "</tr>";
                 }
-                
-                
                 ?>
             </tbody>
         </table>
