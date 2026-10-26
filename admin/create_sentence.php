@@ -7,5 +7,12 @@
 </head>
 <body>
     
+    <header id="admin-header" class="flex-center">
+        <div class="flex-center">
+            <h3>Admin</h3>
+            <p>Hola, <?= $_SESSION["admin-username"]?></p>
+        </div>
+        <a href="logout.php">Tancar sessió</a>
+    </header>
 </body>
 </html>

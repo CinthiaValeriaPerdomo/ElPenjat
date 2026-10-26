@@ -208,6 +208,7 @@ noscript {
     background: url("assets/images/bg_admin.png") no-repeat center center fixed;
     background-size: 100% 100%;
 }
+
 /********************************/
 /* - - - Estils index.php - - - */
 /********************************/
@@ -494,9 +495,27 @@ noscript {
     padding: 32px;
 }
 
-/********************************** */
-/* - - - Estils admin/index.php - - */
-/***********************************/
+/*****************************/
+/* - - - Estils admin/ - - - */
+/*****************************/
+
+#admin-header {
+    background-color:#422456;
+    height: 50px;
+
+    & div {
+        width: 60%;
+        justify-content: space-between;
+    }
+    & * {
+        margin: 0
+    }
+}
+
+/**************************************/
+/* - - - Estils admin/index.php - - - */ 
+/**************************************/
+
 #delete-admin .container{
     background: none;
     box-shadow: none;
@@ -510,6 +529,11 @@ noscript {
 #delete-admin tr:nth-child(odd) {
     color: #FFF2F5;
     border: 1px solid #A18191;
+}
+#phrases-header th{
+    border: 1px solid #89634D;
+    background-color: #48251F;
+    color: #D8B77A;
     font-family:'Times New Roman', Times, serif;
 }
 #delete-admin table {

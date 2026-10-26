@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body id="delete-admin">
+    <header id="admin-header" class="flex-center">
+        <div class="flex-center">
+            <h3>Admin</h3>
+            <p>Hola, <?= $_SESSION["admin-username"]?></p>
+            <a href="logout.php">Tancar sessió</a>
+        </div>
+    </header>
+
     <div class="container">
         <table>
             <thead id="phrases-header">
