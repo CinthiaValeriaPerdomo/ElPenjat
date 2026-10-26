@@ -1,11 +1,13 @@
 <?php
     session_start();
 
+    
+
     if (isset($_POST["fi"])) {
         $_SESSION["guanyat"] = ($_POST["guanyat"] == "1");
         $_SESSION["acces_correcte"] = true;
         $_SESSION["puntuacio"] = $_POST["puntuacio"];
-        $_SESSION["data"] = date('Y-m-d H:i:s') ;
+        $_SESSION["data"] = date('Y-m-d H:i:s');
         header("Location: gameover.php");
         exit();
     }
@@ -13,6 +15,8 @@
         header("Location: index.php");
         exit();
     }
+
+    //print_r($_SESSION);
 
     $_SESSION["nom"] = $_POST["nom"];
     $nivell = $_POST["nivell"];
@@ -26,9 +30,7 @@
     }
     $frases = file($fitxer, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
     $frase = mb_strtoupper($frases[array_rand($frases)], "UTF-8");
-
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="ca">
 <head>
     <meta charset="UTF-8">
@@ -37,13 +39,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="play">
-    <!-- 
-    Specs d'aquesta pàgina:
-    
-    15. Efectes de sons         | JS 
-    
-    (temporal, esborrar cada spec segons s'acabin i el comentari en acabar totes)
-    -->
     <noscript class="flex-center">
         <div>
             <h3>! JavaScript desactivat !</h3>
@@ -72,7 +67,7 @@
 
     <div class="container" id="container-play">
         <h1>LA MANSIÓ EMBRUIXADA</h1>
-        <h6 class="gold-text">DESCOBREIX EL MISTERI</h6>
+        <h6>DESCOBREIX EL MISTERI</h6>
         <p id="frase"></p>
         <img id="penjat" src="assets/images/penjat-0.png" alt="Penjat" width="200">
         <table id="teclat">
@@ -83,10 +78,10 @@
                         echo " <tr>"; 
                     }
                     echo '<td><button type="button" class="tecla">' . $l . '</button></td>';
-                    if (($i - 65) % 13 == 12) { 
+                    if (($i - 65) % 13 == 12) {
                         echo "</tr>\n";
                     }
-                } 
+                }
             ?>
         </table>
         <form id="form-fi" action="play.php" method="post">
@@ -104,7 +99,8 @@
     </div>
 
     <script>
-        const frase = "<?= $frase ?>";
+        const frase = "<?php echo $frase; ?>";
+        console.log("test frase:",frase);
     </script>
     <script src="scripts/play.js"></script>
 </body>

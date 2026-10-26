@@ -26,12 +26,6 @@ function lletraBase(lletra) {
     return lletra;
 }
 
-let fraseBase = "";
-for (let i = 0; i < frase.length; i++) {
-    fraseBase += lletraBase(frase[i]);
-}
-
-
 function mostrarFrase() {
     let html = "";
     quedan = 0;
@@ -51,6 +45,15 @@ function mostrarFrase() {
     }
     pFrase.innerHTML = html;
 }
+
+mostrarFrase();
+
+
+let fraseBase = "";
+for (let i = 0; i < frase.length; i++) {
+    fraseBase += lletraBase(frase[i]);
+}
+
 
 
 
@@ -135,6 +138,31 @@ function comprovarFinal() {
     }
 }
 
+for (let i = 0; i < teclas.length; i++) {
+    teclas[i].addEventListener("click", () => {
+        jugar(teclas[i]);
+    });
+}
+
+
+function acabar(guanyat) {
+    document.getElementById("guanyat").value = guanyat ? "1" : "0";
+    document.getElementById("puntuacio").value = calcularPunctuacion(guanyat);
+
+    const audioRiure = audiosRiure[Math.floor(Math.random()*audiosRiure.length)];
+    if (guanyat) {
+        audioAplaudiment.play();
+    } else {
+        audioRiure.play();
+        audioBach.play();
+    }
+
+    const timeout = 1000 * (guanyat ? audioAplaudiment.duration : audioRiure.duration);
+    setTimeout(() => {
+        document.getElementById("form-fi").submit();
+    }, timeout);
+}
+
 
 function calcularPunctuacion(guanyat){
     if (!guanyat) {
@@ -158,29 +186,3 @@ function calcularPunctuacion(guanyat){
 
     return puntos;
 }
-
-function acabar(guanyat) {
-    document.getElementById("guanyat").value = guanyat ? "1" : "0";
-    document.getElementById("puntuacio").value = calcularPunctuacion(guanyat);
-
-    const audioRiure = audiosRiure[Math.floor(Math.random()*audiosRiure.length)];
-    if (guanyat) {
-        audioAplaudiment.play();
-    } else {
-        audioRiure.play();
-        audioBach.play();
-    }
-
-    const timeout = 1000 * (guanyat ? audioAplaudiment.duration : audioRiure.duration);
-    setTimeout(() => {
-        document.getElementById("form-fi").submit();
-    }, timeout);
-}
-
-for (let i = 0; i < teclas.length; i++) {
-    teclas[i].addEventListener("click", () => {
-        jugar(teclas[i]);
-    });
-}
-
-mostrarFrase();

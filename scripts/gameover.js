@@ -11,7 +11,9 @@ form.addEventListener("submit", (event) => {
 
     if (resposta == "S") {
         audioSegellar.play();
-        setTimeout(form.submit(), audioSegellar.duration*1000);
+        setTimeout(() => { 
+            form.submit(); 
+        }, audioSegellar.duration*1000);
     } else {
         form.submit();
     }

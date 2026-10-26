@@ -20,25 +20,17 @@ if ($_POST["resposta"] == "S") {
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="ranking">
-    <!-- 
-    Specs d'aquesta pàgina:
-    
-    13. Enregistrar récord  | HTML+CSS, PHP
-    15. Efectes de sons     | JS
-    
-    (temporal, esborrar cada spec segons s'acabin i el comentari en acabar totes)
-    -->
     <div class="container">
         <h1>Taula de classificacions</h1>
         <table>
-            <thead>
+            <thead id="ranking-header">
                 <tr>
                     <th>Nom</th>
                     <th>Puntuació</th>
                     <th>Data</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="zebra-rows">
                 <?php
                 $recordsStr = explode("\n", file_get_contents("records.txt"));
 

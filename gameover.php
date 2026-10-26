@@ -1,15 +1,15 @@
 <?php
     session_start();
+    //print_r($_SESSION);
 
     // Redirecció
     if (!isset($_SESSION["acces_correcte"])) {
         header('Location: error403.php');
         exit();
-    } else {
+    }else {
         unset($_SESSION["acces_correcte"]);
     }
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="ca">
 <head>
     <meta charset="UTF-8">
@@ -19,14 +19,6 @@
     <script src="scripts/gameover.js" defer></script>
 </head>
 <body id="gameover">
-    <!-- 
-    Specs d'aquesta pàgina:
-    
-    15. Efectes de sons     | JS 
-    
-    (temporal, esborrar cada spec segons s'acabin i el comentari en acabar totes)
-    -->
-
     <audio><source src="assets/audio/segellar.wav" type="audio/wav"></audio>
 
     <div class="container">
