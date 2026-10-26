@@ -1,11 +1,13 @@
 <?php
     session_start();
 
+    
+
     if (isset($_POST["fi"])) {
         $_SESSION["guanyat"] = ($_POST["guanyat"] == "1");
         $_SESSION["acces_correcte"] = true;
         $_SESSION["puntuacio"] = $_POST["puntuacio"];
-        $_SESSION["data"] = date('Y-m-d H:i:s') ;
+        $_SESSION["data"] = date('Y-m-d H:i:s');
         header("Location: gameover.php");
         exit();
     }
@@ -13,6 +15,8 @@
         header("Location: index.php");
         exit();
     }
+
+    //print_r($_SESSION);
 
     $_SESSION["nom"] = $_POST["nom"];
     $nivell = $_POST["nivell"];

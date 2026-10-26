@@ -1,15 +1,15 @@
 <?php
     session_start();
+    //print_r($_SESSION);
 
     // Redirecció
     if (!isset($_SESSION["acces_correcte"])) {
         header('Location: error403.php');
         exit();
-    } else {
+    }else {
         unset($_SESSION["acces_correcte"]);
     }
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="ca">
 <head>
     <meta charset="UTF-8">

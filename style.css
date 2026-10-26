@@ -205,6 +205,10 @@ noscript {
     background-size: cover;
 }
 
+#index-admin {
+    background: url("assets/images/bg_admin.png") no-repeat center center fixed;
+    background-size: 100% 100%;
+}
 /********************************/
 /* - - - Estils index.php - - - */
 /********************************/
@@ -412,4 +416,47 @@ noscript {
     color: black;
     width: fit-content;
     padding: 32px;
+}
+
+
+/***********************************/
+/* - - - Estils admin/index.php - - */ 
+/***********************************/
+#index-admin table {
+    background-color: #160D16;
+    color: #F5EAE0;
+}
+
+#phrases-header th{
+    border: 1px solid #89634D;
+    background-color: #48251F;
+    color: #D8B77A;
+    font-family:'Times New Roman', Times, serif;
+}
+#phrases-rows td {
+    border: 1px solid #89634D;
+    color: #F5EAE0;
+    min-width: 220px;
+}
+
+#phrases-rows tr:nth-child(odd) {
+    background-color: #30171A;
+}
+#phrases-rows tr:nth-child(even) {
+    background-color: #50302A;
+}
+button.btnEliminar{
+    background-color: #722F32;
+    border: 1px solid #A45A50;
+    padding: 10px;
+    font-size: x-small;
+    font-family: Georgia, "Times New Roman", serif;
+    border-radius: 8px;
+    color: #D8B77A;
+}
+button.btnEliminar:hover {
+    background-color: #913D40;
+    border-color: #D8B77A;
+    color: #FFF0E8;
+
 }
