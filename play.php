@@ -20,16 +20,80 @@
 
     $_SESSION["nom"] = $_POST["nom"];
     $nivell = $_POST["nivell"];
-    
-    if ($nivell == "Fàcil") {
-        $fitxer = "data/facil.txt";
-    } elseif ($nivell == "Normal") {
-        $fitxer = "data/normal.txt";
-    } else {
-        $fitxer = "data/dificil.txt";
+    $frases = "data/catala.txt";
+
+
+
+
+function dificultat($frases, $nivell){
+
+    foreach ($frases as $i => $frase){
+        $abecedario = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",];
+        $facil = [];
+        $normal = [];
+        $dificil = [];
+        
+
+        $fraseBase = preg_replace('/[^A-ZÀÈÉÍÏÒÓÚÜÇ]/u', '', mb_strtoupper($frase, 'UTF-8'));
+
+        // $letrasDiferentes = array_filter($abecedario, fn($letraABC) => in_array($letraABC, $fraseBase));
+
+        $letrasDiferentes = array_unique(mb_str_split($fraseBase));  
+
+        $letrasPendientes = array_filter(
+            $abecedario, 
+            fn($letraABC) => !in_array($letraABC, $letrasDiferentes)
+            );
+        $letrasFaltantes = count($letrasPendientes);
+
+        $lenFrase = mb_strlen($fraseBase, 'UTF-8');
+
+
+        if ($letrasFaltantes >= 19){
+            if ($lenFrase <= 20){
+                $dificil[] = $frase;
+            } else{
+                $normal[] = $frase;
+            }
+        }elseif ($letrasFaltantes <= 9){
+            if ($lenFrase >= 41){
+                $facil[] = $frase;
+            }
+        }else {
+            $normal[] = $frase;
+        }
+
     }
+
+    if ($nivell === "facil"){
+        $seleccion = $facil;
+    }elseif ($nivell === "normal"){
+        $seleccion = $normal;
+    }else{
+        $seleccion = $dificil;
+    }
+
+    if (empty($seleccion)){
+        return null;
+    }
+
+    return $seleccion[array_rand($seleccion)];
+}
+    // if ($nivell == "Fàcil") {
+    //     $fitxer = "data/facil.txt";
+    // } elseif ($nivell == "Normal") {
+    //     $fitxer = "data/normal.txt";
+    // } else {
+    //     $fitxer = "data/dificil.txt";
+    // }
+
+    
+
+
+
+
     $frases = file($fitxer, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-    $frase = mb_strtoupper($frases[array_rand($frases)], "UTF-8");
+    // $frase = mb_strtoupper($frases[array_rand($frases)], "UTF-8");
 ?><!DOCTYPE html>
 <html lang="ca">
 <head>
