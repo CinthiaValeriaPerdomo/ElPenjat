@@ -15,8 +15,8 @@ html, body {
     }
 body {
     font-family: Georgia, "Times New Roman", serif;
-    color: white;
     font-size: 18px;
+    color: white;
     float: left; /* per prevenir que cap marge d'un element fill s'estengui més enllà del seu contorn (prevenir colapsament de marges)*/
 }
 
@@ -204,7 +204,7 @@ noscript {
     background: url("assets/images/manor_foyer.jpg") no-repeat center center fixed;
     background-size: cover;
 }
-#delete-admin {
+.admin-page{
     background: url("assets/images/bg_admin.png") no-repeat center center fixed;
     background-size: 100% 100%;
 }
@@ -495,24 +495,29 @@ noscript {
 }
 
 /********************************** */
-/* - - - Estils admin/index.php - - */
+/* - - - Estils admin/list_sentences.php - - */
 /***********************************/
-#delete-admin .container{
+.admin-page h1{
+    font-family: 'Grenze Gotisch', serif;    
+    color: #70435F;
+    
+}
+.admin-page .container{
     background: none;
     box-shadow: none;
     position: relative;
     left: -120px;
 }
-#delete-admin table,
-#delete-admin th,
-#delete-admin td,
-#delete-admin button,
-#delete-admin tr:nth-child(odd) {
+.admin-page table,
+.admin-page th,
+.admin-page td,
+.admin-page #Eliminar,
+.admin-page tr:nth-child(odd) {
     color: #FFF2F5;
     border: 1px solid #A18191;
     font-family:'Times New Roman', Times, serif;
 }
-#delete-admin table {
+.admin-page table {
     width: 100%;
     table-layout: fixed;
     background-color: #765579;
@@ -529,27 +534,24 @@ noscript {
 }
 #phrases-header th:nth-child(1),
 #phrases-rows td:nth-child(1) {
-    width: 8%;
+    width: 60%;
 }
 #phrases-header th:nth-child(2),
-#phrases-rows td:nth-child(2) {
-    width: 42%;
-}
+#phrases-rows td:nth-child(2),
 #phrases-header th:nth-child(3),
-#phrases-rows td:nth-child(3),
-#phrases-header th:nth-child(4),
-#phrases-rows td:nth-child(4) {
-    width: 25%;
+#phrases-rows td:nth-child(3) {
+    width: 20%;
 }
 #phrases-rows tr:nth-child(even) {
     background-color: #96739C;
 }
-button.btnEliminar{
+#Eliminar{
     background-color: #70435F;
     font-size: medium;
-    border-radius: 8px;
+    border-radius: 6px;
     margin: 0;
+    padding: 12px;
 }
-button.btnEliminar:hover {
+#Eliminar:hover {
     background-color: #976A8A;
 }
