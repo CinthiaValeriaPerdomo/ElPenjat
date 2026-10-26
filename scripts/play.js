@@ -26,12 +26,6 @@ function lletraBase(lletra) {
     return lletra;
 }
 
-let fraseBase = "";
-for (let i = 0; i < frase.length; i++) {
-    fraseBase += lletraBase(frase[i]);
-}
-
-
 function mostrarFrase() {
     let html = "";
     quedan = 0;
@@ -52,11 +46,42 @@ function mostrarFrase() {
     pFrase.innerHTML = html;
 }
 
+mostrarFrase();
+
+
+let fraseBase = "";
+for (let i = 0; i < frase.length; i++) {
+    fraseBase += lletraBase(frase[i]);
+}
+
+
 
 // VALERIA HACER ESTA FUNCION MAS CORTA USANDO OTRAS FUNCIONES
 
 const letrasFrase = [...new Set(frase.replaceAll(" ", ""))];
+
+
 let contador_consonantes = 0;
+
+
+function acierto(tecla, lletra) {
+    tecla.classList.add("correcta");
+    const audioEncert = audiosEncert[Math.floor(Math.random()*audiosEncert.length)];
+    audioEncert.play();
+    acertadas.push(lletra);
+    mostrarFrase();
+}
+
+function fallo(tecla) {
+    tecla.classList.add("incorrecta");
+    const audioError = audiosError[Math.floor(Math.random()*audiosError.length)];
+    audioError.play();
+
+    errors++;
+    pImg.src = "assets/images/penjat-" + errors + ".png";
+}
+
+
 function jugar(tecla) {
     const lletra = tecla.textContent;
     tecla.disabled = true;
@@ -67,35 +92,18 @@ function jugar(tecla) {
     if (consonantes.includes(lletra)){
         contador_consonantes += 1;
         if (fraseBase.includes(lletra)) {
-            tecla.classList.add("correcta");
-            const audioEncert = audiosEncert[Math.floor(Math.random()*audiosEncert.length)];
-            audioEncert.play();
-            acertadas.push(lletra);
-            mostrarFrase();
+            acierto(tecla, lletra);
         } else {
-            tecla.classList.add("incorrecta");
-            const audioError = audiosError[Math.floor(Math.random()*audiosError.length)];
-            audioError.play();
-
-            errors++;
-            pImg.src = "assets/images/penjat-" + errors + ".png";
+            fallo(tecla);
         }
     } else if (vocales.includes(lletra)){
         if (contador_consonantes >= 3){
+            contador_consonantes = 0;
             if (fraseBase.includes(lletra)) {
-                tecla.classList.add("correcta");
-                const audioEncert = audiosEncert[Math.floor(Math.random()*audiosEncert.length)];
-                audioEncert.play();
-                acertadas.push(lletra);
-                mostrarFrase();
-                contador_consonantes = 0;
+                acierto(tecla, lletra);
+                
             } else {
-                contador_consonantes = 0;
-                tecla.classList.add("incorrecta");
-                const audioError = audiosError[Math.floor(Math.random()*audiosError.length)];
-                audioError.play();
-                errors++;
-                pImg.src = "assets/images/penjat-" + errors + ".png";
+                fallo(tecla);
             } 
              
         } else {
@@ -130,6 +138,31 @@ function comprovarFinal() {
     }
 }
 
+for (let i = 0; i < teclas.length; i++) {
+    teclas[i].addEventListener("click", () => {
+        jugar(teclas[i]);
+    });
+}
+
+
+function acabar(guanyat) {
+    document.getElementById("guanyat").value = guanyat ? "1" : "0";
+    document.getElementById("puntuacio").value = calcularPunctuacion(guanyat);
+
+    const audioRiure = audiosRiure[Math.floor(Math.random()*audiosRiure.length)];
+    if (guanyat) {
+        audioAplaudiment.play();
+    } else {
+        audioRiure.play();
+        audioBach.play();
+    }
+
+    const timeout = 1000 * (guanyat ? audioAplaudiment.duration : audioRiure.duration);
+    setTimeout(() => {
+        document.getElementById("form-fi").submit();
+    }, timeout);
+}
+
 
 function calcularPunctuacion(guanyat){
     if (!guanyat) {
@@ -153,29 +186,3 @@ function calcularPunctuacion(guanyat){
 
     return puntos;
 }
-
-function acabar(guanyat) {
-    document.getElementById("guanyat").value = guanyat ? "1" : "0";
-    document.getElementById("puntuacio").value = calcularPunctuacion(guanyat);
-
-    const audioRiure = audiosRiure[Math.floor(Math.random()*audiosRiure.length)];
-    if (guanyat) {
-        audioAplaudiment.play();
-    } else {
-        audioRiure.play();
-        audioBach.play();
-    }
-
-    const timeout = 1000 * (guanyat ? audioAplaudiment.duration : audioRiure.duration);
-    setTimeout(() => {
-        document.getElementById("form-fi").submit();
-    }, timeout);
-}
-
-for (let i = 0; i < teclas.length; i++) {
-    teclas[i].addEventListener("click", () => {
-        jugar(teclas[i]);
-    });
-}
-
-mostrarFrase();

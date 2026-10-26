@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php
+    session_start();
+    //print_r($_SESSION);
+
+
+?><!DOCTYPE html>
 <html lang="ca">
 <head>
     <meta charset="UTF-8">
@@ -18,8 +23,8 @@
     </noscript>
 
     <div class="container">
-        <div class="imagen-titulo">
-            <img src="assets/images/barret-bruixa.png" alt="" class="img">
+        <div id="game-title">
+            <img src="assets/images/barret-bruixa.png" alt="" id="img-barret">
             <h1>El Penjat</h1>
         </div>
         <div id="description">
@@ -28,35 +33,27 @@
         </div>
 
         <div id="linea"></div> <!--novalidate es un atributo booleano que desactiva la validacion nativa del navegador -->
-        <form id="formulario" action="play.php" method="post" novalidate>
+        <form id="form-jugar" action="play.php" method="post" novalidate>
             <div class="flex-center">
-            
                 <div>
-                    <label for="nom" id="label">Nom:</label>
-                    <input type="text" id="nom" placeholder="El teu nom ..." name="nom">
-                    <div id = "errorNombre"></div>
+                    <label for="nom">Nom:</label>
+                    <input type="text" id="nom" placeholder="El teu nom ..." name="nom" value="<?php echo $_SESSION["nom"] ?? ""; ?>">
+                    <div id = "error-nombre"></div>
                 </div>
                 
                 <div>
-                    <label for="nivell" id="label">Dificultat: </label>
+                    <label for="nivell">Dificultat: </label>
                     <select name="nivell" id="nivell">
-                        <option value="facil">Fàcil</option>
-                        <option  value="normal" selected>Normal</option>
-                        <option value="dificil">Dificil</option>
+                        <option value="Fàcil">Fàcil</option>
+                        <option  value="Normal" selected>Normal</option>
+                        <option value="Dificil">Dificil</option>
                     </select>
-
                 </div>
             </div>
-            
-            <button type="submit" class="jugar">JUGAR</button>
-            
-
+            <button type="submit" id="jugar" disabled>JUGAR</button>
         </form>
 
-        <a id="a-ranking" href="ranking.php">Veure Ranking</a>
-            
-       
-        
+        <a href="ranking.php" class="link-button secondary">Veure Ranking</a>
     </div>
 </body>
 </html>

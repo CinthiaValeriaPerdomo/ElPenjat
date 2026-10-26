@@ -1,11 +1,13 @@
 <?php
     session_start();
 
+    
+
     if (isset($_POST["fi"])) {
         $_SESSION["guanyat"] = ($_POST["guanyat"] == "1");
         $_SESSION["acces_correcte"] = true;
         $_SESSION["puntuacio"] = $_POST["puntuacio"];
-        $_SESSION["data"] = date('Y-m-d H:i:s') ;
+        $_SESSION["data"] = date('Y-m-d H:i:s');
         header("Location: gameover.php");
         exit();
     }
@@ -14,21 +16,85 @@
         exit();
     }
 
+    //print_r($_SESSION);
+
     $_SESSION["nom"] = $_POST["nom"];
     $nivell = $_POST["nivell"];
+    $frases = "data/catala.txt";
 
-    if ($nivell == "Fàcil") {
-        $fitxer = "data/facil.txt";
-    } elseif ($nivell == "Normal") {
-        $fitxer = "data/normal.txt";
-    } else {
-        $fitxer = "data/dificil.txt";
+
+
+
+function dificultat($frases, $nivell){
+
+    foreach ($frases as $i => $frase){
+        $abecedario = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",];
+        $facil = [];
+        $normal = [];
+        $dificil = [];
+        
+
+        $fraseBase = preg_replace('/[^A-ZÀÈÉÍÏÒÓÚÜÇ]/u', '', mb_strtoupper($frase, 'UTF-8'));
+
+        // $letrasDiferentes = array_filter($abecedario, fn($letraABC) => in_array($letraABC, $fraseBase));
+
+        $letrasDiferentes = array_unique(mb_str_split($fraseBase));  
+
+        $letrasPendientes = array_filter(
+            $abecedario, 
+            fn($letraABC) => !in_array($letraABC, $letrasDiferentes)
+            );
+        $letrasFaltantes = count($letrasPendientes);
+
+        $lenFrase = mb_strlen($fraseBase, 'UTF-8');
+
+
+        if ($letrasFaltantes >= 19){
+            if ($lenFrase <= 20){
+                $dificil[] = $frase;
+            } else{
+                $normal[] = $frase;
+            }
+        }elseif ($letrasFaltantes <= 9){
+            if ($lenFrase >= 41){
+                $facil[] = $frase;
+            }
+        }else {
+            $normal[] = $frase;
+        }
+
     }
-    $frases = file($fitxer, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-    $frase = mb_strtoupper($frases[array_rand($frases)], "UTF-8");
 
-?>
-<!DOCTYPE html>
+    if ($nivell === "facil"){
+        $seleccion = $facil;
+    }elseif ($nivell === "normal"){
+        $seleccion = $normal;
+    }else{
+        $seleccion = $dificil;
+    }
+
+    if (empty($seleccion)){
+        return null;
+    }
+
+    return $seleccion[array_rand($seleccion)];
+}
+    // if ($nivell == "Fàcil") {
+    //     $fitxer = "data/facil.txt";
+    // } elseif ($nivell == "Normal") {
+    //     $fitxer = "data/normal.txt";
+    // } else {
+    //     $fitxer = "data/dificil.txt";
+    // }
+
+    
+
+
+
+
+    $frases = file($fitxer, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    // $frase = mb_strtoupper($frases[array_rand($frases)], "UTF-8");
+?><!DOCTYPE html>
 <html lang="ca">
 <head>
     <meta charset="UTF-8">
@@ -37,13 +103,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="play">
-    <!-- 
-    Specs d'aquesta pàgina:
-    
-    15. Efectes de sons         | JS 
-    
-    (temporal, esborrar cada spec segons s'acabin i el comentari en acabar totes)
-    -->
     <noscript class="flex-center">
         <div>
             <h3>! JavaScript desactivat !</h3>
@@ -72,7 +131,7 @@
 
     <div class="container" id="container-play">
         <h1>LA MANSIÓ EMBRUIXADA</h1>
-        <h6 class="gold-text">DESCOBREIX EL MISTERI</h6>
+        <h6>DESCOBREIX EL MISTERI</h6>
         <p id="frase"></p>
         <img id="penjat" src="assets/images/penjat-0.png" alt="Penjat" width="200">
         <table id="teclat">
@@ -83,10 +142,10 @@
                         echo " <tr>"; 
                     }
                     echo '<td><button type="button" class="tecla">' . $l . '</button></td>';
-                    if (($i - 65) % 13 == 12) { 
+                    if (($i - 65) % 13 == 12) {
                         echo "</tr>\n";
                     }
-                } 
+                }
             ?>
         </table>
         <form id="form-fi" action="play.php" method="post">
@@ -104,7 +163,8 @@
     </div>
 
     <script>
-        const frase = "<?= $frase ?>";
+        const frase = "<?php echo $frase; ?>";
+        console.log("test frase:",frase);
     </script>
     <script src="scripts/play.js"></script>
 </body>
