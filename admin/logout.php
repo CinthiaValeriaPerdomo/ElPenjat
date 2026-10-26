@@ -1,3 +1,6 @@
+<?php
+unset($_SESSION["admin-username"]);
+?>
 <!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -10,8 +13,11 @@
     <header id="admin-header" class="flex-center">
         <div class="flex-center">
             <h3>Admin</h3>
-            <p>Adéu, <?= $_SESSION["admin-username"]?></p>
         </div>
     </header>
+    <div class="container">
+        <h3>Sessió tancada</h3>
+        <p>Ja pots tancar la pestanya.</p>
+    </div>
 </body>
 </html>

@@ -204,7 +204,7 @@ noscript {
     background: url("assets/images/manor_foyer.jpg") no-repeat center center fixed;
     background-size: cover;
 }
-#delete-admin {
+.admin-page {
     background: url("assets/images/bg_admin.png") no-repeat center center fixed;
     background-size: 100% 100%;
 }
@@ -500,8 +500,8 @@ noscript {
 /*****************************/
 
 #admin-header {
-    background-color:#422456;
-    height: 50px;
+    background-color: #224;
+    height: 80px;
 
     & div {
         width: 60%;
@@ -510,6 +510,11 @@ noscript {
     & * {
         margin: 0
     }
+}
+
+#logout {
+    font-size: 18px;
+    min-width: 0;
 }
 
 /**************************************/

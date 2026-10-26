@@ -12,5 +12,17 @@
             <h3>Admin</h3>
         </div>  
     </header>
+    <div class="container">
+        <h1>Iniciar sessió</h1>
+        <form action="index.php">
+            <div class="flex-center">
+                <label for="username">Nom d'usuari</label>
+                <input type="text" id="username" name="username">
+                <label for="password">Contrasenya</label>
+                <input type="text" id="password" name="password">
+            </div>
+            <button type="submit">Iniciar sessió</button>
+        </form>
+    </div>
 </body>
 </html>
