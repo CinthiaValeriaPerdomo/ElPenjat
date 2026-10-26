@@ -1,6 +1,6 @@
+
 @import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
-
 /******************************/
 /* - - - Estils globals - - - */
 /******************************/
@@ -12,7 +12,7 @@ html, body {
     padding: 0;
     min-height: 100%;
     min-width: 100%;
-}
+    }
 body {
     font-family: Georgia, "Times New Roman", serif;
     color: white;
@@ -34,7 +34,6 @@ h3 {
     font-family: 'UnifrakturCook', serif;
     text-shadow: 1px 0 10px black;
 }
-
 h6 {
     font-size: 20px;
     font-weight: normal;
@@ -86,13 +85,11 @@ a.link-button {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 23px;
     margin-top: 50px;
-
     &:hover {
         background-color: purple;
         cursor: pointer;
     }
 }
-
 button.secondary,
 a.link-button.secondary {
     background-color: rgb(51, 51, 51);
@@ -131,11 +128,20 @@ table {
     border-collapse: collapse;
     font-size: 20px;
 }
-
 th,
 td {
     border: 2px solid white;
     padding: 8px;
+}
+thead {
+    background-color: rgb(85, 0, 102);
+    color: white;
+}
+tbody.zebra-rows tr:nth-child(odd) {
+    background-color: black;
+}
+tbody.zebra-rows tr:nth-child(even) {
+    background-color: #333;
 }
 
 thead {
@@ -167,7 +173,6 @@ noscript {
     justify-content: space-around;
     align-items: center;
 }
-
 .container {
     background-color: rgba(0, 0, 0, 0.724);
     width: 60%;
@@ -178,33 +183,27 @@ noscript {
     margin-top: 130px;
     box-shadow: 0 0 300px 50px rgb(0, 0, 0);
 }
-
 .gold-text {
     color:goldenrod;
 }
-
 /*******************************/
 /* - - - Imatges de fons - - - */
 /*******************************/
-
 #index,
 #error403,
 #error404 {
     background: url("assets/images/manor_outdoors.jpg") no-repeat center center fixed;
     background-size: cover;
 }
-
 #play {
     background: url("assets/images/manor_hallway.jpg") no-repeat center center fixed;
     background-size: cover;
 }
-
 #gameover,
 #ranking {
     background: url("assets/images/manor_foyer.jpg") no-repeat center center fixed;
     background-size: cover;
 }
-
 #index-admin {
     background: url("assets/images/bg_admin.png") no-repeat center center fixed;
     background-size: 100% 100%;
@@ -239,7 +238,6 @@ noscript {
     margin-bottom: 25px;
     margin-top: 25px;
 }
-
 #description p {
     font-family: Georgia, "Times New Roman", serif;
     margin-bottom: 10px;
@@ -250,12 +248,10 @@ noscript {
     line-height: 1.5;
     font-size: 25px;
 }
-
 #description .gold-text {
     font-style: italic;
     /*cursiva*/
 }
-
 #linea {
     width: 100%;
     height: 1px;
@@ -288,17 +284,14 @@ noscript {
         cursor: pointer;
     }
 }
-
 #jugar {
     margin-top: 40px;
     margin-bottom: 40px;
     font-size: 23px;
 }
-
 /*******************************/
 /* - - - Estils play.php - - - */
 /*******************************/
-
 #container-play h1 {
     color: #eccc91;
 }
@@ -306,13 +299,10 @@ noscript {
     color: #462d2a;
     font-weight: bold;
 }
-
 /* - - - Frase - - - */
-
 #frase {
     font-size: 28px;
 }
-
 .casilla {
     display: inline-block;
     width: 34px;
@@ -324,20 +314,76 @@ noscript {
     text-align: center;
     margin: 6px 5px;
     vertical-align: middle;
-
 }
-
 .signo {
     display: inline-block;
     margin: 0 6px;
     color:#eccc91;
     vertical-align: middle;
 }
-
 .espacio {
     display: inline-block;
     width: 30px;
     vertical-align: middle;
+}
+/* - - - Teclat - - - */
+#teclat {
+    width: 50%;
+}
+#teclat td {
+    border: none;
+}
+#teclat button {
+    min-width: 0;
+    margin-top: 0;
+    width: 48px;
+    height: 48px;
+    background-color:#120918;
+    border:1px solid #332A3A;
+    border-radius: 5px;
+    color: #eccc91;
+&.correcta {
+    background-color: rgb(2, 53, 2);
+}
+&.incorrecta {
+    background-color: rgb(87, 3, 3);
+}
+&:disabled {
+    cursor: default;
+    position: relative;
+    top: 5px;
+    }
+}
+
+/* Estilo base del mensaje flotante */
+.alerta {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 1000; /* Asegura que esté por encima de todo */
+    font-family: sans-serif;
+}
+/* Clase utilitaria para ocultar el elemento */
+.oculto {
+    display: none;
+}
+/* Estilo para el botón de la 'x' */
+.btn-cerrar {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 /* - - - Teclat - - - */
@@ -411,7 +457,6 @@ noscript {
 /***********************************/
 /* - - - Estils gameover.php - - - */
 /***********************************/
-
 #game-win {
     color: greenyellow;
     text-shadow: 0 4px 8px forestgreen;
@@ -420,7 +465,6 @@ noscript {
     color: darkred;
     text-shadow: 0 4px 8px coral;
 }
-
 /**********************************/
 /* - - - Estils ranking.php - - - */
 /**********************************/
@@ -433,15 +477,13 @@ noscript {
 }
 
 /***********************************/
-/* - - - Estils error403.php - - - */ 
-/* - - -        error404.php - - - */
+/* - - - Estils error403.php - - - */
+/* - - - error404.php - - - */
 /***********************************/
-
 .error-image {
     width: 100px;
     height: 100px;
 }
-
 .note-from-witch {
     background: url("assets/images/witch-note.png") no-repeat center center;
     background-size: 100% 100%;
@@ -452,45 +494,62 @@ noscript {
     padding: 32px;
 }
 
-
+/********************************** */
+/* - - - Estils admin/index.php - - */
 /***********************************/
-/* - - - Estils admin/index.php - - */ 
-/***********************************/
-#index-admin table {
-    background-color: #160D16;
-    color: #F5EAE0;
+#index-admin .container{
+    background: none;
+    box-shadow: none;
+    position: relative;
+    left: -120px;
 }
-
-#phrases-header th{
-    border: 1px solid #89634D;
-    background-color: #48251F;
-    color: #D8B77A;
+#index-admin table,
+#index-admin th,
+#index-admin td,
+#index-admin button,
+#index-admin tr:nth-child(odd) {
+    color: #FFF2F5;
+    border: 1px solid #A18191;
     font-family:'Times New Roman', Times, serif;
 }
-#phrases-rows td {
-    border: 1px solid #89634D;
-    color: #F5EAE0;
-    min-width: 220px;
+#index-admin table {
+    width: 100%;
+    table-layout: fixed;
+    background-color: #765579;
 }
-
-#phrases-rows tr:nth-child(odd) {
-    background-color: #30171A;
+#phrases-header th{
+    background-color: #503652;
+}
+#phrases-rows tr {
+    height: 60px;
+}
+#phrases-rows td {
+    padding: 10px;
+    vertical-align: middle;
+}
+#phrases-header th:nth-child(1),
+#phrases-rows td:nth-child(1) {
+    width: 8%;
+}
+#phrases-header th:nth-child(2),
+#phrases-rows td:nth-child(2) {
+    width: 42%;
+}
+#phrases-header th:nth-child(3),
+#phrases-rows td:nth-child(3),
+#phrases-header th:nth-child(4),
+#phrases-rows td:nth-child(4) {
+    width: 25%;
 }
 #phrases-rows tr:nth-child(even) {
-    background-color: #50302A;
+    background-color: #96739C;
 }
 button.btnEliminar{
-    background-color: #722F32;
-    border: 1px solid #A45A50;
-    padding: 10px;
-    font-size: x-small;
-    font-family: Georgia, "Times New Roman", serif;
+    background-color: #70435F;
+    font-size: medium;
     border-radius: 8px;
-    color: #D8B77A;
+    margin: 0;
 }
 button.btnEliminar:hover {
-    background-color: #913D40;
-    border-color: #D8B77A;
-    color: #FFF0E8;
-
+    background-color: #976A8A;
 }
