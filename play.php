@@ -35,14 +35,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="play">
-    <!-- 
-
-    Specs d'aquesta pàgina:
-    
-    15. Efectes de sons         | JS 
-    
-    (temporal, esborrar cada spec segons s'acabin i el comentari en acabar totes)
-    -->
     <noscript class="flex-center">
         <div>
             <h3>! JavaScript desactivat !</h3>
