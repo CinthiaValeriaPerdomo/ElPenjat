@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+<?php
+    // echo $_POST["frase"];
+    // echo $_POST["pos"];
+
+
+
+?><!DOCTYPE html>
 <html lang="ca">
 <head>
     <meta charset="UTF-8">
@@ -18,8 +24,7 @@
         </div>
     </header>
 
-    <p><?php echo $_POST["frase"]; ?></p>
-    <!-- <p><?php echo $_POST["pos"]; ?></p> -->
+
 
 
 
