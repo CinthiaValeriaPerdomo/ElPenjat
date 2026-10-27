@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+<?php 
+    session_start();
+    // if(!isset($_SESSION["admin-username"])){
+    //     header("Location: login.php");
+    //     exit();
+    // }
+?><!DOCTYPE html>
 <html lang="ca">
 <head>
     <meta charset="UTF-8">
@@ -47,7 +53,7 @@
                 ?>
                 <td>
                     <form action="delete_sentence.php" method="post">
-                        <input type="hidden" name="frase" id="frase" value="<?php echo $frase ?>">
+                        <input type="hidden" name="frase" id="frase" value="<?php echo htmlspecialchars($frase) ?>">
                         <input type="hidden" name="pos" id="pos" value="<?php echo $i ?>">
                         <input type="submit" id="Eliminar" value="Eliminar">
                     </form>

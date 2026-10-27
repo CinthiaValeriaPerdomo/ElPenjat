@@ -1,9 +1,24 @@
 <?php
-    // echo $_POST["frase"];
-    // echo $_POST["pos"];
+    session_start();
+    // if(!isset($_SESSION["admin-username"])){
+    //     header("Location: login.php");
+    //     exit();
+    // }
+
+    if(!empty($_POST["frase"])){
+
+        $frase= trim($_POST["frase"]);
+        $frasesStr = file_get_contents("../sentences_ca.txt");
+
+        $pos = $_POST["pos"];
+
+        if (str_contains($frasesStr,$frase)) {
+            $frasesNuevas = str_replace($frase . PHP_EOL, "", $frasesStr);
+            file_put_contents(../sentences_ca_temp.txt", $frasesNuevas);
+        }
 
 
-
+    }
 ?><!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -23,6 +38,8 @@
             </a>
         </div>
     </header>
+
+
 
 
 
