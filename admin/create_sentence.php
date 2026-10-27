@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if ($_SESSION["admin-access"] != "S") {
+    header('Location: /admin/login.php');
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -5,8 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADMIN El Penjat - Crear frase</title>
 </head>
-<body>
-    
+<body class="admin-page">
     <header id="admin-header" class="flex-center">
         <div class="flex-center">
             <h3>Admin</h3>

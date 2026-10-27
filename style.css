@@ -502,19 +502,30 @@ noscript {
 #admin-header {
     background-color: #224;
     height: 80px;
-
-    & div {
-        width: 60%;
-        justify-content: space-between;
-    }
-    & * {
-        margin: 0
-    }
+}
+#admin-header div {
+    width: 60%;
+    justify-content: space-between;
+}
+#admin-header p {
+    font-size: 24px;
+}
+#admin-header * {
+    margin: 0
 }
 
 #logout {
     font-size: 18px;
     min-width: 0;
+}
+
+/**************************************/
+/* - - - Estils admin/login.php - - - */
+/**************************************/
+
+#wrong-credentials {
+    color: red;
+    text-shadow: 0 0 16px darkred;
 }
 
 /**************************************/
