@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 
-
-
 <body class="admin-page">
     <header id="admin-header" class="flex-center">
         <div class="flex-center">
@@ -34,23 +32,29 @@
             <tbody id="phrases-rows">
                 <?php
                     $frasesStr = explode("\n", file_get_contents("../sentences_ca.txt"));
-                    
-                    foreach ($frasesStr as $i => $frase) {
+                    require_once '../functions.php';
+                    $frasesClasificadas = clasificar($frasesStr);
+                    for ($i=0; $i <count($frasesClasificadas) ; $i++) { 
+                       foreach ($frasesClasificadas[$i] as $frase) {
                         echo "<tr>";
                         echo "<td>$frase</td>";
-                        echo "<td></td>";
+                        if ($i == 0) {
+                            echo "<td>Fàcil</td>";
+                        }elseif($i ==1){
+                            echo "<td>Normal</td>";
+                        }else{
+                            echo "<td>Difícil</td>";
+                        }  
                 ?>
                 <td>
                     <form action="delete_sentence.php" method="post">
                         <input type="hidden" name="frase" id="frase" value="<?php echo $frase ?>">
-                        <input type="hidden" name="pos" id="pos" value="<?php echo $i ?>">
+                        <!-- <input type="hidden" name="pos" id="pos" value="<?php echo $i ?>"> -->
                         <input type="submit" id="Eliminar" value="Eliminar">
                     </form>
                 </td>
                 </tr>
-                <?php }?>
-
-
+                <?php }}?>
             </tbody>
         </table>
     </div>

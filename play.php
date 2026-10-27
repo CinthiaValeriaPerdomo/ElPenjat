@@ -1,8 +1,6 @@
 <?php
     session_start();
 
-    
-
     if (isset($_POST["fi"])) {
         $_SESSION["guanyat"] = ($_POST["guanyat"] == "1");
         $_SESSION["acces_correcte"] = true;
@@ -16,67 +14,13 @@
         exit();
     }
 
-    //print_r($_SESSION);
-
     $_SESSION["nom"] = $_POST["nom"];
     $nivell = $_POST["nivell"];
 
-function normalitzar($text){
-    $amb  = ['À','Á','È','É','Ì','Í','Ï','Ò','Ó','Ù','Ú','Ü','Ñ','à','á','è','é','ì','í','ï','ò','ó','ù','ú','ü','ñ'];
-    $sense = ['A','A','E','E','I','I','I','O','O','U','U','U','N','a','a','e','e','i','i','i','o','o','u','u','u','n'];   
-    $lletraSense = str_replace($amb, $sense, $text);
-    return $lletraSense;
-}
-
-function classificar($frases){
-    $facil = [];
-    $normal = [];
-    $dificil = [];
-    $abecedario = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ç", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",];
-    foreach ($frases as $i => $frase){ 
-        $fraseBase = mb_strtoupper($frase, 'UTF-8');
-        $fraseBase = normalitzar($fraseBase);
-        $fraseBase = preg_replace('/[^A-ZÇ]/u', '', $fraseBase);
-
-        // $letrasDiferentes = array_filter($abecedario, fn($letraABC) => in_array($letraABC, $fraseBase));
-
-        $letrasDiferentes = array_unique(mb_str_split($fraseBase));  
-
-        $letrasPendientes = array_filter(
-            $abecedario, 
-            fn($letraABC) => !in_array($letraABC, $letrasDiferentes)
-            );
-        $letrasFaltantes = count($letrasPendientes);
-
-        $lenFrase = mb_strlen($fraseBase, 'UTF-8');
-
-
-        if ($letrasFaltantes >= 19){
-            if ($lenFrase <= 20){
-                $dificil[] = $frase;
-            } else{
-                $normal[] = $frase;
-            }
-        }elseif ($letrasFaltantes <= 9){
-            if ($lenFrase >= 41){
-                $facil[] = $frase;
-            }else{
-                $normal[] = $frase;
-            }
-        }else {
-            $normal[] = $frase;
-        }
-
-    }
-
-    return [$facil, $normal, $dificil];
-}
-
-
-
+    require_once 'functions.php';
 
 function escogerFrase($frases, $nivell){
-    [$facil, $normal, $dificil] = classificar($frases);
+    [$facil, $normal, $dificil] = clasificar($frases);
 
     if ($nivell === "Fàcil"){
         $seleccion = $facil;
@@ -93,7 +37,7 @@ function escogerFrase($frases, $nivell){
     return $seleccion[array_rand($seleccion)];
 }
 
-$fitxer = "data/catala.txt";
+$fitxer = "sentences_ca.txt";
 $frases = file($fitxer, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
 $frase = escogerFrase($frases, $nivell);
@@ -104,17 +48,7 @@ if ($frase === null) {
 }
 
 $frase = mb_strtoupper($frase, "UTF-8");
-    // if ($nivell == "Fàcil") {
-    //     $fitxer = "data/facil.txt";
-    // } elseif ($nivell == "Normal") {
-    //     $fitxer = "data/normal.txt";
-    // } else {
-    //     $fitxer = "data/dificil.txt";
-    // }
 
-    
-
-    // $frase = mb_strtoupper($frases[array_rand($frases)], "UTF-8");
 ?><!DOCTYPE html>
 <html lang="ca">
 <head>

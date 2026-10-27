@@ -46,7 +46,7 @@
                     <select name="nivell" id="nivell">
                         <option value="Fàcil">Fàcil</option>
                         <option  value="Normal" selected>Normal</option>
-                        <option value="Dificil">Dificil</option>
+                        <option value="Difícil">Difícil</option>
                     </select>
                 </div>
             </div>

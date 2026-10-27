@@ -19,7 +19,7 @@
     </header>
 
     <p><?php echo $_POST["frase"]; ?></p>
-    <p><?php echo $_POST["pos"]; ?></p>
+    <!-- <p><?php echo $_POST["pos"]; ?></p> -->
 
 
 
