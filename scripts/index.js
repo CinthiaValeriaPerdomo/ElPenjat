@@ -1,4 +1,4 @@
-const formulario = document.getElementById('formulario'); // tengo mi formulario del index
+const formulario = document.getElementById('form-jugar'); // tengo mi formulario del index
 const btnJugar = document.getElementById('jugar');
 btnJugar.disabled = false;
 
@@ -13,7 +13,7 @@ formulario.addEventListener('submit', function (evento) {
     
 
     // cojo los errores
-    const errorNombre = document.getElementById('errorNombre');
+    const errorNombre = document.getElementById('error-nombre');
 
     // validamos 
     if (nombre === '') {
@@ -25,7 +25,6 @@ formulario.addEventListener('submit', function (evento) {
         errorNombre.style.display = 'none';
         esValido = true;
     }
-
 
     if (esValido) {
         formulario.submit();
