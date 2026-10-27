@@ -213,6 +213,19 @@ noscript {
 /* - - - Estils index.php - - - */
 /********************************/
 
+/* - - - Selecció d'idioma - - - */
+#lang-selection {
+    margin-bottom: 50px;
+    justify-content: space-evenly;
+    & a {
+        font-size: 18px;
+        min-width: 0;
+    }
+}
+#lang-ca { background-color: maroon; }
+#lang-es { background-color: darkgoldenrod }
+#lang-en { background-color: navy; }
+
 /* - - - Títol - - - */
 
 #game-title {
@@ -228,9 +241,9 @@ noscript {
     /*es posicionarà segons el contenidor*/
     top: -30px;
     /*amunt*/
-    left: 170px;
+    left: 80%;
     /*espai a l'esquerra*/
-    width: 50%;
+    width: 100px;
 }
 
 /* - - - Descripció - - - */

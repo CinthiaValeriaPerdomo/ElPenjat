@@ -1,5 +1,7 @@
 <?php
     session_start();
+    require_once "localization.php";
+    setPage("gameover.php");
     //print_r($_SESSION);
 
     // Redirecció
@@ -14,7 +16,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Penjat - Fi de partida</title>
+    <title><?= t("html-title") ?></title>
     <link rel="stylesheet" href="style.css">
     <script src="scripts/gameover.js" defer></script>
 </head>
@@ -27,21 +29,21 @@
             ? '<h1 id="game-win">'."\n" 
             : '<h1 id="game-loss">'."\n";
         ?>
-            Fi de partida
+            <?= t("title") ?>
         </h1>
         <h6 class="gold-text">
             <?php 
             echo $_SESSION["guanyat"] 
-                ? "Has escapat de la mansió!" 
-                : "T'has convertit en un dels seus esperits." 
+                ? t("subtitle-win")
+                : t("subtitle-loss");
             ?>
         </h6>
 
         <form action="ranking.php" method="post">
-            <p>Vols enregistrar el teu récord?</p>
+            <p><?= t("log-record") ?></p>
             <div class="flex-center">
-                <button type="submit" value="S">Sí</button>
-                <button type="submit" value="N" class="secondary">No, gràcies.</button>
+                <button type="submit" value="S"><?= t("submit-yes") ?></button>
+                <button type="submit" value="N" class="secondary"><?= t("submit-no") ?></button>
                 <input type="hidden" name="resposta" id="resposta">
             </div>
         </form>
