@@ -204,10 +204,11 @@ noscript {
     background: url("assets/images/manor_foyer.jpg") no-repeat center center fixed;
     background-size: cover;
 }
-.admin-page{
+.admin-page {
     background: url("assets/images/bg_admin.png") no-repeat center center fixed;
     background-size: 100% 100%;
 }
+
 /********************************/
 /* - - - Estils index.php - - - */
 /********************************/
@@ -494,15 +495,49 @@ noscript {
     padding: 32px;
 }
 
-/********************************** */
-/* - - - Estils admin/list_sentences.php - - */
-/***********************************/
-.admin-page h1{
+
+/*****************************/
+/* - - - Estils admin/ - - - */
+/*****************************/
+
+#admin-header {
+    background-color: #224;
+    height: 80px;
+}
+#admin-header div {
+    width: 60%;
+    justify-content: space-between;
+}
+#admin-header p {
+    font-size: 24px;
+}
+#admin-header * {
+    margin: 0
+}
+
+#logout {
+    font-size: 18px;
+    min-width: 0;
+}
+
+/**************************************/
+/* - - - Estils admin/login.php - - - */
+/**************************************/
+
+#wrong-credentials {
+    color: red;
+    text-shadow: 0 0 16px darkred;
+}
+
+/***********************************************/
+/* - - - Estils admin/list_sentences.php - - - */
+/***********************************************/
+.admin-page h1 {
     font-family: 'Grenze Gotisch', serif;    
     color: #70435F;
-    
+
 }
-.admin-page .container{
+.admin-page .container {
     background: none;
     box-shadow: none;
     position: relative;
@@ -515,6 +550,11 @@ noscript {
 .admin-page tr:nth-child(odd) {
     color: #FFF2F5;
     border: 1px solid #A18191;
+}
+#phrases-header th{
+    border: 1px solid #89634D;
+    background-color: #48251F;
+    color: #D8B77A;
     font-family:'Times New Roman', Times, serif;
 }
 .admin-page table {

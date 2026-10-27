@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if ($_SESSION["admin-access"] != "S") {
+    header('Location: /admin/login.php');
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -10,12 +18,8 @@
         <div class="flex-center">
             <h3>Admin</h3>
             <p>Hola, <?= $_SESSION["admin-username"]?></p>
-            <a id="logout" class="link-button" href="logout.php">
-                <img src="../assets/images/logout.svg" alt="">
-                    Tancar sessió
-            </a>
         </div>
+        <a href="logout.php">Tancar sessió</a>
     </header>
-    
 </body>
 </html>

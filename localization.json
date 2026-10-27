@@ -1,0 +1,281 @@
+{
+    "index.php": {
+        "html-title": {
+            "ca": "El Penjat",
+            "es": "El Ahorcado",
+            "en": "Hangman"
+        },
+        "noscript-title": {
+            "ca": "! JavaScript desactivat !",
+            "es": "! JavaScript desactivado !",
+            "en": "! JavaScript disabled !"
+        },
+        "noscript-p1": {
+            "ca": "És necessari el JavaScript per jugar a aquest joc.",
+            "es": "Es necesario el JavaScript para jugar a este juego.",
+            "en": "JavaScript is necessary to play this game."
+        },
+        "noscript-p2": {
+            "ca": "Activa'l al teu navegador.",
+            "es": "Actívalo en tu navegador.",
+            "en": "Enable it in your browser."
+        },
+        "game-title": {
+            "ca": "El Penjat",
+            "es": "El Ahorcado",
+            "en": "Hangman"
+        },
+        "description1": {
+            "ca": "Estaves explorant una mansió encantada. De sobte, va aparèixer la bruixa, la mestressa de la mansió. T'ha acorralat i ha conjurat un encanteri per condemnar-te a viure junt amb els seus espirits per sempre.",
+            "es": "Estabas explorando una mansión encantada. De repente, apareció la bruja, la dueña de la mansión. Te ha acorralado y ha conjurado un hechizo para condenarte a vivir junto a sus espíritus para siempre.",
+            "en": "You were exploring a haunted mansion. Suddenly, the witch appeared, the owner of the mansion. After cornering you, she cast a spell in order to doom you to living among her spirits forevermore."
+        },
+        "description2": {
+            "ca": "Podràs fer servir la teva habilitat lèxica per superar el seu joc malvat i escapar amb vida?",
+            "es": "¿Podrás utilizar tu habilidad léxica para superar su juego malvado y escapar con vida?",
+            "en": "Will you manage to use your lexical skills to overcome her wicked game and make it out alive?"
+        },
+        "label-name": {
+            "ca": "Nom:",
+            "es": "Nombre:",
+            "en": "Name:"
+        },
+        "input-name-placeholder": {
+            "ca": "El teu nom...",
+            "es": "Tu nombre...",
+            "en": "Your name..."
+        },
+        "label-diff": {
+            "ca": "Dificultat:",
+            "es": "Dificultad:",
+            "en": "Difficulty:"
+        },
+        "option-easy": {
+            "ca": "Fàcil",
+            "es": "Fácil",
+            "en": "Easy"
+        },
+        "option-normal": {
+            "ca": "Normal",
+            "es": "Normal",
+            "en": "Normal"
+        },
+        "option-hard": {
+            "ca": "Difícil",
+            "es": "Difícil",
+            "en": "Hard"
+        },
+        "button-play": {
+            "ca": "JUGAR",
+            "es": "JUGAR",
+            "en": "PLAY"
+        },
+        "link-to-ranking": {
+            "ca": "Veure rànking",
+            "es": "Ver ránking",
+            "en": "Check rankings"
+        }
+    },
+    "play.php": {
+        "html-title": {
+            "ca": "Penjat - Partida",
+            "es": "Ahorcado - Partida",
+            "en": "Hangman - Game"
+        },
+        "noscript-title": {
+            "ca": "! JavaScript desactivat !",
+            "es": "! JavaScript desactivado !",
+            "en": "! JavaScript disabled !"
+        },
+        "noscript-p1": {
+            "ca": "És necessari el JavaScript per jugar a aquest joc.",
+            "es": "Es necesario el JavaScript para jugar a este juego.",
+            "en": "JavaScript is necessary to play this game."
+        },
+        "noscript-p2": {
+            "ca": "Activa'l al teu navegador.",
+            "es": "Actívalo en tu navegador.",
+            "en": "Enable it in your browser."
+        },
+        "play-title": {
+            "ca": "LA MANSIÓ EMBRUIXADA",
+            "es": "LA MANSIÓN EMBRUJADA",
+            "en": "THE HAUNTED MANSION"
+        },
+        "play-subtitle": {
+            "ca": "DESCOBREIX EL MISTERI",
+            "es": "DESCUBRE EL MISTERIO",
+            "en": "UNCOVER THE MYSTERY"
+        }
+    },
+    "gameover.php": {
+        "html-title": {
+            "ca": "Penjat - Fi de partida",
+            "es": "Ahorcado - Fin de partida",
+            "en": "Hangman - Game Over"
+        },
+        "gameover-title": {
+            "ca": "Fi de partida",
+            "es": "Fin de partida",
+            "en": "Game Over"
+        },
+        "subtitle-win": {
+            "ca": "Has escapat de la mansió!",
+            "es": "¡Has escapado de la mansión!",
+            "en": "You escaped the mansion!"
+        },
+        "subtitle-loss": {
+            "ca": "T'has convertit en un dels seus esperits.",
+            "es": "Te has convertido en uno de sus espíritus.",
+            "en": "You've turned into one of her spirits."
+        },
+        "log-record": {
+            "ca": "Vols enregistrar el teu récord?",
+            "es": "¿Quieres registrar tu récord?",
+            "en": "Do you wish to log your record?"
+        },
+        "submit-yes": {
+            "ca": "Sí",
+            "es": "Sí",
+            "en": "Yes"
+        },
+        "submit-no": {
+            "ca": "No, gràcies.",
+            "es": "No, gracias.",
+            "en": "No, thank you."
+        }
+    },
+    "ranking.php": {
+        "html-title": {
+            "ca": "Penjat - Rànking",
+            "es": "Ahorcado - Ránking",
+            "en": "Hangman - Rankings"
+        },
+        "ranking-title": {
+            "ca": "Taula de classificacions",
+            "es": "Tabla de clasificaciones",
+            "en": "Leaderboard"
+        },
+        "ranking-th1": {
+            "ca": "Nom",
+            "es": "Nombre",
+            "en": "Name"
+        },
+        "ranking-th2": {
+            "ca": "Puntuació",
+            "es": "Puntuación",
+            "en": "Score"
+        },
+        "ranking-th3": {
+            "ca": "Data",
+            "es": "Fecha",
+            "en": "Date"
+        },
+        "link-to-index": {
+            "ca": "Tornar a l'inici",
+            "es": "Volver al inicio",
+            "en": "Return to Homepage"
+        }
+    },
+    "error403.php": {
+        "html-title": {
+            "ca": "Penjat - Error 403",
+            "es": "Ahorcado - Error 403",
+            "en": "Hangman - 403 Error"
+        },
+        "error403-title": {
+            "ca": "Accés denegat",
+            "es": "Acceso denegado",
+            "en": "Access Denied"
+        },
+        "error403-subtitle": {
+            "ca": "Prohibit el pas!",
+            "es": "¡Prohibido el paso!",
+            "en": "No Trespassing!"
+        },
+        "note-to-witch": {
+            "ca": "Però què fas aquí?! <br> A la meva mansió s'entra per la porta! <br> - Sincerament, Bruixa Penny Jatty",
+            "es": "¡¿Pero qué estás haciendo aquí?! <br> ¡A mi mansión se entra por la puerta! <br> - Sinceramente, Bruja Éléanore Cadot",
+            "en": "What are you doing here?! <br> For cauldron's sake, my mansion has a door! <br> - Sincerely, Witch Ángela Manzano"
+        },
+        "link-to-index": {
+            "ca": "Tornar a l'inici",
+            "es": "Volver al inicio",
+            "en": "Return to Homepage"
+        }
+    },
+    "error404.php": {
+        "html-title": {
+            "ca": "Penjat - Error 404",
+            "es": "Ahorcado - Error 404",
+            "en": "Hangman - 404 Error"
+        },
+        "error404-title": {
+            "ca": "No trobat",
+            "es": "No encontrado",
+            "en": "Not Found"
+        },
+        "error404-subtitle": {
+            "ca": "No hi ha aquesta cambra a la mansió!",
+            "es": "¡No hay esa cámara en la mansión!",
+            "en": "That chamber's not in the mansion!"
+        },
+        "note-to-witch": {
+            "ca": "Que t'has perdut? <br> No et preocupis, et porto a la porta... <br> - Sincerament, Bruixa Penny Jatty",
+            "es": "¿Te has perdido? <br> No te preocupes, te llevo a la puerta... <br> - Sinceramente, Bruja Éléanore Cadot",
+            "en": "Are you lost? <br> Don't worry, I'll take you to the door... <br> - Sincerely, Witch Ángela Manzano"
+        },
+        "link-to-index": {
+            "ca": "Tornar a l'inici",
+            "es": "Volver al inicio",
+            "en": "Return to Homepage"
+        },
+        "link-to-ranking": {
+            "ca": "Veure rànking",
+            "es": "Ver ránking",
+            "en": "Check rankings"
+        }
+    },
+    "admin/login.php": {
+        "html-title": {
+            "ca": "ADMIN El Penjat - Iniciar sessió",
+            "es": "ADMIN El Ahorcado - Iniciar sesión",
+            "en": "Hangman ADMIN - Login"
+        }
+    },
+    "admin/index.php": {
+        "html-title": {
+            "ca": "ADMIN El Penjat",
+            "es": "ADMIN Ahorcado",
+            "en": "Hangman ADMIN"
+        }
+    },
+    "admin/logout.php": {
+        "html-title": {
+            "ca": "ADMIN El Penjat - Tancar sessió",
+            "es": "ADMIN El Ahorcado - Cerrar sesión",
+            "en": "Hangman ADMIN - Logout"
+        }
+    },
+    "admin/create_sentence.php": {
+        "html-title": {
+            "ca": "ADMIN El Penjat - Crear frase",
+            "es": "ADMIN El Ahorcado - Crear frase",
+            "en": "Hangman ADMIN - Create sentence"
+        }
+    },
+    "admin/list_sentences.php": {
+        "html-title": {
+            "ca": "ADMIN El Penjat - Llistar frases",
+            "es": "ADMIN El Ahorcado - Listar frases",
+            "en": "Hangman ADMIN - List sentences"
+        }
+    },
+    "admin/delete_sentence.php": {
+        "html-title": {
+            "ca": "ADMIN El Penjat - Eliminar frase",
+            "es": "ADMIN El Ahorcado - Eliminar frase",
+            "en": "Hangman ADMIN - Delete sentence"
+        }
+    }
+}
