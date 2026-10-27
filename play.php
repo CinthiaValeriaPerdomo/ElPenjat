@@ -117,7 +117,7 @@ $frase = mb_strtoupper($frase, "UTF-8");
         <button onclick="cerrarMensaje()" class="btn-cerrar">X</button>
     </div>
 
-    <div id="egg">
+    <div id="egg" class="flex-center">
         <div class="calavera">
             <img src="assets/images/calavera.png" alt="">
             <span class="ojo ojo-izq"></span>
