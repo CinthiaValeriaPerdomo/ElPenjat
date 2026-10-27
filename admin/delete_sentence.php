@@ -5,17 +5,7 @@
     //     exit();
     // }
 
-    if(!empty($_POST["frase"])){
-
-        $frasesStr = file_get_contents("../sentences_ca_temp.txt");
-        $frases = explode("\n", $frasesStr);
-        $pos = $_POST["pos"];
-
-        unset($frases[$pos]);
-
-        file_put_contents("../sentences_ca_temp.txt", implode("\n", $frases));
-
-    }
+    
 ?><!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -37,10 +27,46 @@
         </div>
     </header>
 
+    <div class="container">
 
+        <?php
+            $frasesStr = file_get_contents("../sentences_ca_temp.txt");
+            $frases = explode("\n", $frasesStr);
+            $pos = $_POST["pos"];
+            $frase = $frases[$pos];
+        ?>
+        <h1 id="confirm-delete">
+            Vols eliminar aquesta frase?
+        </h1><br>
+        <h2><?php echo $_POST["frase"] ?></h2><br><br><br><br>
 
-
-
+        <?php
+            if (isset($_POST["resposta"]) && $_POST["resposta"] == "si") {
+                unset($frases[$pos]);
+                if (file_put_contents("../sentences_ca_temp.txt", implode("\n", $frases)) !== false) {
+                    $_SESSION['feedback'] = "<p>La frase <em>". $_POST["frase"]."</em> es va esborrar correctament!</p>";
+                }else {
+                    $_SESSION['feedback'] = "<p>Error en eliminar la frase.</p>";
+                }
+                header("Location: list_sentences.php");
+                exit();
+            }
+            
+            if (isset($_POST["resposta"]) && $_POST["resposta"] == "no") {
+                header("Location: list_sentences.php");
+                exit();
+            }
+        ?>
+        
+        <form action="delete_sentence.php" method="post">
+            <input type="hidden" name="frase" value="<?php echo $_POST["frase"] ?>">
+            <input type="hidden" name="pos" value="<?php echo $_POST["pos"] ?>">
+            <div class="flex-center">
+                <button type="submit" name="resposta" value="si" id="confirm-input">Eliminar</button>
+                <button type="submit" name="resposta" value="no" id="confirm-input">Cancelar</button>
+            </div>
+        </form>
+    </div>
 
 
 </body>

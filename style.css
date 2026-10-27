@@ -555,3 +555,17 @@ noscript {
 #Eliminar:hover {
     background-color: #976A8A;
 }
+#confirm-delete {
+    color: #976A8A;
+    text-shadow: 0 4px 8px #FFF2F5;
+}
+#confirm-input{
+    background-color: #96739C;
+    font-size: medium;
+    border-radius: 6px;
+    margin: 0;
+    padding: 12px;
+}
+#confirm-input:hover {
+    background-color: #70435F;
+}

@@ -1,10 +1,5 @@
 El bug ha tornat
 Avui no compila res
-Més val tard que mai
-El CSS m'odia
-On és el meu cafè?
 Qui sembra, recull
-El div s'ha descontrolat
 PHP ha decidit no funcionar
 El servidor necessita vacances
-Avui toca lluitar amb el flexbox

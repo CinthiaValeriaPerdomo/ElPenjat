@@ -24,6 +24,15 @@
             </a>
         </div>
     </header>
+
+    <?php if(!empty($_SESSION['feedback'])): ?>
+        <div class="feedback">
+            <?php 
+            echo $_SESSION['feedback']; 
+            unset($_SESSION['feedback']);
+            ?>
+        </div>
+    <?php endif; ?>
     
     <div class="container">
         <h1>LLISTAR FRASES</h1>
@@ -37,7 +46,7 @@
             </thead>
             <tbody id="phrases-rows">
                 <?php
-                    $frasesStr = explode("\n", file_get_contents("../sentences_ca.txt"));
+                    $frasesStr = explode("\n", file_get_contents("../sentences_ca_temp.txt"));
                     require_once '../functions.php';
                     $frasesClasificadas = clasificar($frasesStr);
                     foreach ($frasesStr as $i => $frase) {
