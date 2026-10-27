@@ -117,6 +117,14 @@ $frase = mb_strtoupper($frase, "UTF-8");
         <button onclick="cerrarMensaje()" class="btn-cerrar">X</button>
     </div>
 
+    <div id="egg">
+        <div class="calavera">
+            <img src="assets/images/calavera.png" alt="">
+            <span class="ojo ojo-izq"></span>
+            <span class="ojo ojo-der"></span>
+        </div>
+    </div>
+
     <script>
         const frase = "<?php echo $frase; ?>";
         console.log("test frase:",frase);
