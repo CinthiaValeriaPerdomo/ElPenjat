@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if ($_SESSION["admin-access"] != "S") {
+    header('Location: /admin/login.php');
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -6,7 +14,7 @@
     <title>ADMIN El Penjat - Eliminar frase</title>
     <link rel="stylesheet" href="../style.css">
 </head>
-<body id="delete-admin">
+<body class="admin-page">
     <header id="admin-header" class="flex-center">
         <div class="flex-center">
             <h3>Admin</h3>

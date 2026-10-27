@@ -1,4 +1,29 @@
-<!DOCTYPE html>
+<?php
+session_start();
+
+if(!empty($_POST)) {
+    $credentialsStr = explode("\n", file_get_contents("credentials.txt"));
+    $credentials = [];
+    for ($i=0; $i < count($credentialsStr); $i++) { 
+        $cred = explode(":", $credentialsStr[$i]);
+        $credentials[$cred[0]] = $cred[1];
+    }
+
+    $_SESSION["admin-access"] = "S";
+    foreach ($credentials as $key => $value) {
+        if ($_POST[$key] != $value) {
+            $_SESSION["admin-access"] = "N";
+        } else if ($key == "username") {
+            $_SESSION["admin-username"] = $value;
+        }
+    }
+}
+
+if ($_SESSION["admin-access"] != "S") {
+    header('Location: /admin/login.php');
+    exit();
+}
+?><!DOCTYPE html>
 <html lang="ca">
 <head>
     <meta charset="UTF-8">
@@ -16,5 +41,13 @@
             </a>
         </div>
     </header>
+    <div class="container">
+        <h1>Panell de control</h1>
+        <div class="flex-center">
+            <a href="logout.php" class="link-button secondary">Tancar sessió</a>
+            <a href="list_sentences.php" class="link-button">Llistar frases</a>
+            <a href="create_sentence.php" class="link-button">Afegir frase</a>
+        </div>
+    </div>
 </body>
 </html>

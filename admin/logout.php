@@ -1,7 +1,14 @@
 <?php
+session_start();
+
+if ($_SESSION["admin-access"] != "S") {
+    header('Location: /admin/login.php');
+    exit();
+}
+
 unset($_SESSION["admin-username"]);
-?>
-<!DOCTYPE html>
+unset($_SESSION["admin-access"]);
+?><!DOCTYPE html>
 <html lang="ca">
 <head>
     <meta charset="UTF-8">
