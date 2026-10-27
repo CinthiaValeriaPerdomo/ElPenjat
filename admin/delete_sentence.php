@@ -1,9 +1,9 @@
 <?php
     session_start();
-    // if(!isset($_SESSION["admin-username"])){
-    //     header("Location: login.php");
-    //     exit();
-    // }
+    if ($_SESSION["admin-access"] != "S") {
+        header('Location: /admin/login.php');
+        exit();
+    }
 
     
 ?><!DOCTYPE html>
@@ -15,15 +15,11 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body class="admin-page">
-
     <header id="admin-header" class="flex-center">
         <div class="flex-center">
             <h3>Admin</h3>
             <p>Hola, <?= $_SESSION["admin-username"]?></p>
-            <a id="logout" class="link-button" href="logout.php">
-                <img src="../assets/images/logout.svg" alt="">
-                    Tancar sessió
-            </a>
+            <a href="logout.php">Tancar sessió</a>
         </div>
     </header>
 
