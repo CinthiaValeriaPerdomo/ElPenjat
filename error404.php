@@ -1,28 +1,29 @@
-<!DOCTYPE html>
-<html lang="ca">
+<?php
+    session_start();
+    require_once "localization.php";
+    setPage("error403.php");
+
+?><!DOCTYPE html>
+<html lang="<?= getLang() ?>">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Penjat - Error 404</title>
+    <title><?= t("html-title") ?></title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="error404">
     <div class="container">
         <div class="flex-center">
             <img class="error-image" src="./assets/images/where.png" alt="Senyal groc d'advertència amb ?"/>
-            <h1>404 - No trobat</h1>
+            <h1><?= t("title") ?></h1>
             <img class="error-image" src="./assets/images/where.png" alt="Senyal groc d'advertència amb ?"/>
         </div>
-        <h6 class="gold-text">No hi ha aquesta cambra a la mansió!</h6>
+        <h6 class="gold-text"><?= t("subtitle") ?></h6>
         <div class="flex-center">
-            <p class="note-from-witch">
-                Que t'has perdut? <br>
-                No et preocupis, et porto a la porta... <br>
-                - Sincerament, Bruixa Penny Jatty
-            </p>
+            <p class="note-from-witch"><?= t("note-form-witch") ?></p>
         </div>
-        <a href="index.php" class="link-button">Tornar a inici</a><br><br>
-        <a href="ranking.php" class="link-button secondary">Veure Ranking</a>
+        <a href="index.php" class="link-button"><?= t("link-to-index") ?></a><br><br>
+        <a href="ranking.php" class="link-button secondary"><?= t("link-to-ranking") ?></a>
     </div>
 </body>
 </html>

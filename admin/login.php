@@ -1,38 +1,41 @@
 <?php
-session_start();
+    session_start();
+    require_once __DIR__ . "/../localization.php";
+    setPage("admin/login.php");
+
 ?><!DOCTYPE html>
-<html lang="ca">
+<html lang="<?= getLang() ?>">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADMIN El Penjat - Iniciar sessió</title>
+    <title><?= t("html-title") ?></title>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body class="admin-page">
     <header id="admin-header" class="flex-center">
         <div class="flex-center">
-            <h3>Admin</h3>
+            <h3><?= t("admin-header") ?></h3>
         </div>  
     </header>
     <div class="container">
-        <h1>Iniciar sessió</h1>
+        <h1><?= t("title") ?></h1>
         <form action="index.php" method="post">
             <?php
             if ($_SESSION["admin-access"] == "N") {
                 echo "<h3 id='wrong-credentials'>";
-                echo "Credencials incorrectes";
+                echo t("wrong-credentials");
                 echo "</h3>\n";
                 unset($_SESSION["admin-access"]);
             }
             ?>
             <div class="flex-center">
                 
-                <label for="username">Nom d'usuari</label>
+                <label for="username"><?= t("label-username") ?></label>
                 <input type="text" id="username" name="username">
-                <label for="password">Contrasenya</label>
+                <label for="password"><?= t("label-password") ?></label>
                 <input type="text" id="password" name="password">
             </div>
-            <button type="submit">Iniciar sessió</button>
+            <button type="submit"><?= t("submit") ?></button>
         </form>
     </div>
 </body>

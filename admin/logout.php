@@ -1,30 +1,32 @@
 <?php
-session_start();
+    session_start();
+    require_once __DIR__ . "/../localization.php";
+    setPage("admin/logout.php");
 
-if ($_SESSION["admin-access"] != "S") {
-    header('Location: /admin/login.php');
-    exit();
-}
+    if ($_SESSION["admin-access"] != "S") {
+        header('Location: /admin/login.php');
+        exit();
+    }
 
-unset($_SESSION["admin-username"]);
-unset($_SESSION["admin-access"]);
+    unset($_SESSION["admin-username"]);
+    unset($_SESSION["admin-access"]);
 ?><!DOCTYPE html>
-<html lang="ca">
+<html lang="<?= getLang() ?>">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADMIN El Penjat - Tancar sessió</title>
+    <title><?= t("html-title") ?></title>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body class="admin-page">
     <header id="admin-header" class="flex-center">
         <div class="flex-center">
-            <h3>Admin</h3>
+            <h3><?= t("admin-header") ?></h3>
         </div>
     </header>
     <div class="container">
-        <h3>Sessió tancada</h3>
-        <p>Ja pots tancar la pestanya.</p>
+        <h3><?= t("title") ?></h3>
+        <p><?= t("subtitle") ?></p>
     </div>
 </body>
 </html>

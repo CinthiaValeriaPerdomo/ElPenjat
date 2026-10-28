@@ -1,14 +1,20 @@
 <?php
     session_start();
-    //print_r($_SESSION);
+    require_once "localization.php";
+    setPage("index.php");
 
-
+    if(!isset($_SESSION["lang"])) {
+        setLang("ca");
+    }
+    if(isset($_GET["lang"])) {
+        setLang($_GET["lang"]);
+    }
 ?><!DOCTYPE html>
-<html lang="ca">
+<html lang="<?= getLang() ?>">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Penjat</title>
+    <title><?= t("html-title") ?></title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style.css?v=2">
     <script src="./scripts/index.js" defer></script> 
@@ -16,44 +22,53 @@
 <body id="index">
     <noscript class="flex-center">
         <div>
-            <h3>! JavaScript desactivat !</h3>
-            <p class="gold-text">És necessari el JavaScript per jugar a aquest joc.</p>
-            <p>Activa'l al teu navegador.</p>
+            <h3><?= t("noscript-title") ?></h3>
+            <p class="gold-text"><?= t("noscript-p1") ?></p>
+            <p><?= t("noscript-p2") ?></p>
         </div>
     </noscript>
 
     <div class="container">
+        <div class="flex-center" id="lang-selection">
+            <a href="?lang=ca" id="lang-ca" class="link-button">Català</a>
+            <a href="?lang=es" id="lang-es" class="link-button">Español</a>
+            <a href="?lang=en" id="lang-en" class="link-button">English</a>
+        </div>
         <div id="game-title">
+            <h1><?= t("game-title") ?></h1>
             <img src="assets/images/barret-bruixa.png" alt="" id="img-barret">
-            <h1>El Penjat</h1>
         </div>
         <div id="description">
-            <p>Estaves explorant una mansió encantada. De sobte, va aparèixer la bruixa, la mestressa de la mansió. T'ha acorralat i ha conjurat un encanteri per condemnar-te a viure junt amb els seus espirits per sempre.</p>
-            <p class="gold-text">Podràs fer servir la teva habilitat lèxica per superar el seu joc malvat i escapar amb vida?</p>
+            <p><?= t("desc-p1") ?></p>
+            <p class="gold-text"><?= t("desc-p2") ?></p>
         </div>
 
         <div id="linea"></div> <!--novalidate es un atributo booleano que desactiva la validacion nativa del navegador -->
         <form id="form-jugar" action="play.php" method="post" novalidate>
             <div class="flex-center">
                 <div>
-                    <label for="nom">Nom:</label>
-                    <input type="text" id="nom" placeholder="El teu nom ..." name="nom" value="<?php echo $_SESSION["nom"] ?? ""; ?>">
-                    <div id = "error-nombre"></div>
+                    <label for="nom"><?= t("label-name") ?></label>
+                    <input 
+                        type="text" id="nom" 
+                        placeholder="<?= t("input-name-placeholder") ?>"
+                        name="nom" value="<?php echo $_SESSION["nom"] ?? ""; ?>"
+                    />
+                    <div id="error-nombre"></div>
                 </div>
                 
                 <div>
-                    <label for="nivell">Dificultat: </label>
+                    <label for="nivell"><?= t("label-diff") ?></label>
                     <select name="nivell" id="nivell">
-                        <option value="Fàcil">Fàcil</option>
-                        <option  value="Normal" selected>Normal</option>
-                        <option value="Difícil">Difícil</option>
+                        <option value="Fàcil"><?= t("option-easy") ?></option>
+                        <option  value="Normal" selected><?= t("option-normal") ?></option>
+                        <option value="Difícil"><?= t("option-hard") ?></option>
                     </select>
                 </div>
             </div>
-            <button type="submit" id="jugar" disabled>JUGAR</button>
+            <button type="submit" id="jugar" disabled><?= t("button-play") ?></button>
         </form>
 
-        <a href="ranking.php" class="link-button secondary">Veure Ranking</a>
+        <a href="ranking.php" class="link-button secondary"><?= t("link-to-ranking") ?></a>
     </div>
 </body>
 </html>
