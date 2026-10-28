@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once "../localization.php";
+    require_once "/localization.php";
     setPage("admin/login.php");
 
 ?><!DOCTYPE html>
