@@ -1,33 +1,36 @@
 <?php
-session_start();
-$lastRecord = [];
+    session_start();
+    require_once "localization.php";
+    setPage("ranking.php");
 
-if ($_POST["resposta"] == "S") {
-    $lastRecord = [
-        $_SESSION["nom"],
-        $_SESSION["puntuacio"],
-        $_SESSION["data"]
-    ];
-    file_put_contents("records.txt", implode(",", $lastRecord)."\n", FILE_APPEND);
-}
+    $lastRecord = [];
+
+    if ($_POST["resposta"] == "S") {
+        $lastRecord = [
+            $_SESSION["nom"],
+            $_SESSION["puntuacio"],
+            $_SESSION["data"]
+        ];
+        file_put_contents("records.txt", implode(",", $lastRecord)."\n", FILE_APPEND);
+    }
 ?>
 <!DOCTYPE html>
-<html lang="ca">
+<html lang=<?= getLang() ?>>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Penjat - Rànking</title>
+    <title><?= t("html-title") ?></title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="ranking">
     <div class="container">
-        <h1>Taula de classificacions</h1>
+        <h1><?= t("title") ?></h1>
         <table>
             <thead id="ranking-header">
                 <tr>
-                    <th>Nom</th>
-                    <th>Puntuació</th>
-                    <th>Data</th>
+                    <th><?= t("th1") ?></th>
+                    <th><?= t("th2") ?></th>
+                    <th><?= t("th3") ?></th>
                 </tr>
             </thead>
             <tbody class="zebra-rows">
@@ -60,7 +63,7 @@ if ($_POST["resposta"] == "S") {
             </tbody>
         </table>
         
-        <a href="index.php" class="link-button">Tornar a inici</a>
+        <a href="index.php" class="link-button"><?= t("link-to-index") ?></a>
     </div>
 </body>
 </html>
