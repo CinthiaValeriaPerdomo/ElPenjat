@@ -1,10 +1,10 @@
 const maxErrores = 6;
-let errors=0;
+let errors = 0;
 let acertadas = [];
-let quedan =1;
+let quedan = 1;
 const pFrase = document.getElementById("frase");
-const pImg =document.getElementById("penjat");
-const teclas =document.getElementsByClassName("tecla");
+const pImg = document.getElementById("penjat");
+const teclas = document.getElementsByClassName("tecla");
 
 const conAcento = "ÀÁÈÉÍÏÒÓÚÜÇ";
 const sinAcento = "AAEEIIOOUUC";
@@ -12,9 +12,9 @@ const sinAcento = "AAEEIIOOUUC";
 const inicio = Date.now();
 
 const audios = document.getElementsByTagName("audio");
-const audiosEncert = Array.from(audios).slice(0,3);
-const audiosError  = Array.from(audios).slice(3,6);
-const audiosRiure  = Array.from(audios).slice(6,15);
+const audiosEncert = Array.from(audios).slice(0, 3);
+const audiosError = Array.from(audios).slice(3, 6);
+const audiosRiure = Array.from(audios).slice(6, 15);
 const audioBach = audios[15];
 const audioAplaudiment = audios[16];
 
@@ -32,9 +32,9 @@ function mostrarFrase() {
     for (let i = 0; i < frase.length; i++) {
         const lletra = frase[i];
         const base = lletraBase(lletra);
-        if (lletra == " "){
+        if (lletra == " ") {
             html += '<span class="espacio"></span>';
-        }else if (base < "A" || base > "Z") {
+        } else if (base < "A" || base > "Z") {
             html += '<span class="signo">' + lletra + '</span>';
         } else if (acertadas.includes(base)) {
             html += '<span class="casilla">' + lletra + '</span>';
@@ -56,7 +56,7 @@ for (let i = 0; i < frase.length; i++) {
 
 function acierto(tecla, lletra) {
     tecla.classList.add("correcta");
-    const audioEncert = audiosEncert[Math.floor(Math.random()*audiosEncert.length)];
+    const audioEncert = audiosEncert[Math.floor(Math.random() * audiosEncert.length)];
     audioEncert.play();
     acertadas.push(lletra);
     mostrarFrase();
@@ -64,7 +64,7 @@ function acierto(tecla, lletra) {
 
 function fallo(tecla) {
     tecla.classList.add("incorrecta");
-    const audioError = audiosError[Math.floor(Math.random()*audiosError.length)];
+    const audioError = audiosError[Math.floor(Math.random() * audiosError.length)];
     audioError.play();
 
     errors++;
@@ -75,6 +75,7 @@ function fallo(tecla) {
 // const letrasFrase = [...new Set(frase.replaceAll(" ", ""))];
 const fraseSinSignos = frase.replace(/[^A-ZÑÇ]/g, "");
 const letrasFrase = [...new Set(fraseSinSignos)];
+
 let contador_consonantes = 0;
 function jugar(tecla) {
     const lletra = tecla.textContent;
@@ -82,43 +83,45 @@ function jugar(tecla) {
 
     const consonantes = "BCDFGHJKLMNÑPQRSTVWXYZ";
     const vocales = "AEIOU";
-    
-    if (consonantes.includes(lletra)){
+
+    if (consonantes.includes(lletra)) {
         contador_consonantes += 1;
         if (fraseBase.includes(lletra)) {
             acierto(tecla, lletra);
         } else {
             fallo(tecla);
         }
-    } else if (vocales.includes(lletra)){
+        reiniciarTemporizador();
+        mostrarEasterEgg();
+    } else if (vocales.includes(lletra)) {
         const letrasPendientes = letrasFrase.filter(letraFrase => !acertadas.includes(letraFrase));
         console.log("Frase:", frase);
         console.log("Letras únicas:", letrasFrase);
         console.log("Letras pendientes:", letrasPendientes);
         console.log("Letras acertadas:", acertadas);
         console.log("Vocal pulsada:", lletra);
-        if (contador_consonantes >= 3){
+        if (contador_consonantes >= 3) {
             contador_consonantes = 0;
             if (fraseBase.includes(lletra)) {
                 acierto(tecla, lletra);
-                
+
             } else {
                 fallo(tecla);
-            } 
-             
-        } else if (letrasPendientes.length === 1 && vocales.includes(letrasPendientes[0]) && letrasPendientes[0] === lletra){
+            }
+
+        } else if (letrasPendientes.length === 1 && vocales.includes(letrasPendientes[0]) && letrasPendientes[0] === lletra) {
             acierto(tecla, lletra);
         } else {
             mostrarError("DEBE INGRESAR COMO MINIMO TRES CONSONANTES ANTES DE UNA VOCAL");
             tecla.disabled = false;
         }
-    
+
     }
 
     comprovarFinal();
 }
 
-function mostrarError(texto){
+function mostrarError(texto) {
     const alerta = document.getElementById("mensaje-error");
     const textoAlerta = document.getElementById("texto-alerta");
 
@@ -127,7 +130,7 @@ function mostrarError(texto){
 }
 
 
-function cerrarMensaje(){
+function cerrarMensaje() {
     const alerta = document.getElementById("mensaje-error");
     alerta.classList.add("oculto");
 }
@@ -151,7 +154,7 @@ function acabar(guanyat) {
     document.getElementById("guanyat").value = guanyat ? "1" : "0";
     document.getElementById("puntuacio").value = calcularPunctuacion(guanyat);
 
-    const audioRiure = audiosRiure[Math.floor(Math.random()*audiosRiure.length)];
+    const audioRiure = audiosRiure[Math.floor(Math.random() * audiosRiure.length)];
     if (guanyat) {
         audioAplaudiment.play();
     } else {
@@ -166,9 +169,9 @@ function acabar(guanyat) {
 }
 
 
-function calcularPunctuacion(guanyat){
+function calcularPunctuacion(guanyat) {
     if (!guanyat) {
-        return 0; 
+        return 0;
     }
 
     let letras = 0;
@@ -179,12 +182,34 @@ function calcularPunctuacion(guanyat){
     }
 
     let ahora = Date.now();
-    let segundos = Math.round((ahora - inicio)/1000);
-    let puntos = (letras*10) - (errors*15) -segundos;
+    let segundos = Math.round((ahora - inicio) / 1000);
+    let puntos = (letras * 10) - (errors * 15) - segundos;
 
     if (puntos < 0) {
         return 0;
     }
 
     return puntos;
+}
+
+
+
+
+// EASTER EGG 
+let temporizador;
+let yaSalio = false;
+
+function reiniciarTemporizador() {
+    clearTimeout(temporizador);
+    if (!yaSalio) temporizador = setTimeout(mostrarEasterEgg, 60000);
+}
+
+function mostrarEasterEgg() {
+    yaSalio = true;
+    const egg = document.getElementById('egg');
+    egg.classList.add('visible');
+
+    setTimeout(() => {
+        egg.classList.remove('visible');
+    }, 5000)
 }

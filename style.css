@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
 /******************************/
@@ -7,17 +6,20 @@
 
 /* - - - Document - - - */
 
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     min-height: 100%;
     min-width: 100%;
-    }
+}
+
 body {
     font-family: Georgia, "Times New Roman", serif;
     font-size: 18px;
     color: white;
-    float: left; /* per prevenir que cap marge d'un element fill s'estengui més enllà del seu contorn (prevenir colapsament de marges)*/
+    float: left;
+    /* per prevenir que cap marge d'un element fill s'estengui més enllà del seu contorn (prevenir colapsament de marges)*/
 }
 
 /* - - - Títols - - - */
@@ -28,12 +30,14 @@ h1 {
     font-family: 'UnifrakturCook', serif;
     text-shadow: 1px 0 10px black;
 }
+
 h3 {
     font-size: 40px;
     margin: 24px 0;
     font-family: 'UnifrakturCook', serif;
     text-shadow: 1px 0 10px black;
 }
+
 h6 {
     font-size: 20px;
     font-weight: normal;
@@ -44,7 +48,7 @@ h6 {
 /* - - - Formularis - - - */
 
 label {
-    display: block; 
+    display: block;
     /* posa les labels damunt dels inputs */
     font-size: 25px;
 }
@@ -56,7 +60,7 @@ select {
     border-radius: 5px;
     font-family: Georgia, "Times New Roman", serif;
     font-size: 20px;
-    
+
     border: 1px solid rgba(255, 255, 255, 0.15);
     /*vora fina*/
     background-color: rgba(25, 20, 35, 0.9);
@@ -67,6 +71,7 @@ input[type="text"] {
     color: #e8e8e8;
     pointer-events: auto;
 }
+
 select {
     color: #666;
 }
@@ -85,11 +90,13 @@ a.link-button {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 23px;
     margin-top: 50px;
+
     &:hover {
         background-color: purple;
         cursor: pointer;
     }
 }
+
 button.secondary,
 a.link-button.secondary {
     background-color: rgb(51, 51, 51);
@@ -98,20 +105,22 @@ a.link-button.secondary {
         background-color: dimgray;
         cursor: pointer;
     }
+
     /* colors grisos treuen ènfasi al botó */
 }
 
-button:disabled, 
+button:disabled,
 a.link-button:disabled {
     cursor: not-allowed;
     color: silver;
     border-color: silver;
     background-color: dimgray;
-    
+
     &:hover {
         background-color: dimgray;
         cursor: not-allowed;
     }
+
     /* grisos amb contraste reduït treuen encara més ènfasi */
 }
 
@@ -128,18 +137,22 @@ table {
     border-collapse: collapse;
     font-size: 20px;
 }
+
 th,
 td {
     border: 2px solid white;
     padding: 8px;
 }
+
 thead {
     background-color: rgb(85, 0, 102);
     color: white;
 }
+
 tbody.zebra-rows tr:nth-child(odd) {
     background-color: black;
 }
+
 tbody.zebra-rows tr:nth-child(even) {
     background-color: #333;
 }
@@ -152,6 +165,7 @@ thead {
 tbody.zebra-rows tr:nth-child(odd) {
     background-color: black;
 }
+
 tbody.zebra-rows tr:nth-child(even) {
     background-color: #333;
 }
@@ -163,6 +177,7 @@ noscript {
     margin: 0;
     min-width: 100%;
     background-color: rgb(79, 0, 13);
+
     & h3 {
         color: red;
     }
@@ -173,6 +188,7 @@ noscript {
     justify-content: space-around;
     align-items: center;
 }
+
 .container {
     background-color: rgba(0, 0, 0, 0.724);
     width: 60%;
@@ -183,9 +199,11 @@ noscript {
     margin-top: 130px;
     box-shadow: 0 0 300px 50px rgb(0, 0, 0);
 }
+
 .gold-text {
-    color:goldenrod;
+    color: goldenrod;
 }
+
 /*******************************/
 /* - - - Imatges de fons - - - */
 /*******************************/
@@ -195,10 +213,12 @@ noscript {
     background: url("assets/images/manor_outdoors.jpg") no-repeat center center fixed;
     background-size: cover;
 }
+
 #play {
     background: url("assets/images/manor_hallway.jpg") no-repeat center center fixed;
     background-size: cover;
 }
+
 #gameover,
 #ranking {
     background: url("assets/images/manor_foyer.jpg") no-repeat center center fixed;
@@ -239,6 +259,7 @@ noscript {
     margin-bottom: 25px;
     margin-top: 25px;
 }
+
 #description p {
     font-family: Georgia, "Times New Roman", serif;
     margin-bottom: 10px;
@@ -249,10 +270,12 @@ noscript {
     line-height: 1.5;
     font-size: 25px;
 }
+
 #description .gold-text {
     font-style: italic;
     /*cursiva*/
 }
+
 #linea {
     width: 100%;
     height: 1px;
@@ -280,30 +303,36 @@ noscript {
 #form-jugar button {
     margin-top: 50px;
     height: 50px;
+
     &:hover {
         background-color: purple;
         cursor: pointer;
     }
 }
+
 #jugar {
     margin-top: 40px;
     margin-bottom: 40px;
     font-size: 23px;
 }
+
 /*******************************/
 /* - - - Estils play.php - - - */
 /*******************************/
 #container-play h1 {
     color: #eccc91;
 }
+
 #container-play h6 {
     color: #462d2a;
     font-weight: bold;
 }
+
 /* - - - Frase - - - */
 #frase {
     font-size: 28px;
 }
+
 .casilla {
     display: inline-block;
     width: 34px;
@@ -316,43 +345,51 @@ noscript {
     margin: 6px 5px;
     vertical-align: middle;
 }
+
 .signo {
     display: inline-block;
     margin: 0 6px;
-    color:#eccc91;
+    color: #eccc91;
     vertical-align: middle;
 }
+
 .espacio {
     display: inline-block;
     width: 30px;
     vertical-align: middle;
 }
+
 /* - - - Teclat - - - */
 #teclat {
     width: 50%;
 }
+
 #teclat td {
     border: none;
 }
+
 #teclat button {
     min-width: 0;
     margin-top: 0;
     width: 48px;
     height: 48px;
-    background-color:#120918;
-    border:1px solid #332A3A;
+    background-color: #120918;
+    border: 1px solid #332A3A;
     border-radius: 5px;
     color: #eccc91;
-&.correcta {
-    background-color: rgb(2, 53, 2);
-}
-&.incorrecta {
-    background-color: rgb(87, 3, 3);
-}
-&:disabled {
-    cursor: default;
-    position: relative;
-    top: 5px;
+
+    &.correcta {
+        background-color: rgb(2, 53, 2);
+    }
+
+    &.incorrecta {
+        background-color: rgb(87, 3, 3);
+    }
+
+    &:disabled {
+        cursor: default;
+        position: relative;
+        top: 5px;
     }
 }
 
@@ -366,17 +403,20 @@ noscript {
     color: white;
     padding: 10px 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
     gap: 15px;
-    z-index: 1000; /* Asegura que esté por encima de todo */
+    z-index: 1000;
+    /* Asegura que esté por encima de todo */
     font-family: sans-serif;
 }
+
 /* Clase utilitaria para ocultar el elemento */
 .oculto {
     display: none;
 }
+
 /* Estilo para el botón de la 'x' */
 .btn-cerrar {
     background: none;
@@ -402,14 +442,15 @@ noscript {
     margin-top: 0;
     width: 48px;
     height: 48px;
-    background-color:#120918;
-    border:1px solid #332A3A;
+    background-color: #120918;
+    border: 1px solid #332A3A;
     border-radius: 5px;
     color: #eccc91;
 
     &.correcta {
         background-color: rgb(2, 53, 2);
     }
+
     &.incorrecta {
         background-color: rgb(87, 3, 3);
     }
@@ -432,11 +473,12 @@ noscript {
     color: white;
     padding: 10px 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
     gap: 15px;
-    z-index: 1000; /* Asegura que esté por encima de todo */
+    z-index: 1000;
+    /* Asegura que esté por encima de todo */
     font-family: sans-serif;
 }
 
@@ -462,10 +504,12 @@ noscript {
     color: greenyellow;
     text-shadow: 0 4px 8px forestgreen;
 }
+
 #game-loss {
     color: darkred;
     text-shadow: 0 4px 8px coral;
 }
+
 /**********************************/
 /* - - - Estils ranking.php - - - */
 /**********************************/
@@ -485,6 +529,7 @@ noscript {
     width: 100px;
     height: 100px;
 }
+
 .note-from-witch {
     background: url("assets/images/witch-note.png") no-repeat center center;
     background-size: 100% 100%;
@@ -543,6 +588,7 @@ noscript {
     position: relative;
     left: -120px;
 }
+
 .admin-page table,
 .admin-page th,
 .admin-page td,
@@ -557,41 +603,50 @@ noscript {
     color: #D8B77A;
     font-family:'Times New Roman', Times, serif;
 }
+
 .admin-page table {
     width: 100%;
     table-layout: fixed;
     background-color: #765579;
 }
-#phrases-header th{
+
+#phrases-header th {
     background-color: #503652;
 }
+
 #phrases-rows tr {
     height: 60px;
 }
+
 #phrases-rows td {
     padding: 10px;
     vertical-align: middle;
 }
+
 #phrases-header th:nth-child(1),
 #phrases-rows td:nth-child(1) {
     width: 60%;
 }
+
 #phrases-header th:nth-child(2),
 #phrases-rows td:nth-child(2),
 #phrases-header th:nth-child(3),
 #phrases-rows td:nth-child(3) {
     width: 20%;
 }
+
 #phrases-rows tr:nth-child(even) {
     background-color: #96739C;
 }
-#Eliminar{
+
+#Eliminar {
     background-color: #70435F;
     font-size: medium;
     border-radius: 6px;
     margin: 0;
     padding: 12px;
 }
+
 #Eliminar:hover {
     background-color: #976A8A;
 }
@@ -608,4 +663,65 @@ noscript {
 }
 #confirm-input:hover {
     background-color: #70435F;
+}
+
+/********************************** */
+/* - - - Estils play.php/EASTER EGG - - */
+/***********************************/
+
+
+#egg {
+    position: fixed;
+    inset: 0;
+    /*ocupa todo el espacio*/
+    background: rgba(0, 0, 0, 0.65);
+    /* el velo */
+    opacity: 0;
+    /*esta escondido no lo muestra hasta que usaos la clase visible*/
+    pointer-events: none;
+    /*no implica nada en el juego */
+    transition: opacity 1s;
+    /*que la opacidad cambie o tarde en cambiar un segundo */
+    /*lo quehace es esconderme todo lo que tenemos atras es decir play.php*/
+}
+
+#egg.visible {
+    opacity: 1;
+    /*aqui funciona la transition de 0 a 1 en un segundo*/
+}
+
+.calavera {
+    /*lo coloca en su lugar normal para lo convierte en punto de referencia para sus hijos que tengan position absolute se mueven en su contenedor es decir dentro de .calavera*/
+    width: 260px;
+    /**/
+    transform: scale(0.3);
+    /*Cambia el tamaño de la calavera y con transition la hacemos que valla creciendo lento*/
+    transition: transform 5s;
+}
+
+#egg.visible .calavera {
+    transform: scale(1.15);
+    /*aqui la hace mas grande*/
+}
+
+.calavera img {
+    width: 100%;
+}
+
+.ojo {
+    position: absolute;
+    top: 41%;
+    width: 14%;
+    height: 9%;
+    background: #ff1a1a;
+    border-radius: 50%;
+    box-shadow: 0 0 14px 6px #ff1a1a;
+}
+
+.ojo-izq {
+    left: 25%;
+}
+
+.ojo-der {
+    right: 25%;
 }
