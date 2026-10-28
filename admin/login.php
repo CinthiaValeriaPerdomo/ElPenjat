@@ -1,12 +1,12 @@
 <?php
     session_start();
-    require_once __DIR__ . "/../localization.php";
+    require_once "../localization.php";
     setPage("admin/login.php");
 
 ?><!DOCTYPE html>
 <html lang="<?= getLang() ?>">
 <head>
-    <meta charset="UTF-8">
+    <met__DIR__ . a charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= t("html-title") ?></title>
     <link rel="stylesheet" href="../style.css">
@@ -29,11 +29,14 @@
             }
             ?>
             <div class="flex-center">
-                
-                <label for="username"><?= t("label-username") ?></label>
-                <input type="text" id="username" name="username">
-                <label for="password"><?= t("label-password") ?></label>
-                <input type="text" id="password" name="password">
+                <div>
+                    <label for="username"><?= t("label-username") ?></label>
+                    <input type="text" id="username" name="username">
+                </div>
+                <div>
+                    <label for="password"><?= t("label-password") ?></label>
+                    <input type="text" id="password" name="password">
+                </div>
             </div>
             <button type="submit"><?= t("submit") ?></button>
         </form>

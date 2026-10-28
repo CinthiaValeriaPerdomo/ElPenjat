@@ -113,6 +113,11 @@
             "ca": "DESCOBREIX EL MISTERI",
             "es": "DESCUBRE EL MISTERIO",
             "en": "UNCOVER THE MYSTERY"
+        },
+        "alert": {
+            "ca": "Abans d'escollir una vocal, has d'escollir com a mínim 3 consonants.",
+            "es": "Antes de elegir una vocal, debes elegir al menos 3 consonantes.",
+            "en": "Before guessing a vowel, you must guess at least 3 consonants."
         }
     },
     "gameover.php": {
