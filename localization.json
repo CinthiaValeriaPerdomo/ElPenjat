@@ -24,6 +24,21 @@
             "ca": "Veure rànking",
             "es": "Ver ránking",
             "en": "Check rankings"
+        },
+        "admin-header": {
+            "ca": "Admin",
+            "es": "Admin",
+            "en": "Admin"
+        },
+        "admin-greeting": {
+            "ca": "Hola, ",
+            "es": "Hola, ",
+            "en": "Hello, "
+        },
+        "link-to-logout": {
+            "ca": "Tancar sessió",
+            "es": "Cerrar sesión",
+            "en": "Log out"
         }
     }, 
     "index.php": {
@@ -213,6 +228,31 @@
             "ca": "ADMIN El Penjat - Iniciar sessió",
             "es": "ADMIN El Ahorcado - Iniciar sesión",
             "en": "Hangman ADMIN - Login"
+        },
+        "title": {
+            "ca": "Iniciar sessió",
+            "es": "Iniciar sesión",
+            "en": "Log in"
+        },
+        "wrong-credentials": {
+            "ca": "Crdencials incorrectes",
+            "es": "Credenciales incorrectas",
+            "en": "Wrong credentials"
+        },
+        "label-username": {
+            "ca": "Nom d'usuari",
+            "es": "Nombre de usuario",
+            "en": "Username"
+        },
+        "label-password": {
+            "ca": "Contrasenya",
+            "es": "Contraseña",
+            "en": "Password"
+        },
+        "submit": {
+            "ca": "Iniciar sessió",
+            "es": "Iniciar sesión",
+            "en": "Log in"
         }
     },
     "admin/index.php": {
@@ -220,6 +260,21 @@
             "ca": "ADMIN El Penjat",
             "es": "ADMIN Ahorcado",
             "en": "Hangman ADMIN"
+        },
+        "title": {
+            "ca": "Panell de control",
+            "es": "Panel de control",
+            "en": "Control Panel"
+        },
+        "link-to-list-sentences": {
+            "ca": "Llistar frases",
+            "es": "Listar frases",
+            "en": "List sentences"
+        },
+        "link-to-create-sentence": {
+            "ca": "Afegir frase",
+            "es": "Añadir frase",
+            "en": "Add a sentence"
         }
     },
     "admin/logout.php": {
@@ -227,6 +282,16 @@
             "ca": "ADMIN El Penjat - Tancar sessió",
             "es": "ADMIN El Ahorcado - Cerrar sesión",
             "en": "Hangman ADMIN - Logout"
+        },
+        "title": {
+            "ca": "Sessió tancada",
+            "es": "Sesión cerrada",
+            "en": "Logged out successfully"
+        },
+        "subtitle": {
+            "ca": "Ja pots tancar la pestanya.",
+            "es": "Ya puedes cerrar la pestaña.",
+            "en": "You may now close the tab."
         }
     },
     "admin/create_sentence.php": {
