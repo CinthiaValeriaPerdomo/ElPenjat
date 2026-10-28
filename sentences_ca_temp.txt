@@ -1,5 +1,0 @@
-El bug ha tornat
-Avui no compila res
-Qui sembra, recull
-PHP ha decidit no funcionar
-El servidor necessita vacances

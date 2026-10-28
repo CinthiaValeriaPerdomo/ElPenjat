@@ -1,9 +1,10 @@
 <?php
     session_start();
-    if ($_SESSION["admin-access"] != "S") {
-        header('Location: /admin/login.php');
-        exit();
-    }
+
+    // if ($_SESSION["admin-access"] != "S") {
+    //     header('Location: /admin/login.php');
+    //     exit();
+    // }
 
     
 ?><!DOCTYPE html>
@@ -26,7 +27,7 @@
     <div class="container">
 
         <?php
-            $frasesStr = file_get_contents("../sentences_ca_temp.txt");
+            $frasesStr = file_get_contents("../sentences_ca.txt");
             $frases = explode("\n", $frasesStr);
             $pos = $_POST["pos"];
             $frase = $frases[$pos];
@@ -39,10 +40,10 @@
         <?php
             if (isset($_POST["resposta"]) && $_POST["resposta"] == "si") {
                 unset($frases[$pos]);
-                if (file_put_contents("../sentences_ca_temp.txt", implode("\n", $frases)) !== false) {
-                    $_SESSION['feedback'] = "<p>La frase <em>". $_POST["frase"]."</em> es va esborrar correctament!</p>";
+                if (file_put_contents("../sentences_ca.txt", implode("\n", $frases)) !== false) {
+                    $_SESSION['feedback'] = "<p class='success'>La frase '<em>". $_POST["frase"]."</em>' es va esborrar correctament!</p>";
                 }else {
-                    $_SESSION['feedback'] = "<p>Error en eliminar la frase.</p>";
+                    $_SESSION['feedback'] = "<p class='error'>Error en eliminar la frase.</p>";
                 }
                 header("Location: list_sentences.php");
                 exit();

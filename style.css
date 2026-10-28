@@ -609,3 +609,23 @@ noscript {
 #confirm-input:hover {
     background-color: #70435F;
 }
+
+.feedback {
+    width: fit-content;
+    margin: 20px auto;
+    padding: 25px 8px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+.success {
+    background-color: #d4edda;
+    color: green;
+    border: 1px solid green;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: darkred;
+    border: 1px solid darkred;
+}
