@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once "/localization.php";
+    require_once __DIR__ . "/../localization.php";
     setPage("admin/login.php");
 
 ?><!DOCTYPE html>
@@ -23,16 +23,16 @@
             <?php
             if ($_SESSION["admin-access"] == "N") {
                 echo "<h3 id='wrong-credentials'>";
-                echo t("wrong-crdentials");
+                echo t("wrong-credentials");
                 echo "</h3>\n";
                 unset($_SESSION["admin-access"]);
             }
             ?>
             <div class="flex-center">
                 
-                <label for="username"><?= t("username") ?></label>
+                <label for="username"><?= t("label-username") ?></label>
                 <input type="text" id="username" name="username">
-                <label for="password"><?= t("password") ?></label>
+                <label for="password"><?= t("label-password") ?></label>
                 <input type="text" id="password" name="password">
             </div>
             <button type="submit"><?= t("submit") ?></button>

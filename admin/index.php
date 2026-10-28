@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once "/localization.php";
+    require_once __DIR__ . "/../localization.php";
     setPage("admin/index.php");
 
     if(!empty($_POST)) {

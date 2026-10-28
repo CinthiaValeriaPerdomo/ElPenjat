@@ -1,5 +1,8 @@
 <?php
-$localization = json_decode(file_get_contents("localization.json"), true);
+$localization = json_decode(
+    file_get_contents(__DIR__ . '/localization.json'),
+    true
+);
 $page = "";
 
 function getLang() {
@@ -20,7 +23,8 @@ function t($key) {
     $lang = getLang();
     
     $str = $localization[$page][$key][$lang]
-        ?? $localization["_shared"][$key][$lang];
-    return $str ?? $key;
+        ?? $localization["_shared"][$key][$lang]
+        ?? $key;
+    return $str;
 }
 ?>

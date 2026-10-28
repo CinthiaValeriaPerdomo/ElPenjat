@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once "/localization.php";
+    require_once __DIR__ . "/../localization.php";
     setPage("admin/logout.php");
 
     if ($_SESSION["admin-access"] != "S") {
