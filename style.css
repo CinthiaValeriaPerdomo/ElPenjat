@@ -660,35 +660,25 @@ noscript {
 #egg {
     position: fixed;
     inset: 0;
-    /*ocupa todo el espacio*/
-    background: rgba(0, 0, 0, 0.65);
-    /* el velo */
+    background: rgba(0, 0, 0, 0.65);    
     opacity: 0;
-    /*esta escondido no lo muestra hasta que usaos la clase visible*/
     pointer-events: none;
-    /*no implica nada en el juego */
     transition: opacity 1s;
-    /*que la opacidad cambie o tarde en cambiar un segundo */
-    /*lo quehace es esconderme todo lo que tenemos atras es decir play.php*/
 }
 
 #egg.visible {
     opacity: 1;
-    /*aqui funciona la transition de 0 a 1 en un segundo*/
+
 }
 
 .calavera {
-    /*lo coloca en su lugar normal para lo convierte en punto de referencia para sus hijos que tengan position absolute se mueven en su contenedor es decir dentro de .calavera*/
     width: 260px;
-    /**/
     transform: scale(0.3);
-    /*Cambia el tamaño de la calavera y con transition la hacemos que valla creciendo lento*/
     transition: transform 5s;
 }
 
 #egg.visible .calavera {
     transform: scale(1.15);
-    /*aqui la hace mas grande*/
 }
 
 .calavera img {

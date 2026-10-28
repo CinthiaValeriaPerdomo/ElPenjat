@@ -69,12 +69,21 @@ function fallo(tecla) {
 
     errors++;
     pImg.src = "assets/images/penjat-" + errors + ".png";
+    if (errors === 2){
+        mostrarEasterEgg();
+    }
 }
 
 
 // const letrasFrase = [...new Set(frase.replaceAll(" ", ""))];
-const fraseSinSignos = frase.replace(/[^A-ZÑÇ]/g, "");
-const letrasFrase = [...new Set(fraseSinSignos)];
+
+const letrasFrase = [];
+for (let i = 0; i < fraseBase.length; i++) {
+    const letra = fraseBase[i];
+    if (letra >= "A" && letra <= "Z" && !letrasFrase.includes(letra)) {
+        letrasFrase.push(letra);
+    }
+}
 
 let contador_consonantes = 0;
 function jugar(tecla) {
@@ -91,26 +100,23 @@ function jugar(tecla) {
         } else {
             fallo(tecla);
         }
-        reiniciarTemporizador();
-        mostrarEasterEgg();
+
     } else if (vocales.includes(lletra)) {
         const letrasPendientes = letrasFrase.filter(letraFrase => !acertadas.includes(letraFrase));
-        console.log("Frase:", frase);
-        console.log("Letras únicas:", letrasFrase);
-        console.log("Letras pendientes:", letrasPendientes);
-        console.log("Letras acertadas:", acertadas);
-        console.log("Vocal pulsada:", lletra);
         if (contador_consonantes >= 3) {
             contador_consonantes = 0;
             if (fraseBase.includes(lletra)) {
                 acierto(tecla, lletra);
-
             } else {
                 fallo(tecla);
             }
 
-        } else if (letrasPendientes.length === 1 && vocales.includes(letrasPendientes[0]) && letrasPendientes[0] === lletra) {
-            acierto(tecla, lletra);
+        } else if (letrasPendientes.length <= 3) {
+            if (fraseBase.includes(lletra)) {
+                acierto(tecla, lletra);
+            } else {
+                fallo(tecla);
+            }
         } else {
             mostrarError("DEBE INGRESAR COMO MINIMO TRES CONSONANTES ANTES DE UNA VOCAL");
             tecla.disabled = false;
@@ -196,20 +202,18 @@ function calcularPunctuacion(guanyat) {
 
 
 // EASTER EGG 
-let temporizador;
-let yaSalio = false;
 
-function reiniciarTemporizador() {
-    clearTimeout(temporizador);
-    if (!yaSalio) temporizador = setTimeout(mostrarEasterEgg, 60000);
-}
+
+
+
+
 
 function mostrarEasterEgg() {
-    yaSalio = true;
+    
     const egg = document.getElementById('egg');
     egg.classList.add('visible');
 
     setTimeout(() => {
         egg.classList.remove('visible');
-    }, 5000)
+    }, 5000);
 }
