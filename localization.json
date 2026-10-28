@@ -39,6 +39,21 @@
             "ca": "Tancar sessió",
             "es": "Cerrar sesión",
             "en": "Log out"
+        },
+        "diff-easy": {
+            "ca": "Fàcil",
+            "es": "Fácil",
+            "en": "Easy"
+        },
+        "diff-normal": {
+            "ca": "Normal",
+            "es": "Normal",
+            "en": "Normal"
+        },
+        "diff-hard": {
+            "ca": "Difícil",
+            "es": "Difícil",
+            "en": "Hard"
         }
     }, 
     "index.php": {
@@ -76,21 +91,6 @@
             "ca": "Dificultat:",
             "es": "Dificultad:",
             "en": "Difficulty:"
-        },
-        "option-easy": {
-            "ca": "Fàcil",
-            "es": "Fácil",
-            "en": "Easy"
-        },
-        "option-normal": {
-            "ca": "Normal",
-            "es": "Normal",
-            "en": "Normal"
-        },
-        "option-hard": {
-            "ca": "Difícil",
-            "es": "Difícil",
-            "en": "Hard"
         },
         "button-play": {
             "ca": "JUGAR",
@@ -299,6 +299,21 @@
             "ca": "ADMIN El Penjat - Crear frase",
             "es": "ADMIN El Ahorcado - Crear frase",
             "en": "Hangman ADMIN - Create sentence"
+        },
+        "title": {
+            "ca": "AFEGIR FRASE",
+            "es": "AÑADIR FRASE",
+            "en": "ADD A SENTENCE"
+        },
+        "p-difficulty": {
+            "ca": "Dificultat: ",
+            "es": "Dificultad: ",
+            "en": "Difficulty: "
+        },
+        "submit-add": {
+            "ca": "Afegir",
+            "es": "Añadir",
+            "en": "Add"
         }
     },
     "admin/list_sentences.php": {
@@ -306,6 +321,26 @@
             "ca": "ADMIN El Penjat - Llistar frases",
             "es": "ADMIN El Ahorcado - Listar frases",
             "en": "Hangman ADMIN - List sentences"
+        },
+        "title": {
+            "ca": "LLISTAR FRASES",
+            "es": "LISTAR FRASES",
+            "en": "LIST SENTENCES"
+        },
+        "th1": {
+            "ca": "Frase",
+            "es": "Frase",
+            "en": "Sentence"
+        },
+        "th2": {
+            "ca": "Dificultat",
+            "es": "Dificultad",
+            "en": "Difficulty"
+        },
+        "th3": {
+            "ca": "Acció",
+            "es": "Acción",
+            "en": "Action"
         }
     },
     "admin/delete_sentence.php": {
@@ -313,6 +348,36 @@
             "ca": "ADMIN El Penjat - Eliminar frase",
             "es": "ADMIN El Ahorcado - Eliminar frase",
             "en": "Hangman ADMIN - Delete sentence"
+        },
+        "title": {
+            "ca": "Vols eliminar aquesta frase?",
+            "es": "¿Quieres eliminar esta frase?",
+            "en": "Do you want to delete this sentence?"
+        },
+        "feedback-success-substr1": {
+            "ca": "La frase '",
+            "es": "¡La frase '",
+            "en": "The sentence '"
+        },
+        "feedback-success-substr2": {
+            "ca": "' s'ha esborrat correctament!",
+            "es": "' se ha borrado correctamente!'",
+            "en": "' has been deleted successfully!"
+        },
+        "feedback-error": {
+            "ca": "Error en eliminar la frase.",
+            "es": "Error en eliminar la frase.",
+            "en": "Error en eliminar la frase."
+        },
+        "button-confirm": {
+            "ca": "Eliminar",
+            "es": "Eliminar",
+            "en": "Delete"
+        },
+        "button-cancel": {
+            "ca": "Cancelar",
+            "es": "Cancelar",
+            "en": "Cancel"
         }
     }
 }

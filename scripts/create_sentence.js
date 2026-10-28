@@ -24,18 +24,18 @@ function clasificarFrase(frase) {
 
     if (numFaltan >= 13) {
         if (numLetras <= 28) {
-            return "Difícil";
+            return tDificil;
         } else {
-            return "Normal";
+            return tNormal;
         }
     } else if (numFaltan <= 9) {
         if (numLetras >= 30) {
-            return "Fàcil";
+            return tFacil;
         } else {
-            return "Normal";
+            return tNormal;
         }
     } else {
-        return "Normal";
+        return tNormal;
     }
 }
 

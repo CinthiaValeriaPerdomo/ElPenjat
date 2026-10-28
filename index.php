@@ -59,9 +59,9 @@
                 <div>
                     <label for="nivell"><?= t("label-diff") ?></label>
                     <select name="nivell" id="nivell">
-                        <option value="Fàcil"><?= t("option-easy") ?></option>
-                        <option  value="Normal" selected><?= t("option-normal") ?></option>
-                        <option value="Difícil"><?= t("option-hard") ?></option>
+                        <option value="Fàcil"><?= t("diff-easy") ?></option>
+                        <option value="Normal" selected><?= t("diff-normal") ?></option>
+                        <option value="Difícil"><?= t("diff-hard") ?></option>
                     </select>
                 </div>
             </div>

@@ -1,26 +1,28 @@
 <?php 
     session_start();
-    // if(!isset($_SESSION["admin-username"])){
-    //     header("Location: login.php");
-    //     exit();
-    // }
+    require_once __DIR__ . "/../localization.php";
+    setPage("admin/list_sentences.php");
+
+    if ($_SESSION["admin-access"] != "S") {
+        header('Location: /admin/login.php');
+        exit();
+    }
 ?><!DOCTYPE html>
 <html lang="ca">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADMIN El Penjat - Listar frases</title>
+    <title><?= t("html-title") ?></title>
     <link rel="stylesheet" href="../style.css">
 </head>
 
 <body class="admin-page">
     <header id="admin-header" class="flex-center">
         <div class="flex-center">
-            <h3>Admin</h3>
-            <p>Hola, <?= $_SESSION["admin-username"]?></p>
-            <a id="logout" class="link-button" href="logout.php">
-                <img src="../assets/images/logout.svg" alt="">
-                    Tancar sessió
+            <h3><?= t("admin-header") ?></h3>
+            <p><?= t("admin-greeting").$_SESSION["admin-username"] ?></p>
+            <a id="logout" class="link-button secondary" href="logout.php">
+                <?= t("link-to-logout") ?>
             </a>
         </div>
     </header>
@@ -35,13 +37,13 @@
     <?php endif; ?>
     
     <div class="container">
-        <h1>LLISTAR FRASES</h1>
+        <h1><?= t("title") ?></h1>
         <table>
             <thead id="phrases-header">
                 <tr>
-                    <th>Frase</th>
-                    <th>Dificultat</th>
-                    <th>Acció</th>
+                    <th><?= t("th1") ?></th>
+                    <th><?= t("th2") ?></th>
+                    <th><?= t("th3") ?></th>
                 </tr>
             </thead>
             <tbody id="phrases-rows">
@@ -53,11 +55,11 @@
                         echo "<tr>";
                         echo "<td>$frase</td>";
                         if (in_array($frase,$frasesClasificadas[0])) {
-                            echo "<td>Fàcil</td>";
+                            echo "<td>".t("diff-easy")."</td>";
                         }elseif(in_array($frase,$frasesClasificadas[1])){
-                            echo "<td>Normal</td>";
+                            echo "<td>".t("diff-normal")."</td>";
                         }else{
-                            echo "<td>Difícil</td>";
+                            echo "<td>".t("diff-hard")."</td>";
                         }     
                 ?>
                 <td>

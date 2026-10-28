@@ -1,5 +1,7 @@
 <?php
     session_start();
+    require_once __DIR__ . "/../localization.php";
+    setPage("play.php");
 
     if (isset($_POST["fi"])) {
         $_SESSION["guanyat"] = ($_POST["guanyat"] == "1");
@@ -54,15 +56,15 @@ $frase = mb_strtoupper($frase, "UTF-8");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Penjat - Partida</title>
+    <title><?= t("html-title") ?></title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="play">
     <noscript class="flex-center">
         <div>
-            <h3>! JavaScript desactivat !</h3>
-            <p class="gold-text">És necessari el JavaScript per jugar a aquest joc.</p>
-            <p>Activa'l al teu navegador.</p>
+            <h3><?= t("noscript-title") ?></h3>
+            <p class="gold-text"><?= t("noscript-p1") ?></p>
+            <p><?= t("noscript-p2") ?></p>
         </div>
     </noscript>
 
@@ -88,8 +90,8 @@ $frase = mb_strtoupper($frase, "UTF-8");
     <audio><source src="assets/audio/skeleton-music-loop.wav" type="audio/wav"></audio>    
 
     <div class="container" id="container-play">
-        <h1>LA MANSIÓ EMBRUIXADA</h1>
-        <h6>DESCOBREIX EL MISTERI</h6>
+        <h1><?= t("title") ?></h1>
+        <h6><?= t("subtitle") ?></h6>
         <p id="frase"></p>
         <img id="penjat" src="assets/images/penjat-0.png" alt="Penjat" width="200">
         <table id="teclat">
@@ -115,7 +117,7 @@ $frase = mb_strtoupper($frase, "UTF-8");
     <div id="mensaje-error" class="fondo-alerta oculto">
         <div class="alerta">
             <span id="texto-alerta">    
-                Antes de poder elegir una vocal, debes elegir tres consonantes.
+                <?= t("alert") ?>
             </span>
             <button onclick="cerrarMensaje()" class="btn-cerrar">X</button>
         </div>
