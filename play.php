@@ -39,7 +39,7 @@ function escogerFrase($frases, $nivell){
     return $seleccion[array_rand($seleccion)];
 }
 
-$fitxer = "sentences_ca.txt";
+$fitxer = "sentences_".getLang().".txt";
 $frases = file($fitxer, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
 $frase = escogerFrase($frases, $nivell);
