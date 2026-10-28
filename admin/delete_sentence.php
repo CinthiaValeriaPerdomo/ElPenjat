@@ -1,10 +1,10 @@
 <?php
     session_start();
 
-    // if ($_SESSION["admin-access"] != "S") {
-    //     header('Location: /admin/login.php');
-    //     exit();
-    // }
+    if ($_SESSION["admin-access"] != "S") {
+        header('Location: /admin/login.php');
+         exit();
+    }
 
     
 ?><!DOCTYPE html>

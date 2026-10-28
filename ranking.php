@@ -10,8 +10,7 @@ if ($_POST["resposta"] == "S") {
     ];
     file_put_contents("records.txt", implode(",", $lastRecord)."\n", FILE_APPEND);
 }
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="ca">
 <head>
     <meta charset="UTF-8">

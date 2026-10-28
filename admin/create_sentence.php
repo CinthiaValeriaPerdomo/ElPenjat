@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-// if ($_SESSION["admin-access"] != "S") {
-//     header('Location: /admin/login.php');
-//     exit();
-// }
+  if ($_SESSION["admin-access"] != "S") {
+        header('Location: /admin/login.php');
+        exit();
+    }
 
   if (!empty($_POST["frase"])) {
         $frase = trim($_POST["frase"]);
@@ -23,8 +23,7 @@ session_start();
         header("Location: list_sentences.php");
         exit();
     }
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="ca">
 <head>
     <meta charset="UTF-8">
@@ -44,7 +43,7 @@ session_start();
     <div class="container">
         <h1>AFEGIR FRASE</h1>
         <form action="create_sentence.php" method="post">
-            <input type="text" id="frase" name="frase" autocomplete="off">
+            <input type="text" id="frase" name="frase">
             <p>Dificultat: <span id="dificultat">_____</span></p>
             <button type="submit">Afegir</button>
         </form>
