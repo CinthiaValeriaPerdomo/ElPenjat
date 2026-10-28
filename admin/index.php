@@ -8,7 +8,7 @@
         $credentials = [];
         for ($i=0; $i < count($credentialsStr); $i++) { 
             $cred = explode(":", $credentialsStr[$i]);
-            $credentials[$cred[0]] = $cred[1];
+            $credentials[$cred[0]] = trim($cred[1]);
         }
 
         $_SESSION["admin-access"] = "S";
