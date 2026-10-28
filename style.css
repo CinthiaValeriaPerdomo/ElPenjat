@@ -224,6 +224,7 @@ noscript {
     background: url("assets/images/manor_foyer.jpg") no-repeat center center fixed;
     background-size: cover;
 }
+
 .admin-page {
     background: url("assets/images/bg_admin.png") no-repeat center center fixed;
     background-size: 100% 100%;
@@ -406,39 +407,6 @@ noscript {
     }
 }
 
-/* Estilo base del mensaje flotante */
-.alerta {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #ff4d4d;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    z-index: 1000;
-    /* Asegura que esté por encima de todo */
-    font-family: sans-serif;
-}
-
-/* Clase utilitaria para ocultar el elemento */
-.oculto {
-    display: none;
-}
-
-/* Estilo para el botón de la 'x' */
-.btn-cerrar {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-    font-weight: bold;
-}
 
 /* - - - Teclat - - - */
 
@@ -476,39 +444,7 @@ noscript {
 }
 
 
-/* Estilo base del mensaje flotante */
-.alerta {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #ff4d4d;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    z-index: 1000;
-    /* Asegura que esté por encima de todo */
-    font-family: sans-serif;
-}
 
-/* Clase utilitaria para ocultar el elemento */
-.oculto {
-    display: none;
-}
-
-/* Estilo para el botón de la 'x' */
-.btn-cerrar {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-    font-weight: bold;
-}
 
 /***********************************/
 /* - - - Estils gameover.php - - - */
@@ -562,13 +498,16 @@ noscript {
     background-color: #224;
     height: 80px;
 }
+
 #admin-header div {
     width: 60%;
     justify-content: space-between;
 }
+
 #admin-header p {
     font-size: 24px;
 }
+
 #admin-header * {
     margin: 0
 }
@@ -591,10 +530,11 @@ noscript {
 /* - - - Estils admin/list_sentences.php - - - */
 /***********************************************/
 .admin-page h1 {
-    font-family: 'Grenze Gotisch', serif;    
+    font-family: 'Grenze Gotisch', serif;
     color: #70435F;
 
 }
+
 .admin-page .container {
     box-shadow: none;
     position: relative;
@@ -609,11 +549,12 @@ noscript {
     color: #FFF2F5;
     border: 1px solid #A18191;
 }
-#phrases-header th{
+
+#phrases-header th {
     border: 1px solid #89634D;
     background-color: #48251F;
     color: #D8B77A;
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .admin-page table {
@@ -704,35 +645,25 @@ noscript {
 #egg {
     position: fixed;
     inset: 0;
-    /*ocupa todo el espacio*/
     background: rgba(0, 0, 0, 0.65);
-    /* el velo */
     opacity: 0;
-    /*esta escondido no lo muestra hasta que usaos la clase visible*/
     pointer-events: none;
-    /*no implica nada en el juego */
     transition: opacity 1s;
-    /*que la opacidad cambie o tarde en cambiar un segundo */
-    /*lo quehace es esconderme todo lo que tenemos atras es decir play.php*/
 }
 
 #egg.visible {
     opacity: 1;
-    /*aqui funciona la transition de 0 a 1 en un segundo*/
+
 }
 
 .calavera {
-    /*lo coloca en su lugar normal para lo convierte en punto de referencia para sus hijos que tengan position absolute se mueven en su contenedor es decir dentro de .calavera*/
     width: 260px;
-    /**/
     transform: scale(0.3);
-    /*Cambia el tamaño de la calavera y con transition la hacemos que valla creciendo lento*/
     transition: transform 5s;
 }
 
 #egg.visible .calavera {
     transform: scale(1.15);
-    /*aqui la hace mas grande*/
 }
 
 .calavera img {
@@ -755,4 +686,46 @@ noscript {
 
 .ojo-der {
     right: 25%;
+}
+
+
+/***********************************/
+/* - - - Estils MensajeDeVocal play.php - - - */
+/***********************************/
+
+.fondo-alerta {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.alerta {
+    background-color: #4640405e;
+    font-size: 20px;
+    color: white;
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 90%;
+    font-family: sans-serif;
+}
+
+.btn-cerrar {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.oculto {
+    display: none;
 }

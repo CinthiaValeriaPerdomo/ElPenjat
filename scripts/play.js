@@ -17,6 +17,9 @@ const audiosError = Array.from(audios).slice(3, 6);
 const audiosRiure = Array.from(audios).slice(6, 15);
 const audioBach = audios[15];
 const audioAplaudiment = audios[16];
+// const audioEggIntro = audios[17];
+// const audioEggHorror = audios[18];
+// const audioEggLoop = audios[19];
 
 function lletraBase(lletra) {
     let pos = conAcento.indexOf(lletra);
@@ -69,12 +72,28 @@ function fallo(tecla) {
 
     errors++;
     pImg.src = "assets/images/penjat-" + errors + ".png";
+    if (errors === 1) {
+        const audioEggIntro = new Audio("assets/audio/horror-shock.wav");
+        const audioEggHorror = new Audio("assets/audio/skeleton-music-intro.wav");
+        const audioEggLoop = new Audio("assets/audio/skeleton-music-loop.wav");
+        audioEggIntro.play();
+        audioEggHorror.play();
+        setTimeout(() => audioEggLoop.play(), audioEggIntro.duration);
+        setTimeout(() => audioEggLoop.pause(), 10000);
+        mostrarEasterEgg();
+    }
 }
 
 
 // const letrasFrase = [...new Set(frase.replaceAll(" ", ""))];
-const fraseSinSignos = frase.replace(/[^A-ZÑÇ]/g, "");
-const letrasFrase = [...new Set(fraseSinSignos)];
+
+const letrasFrase = [];
+for (let i = 0; i < fraseBase.length; i++) {
+    const letra = fraseBase[i];
+    if (letra >= "A" && letra <= "Z" && !letrasFrase.includes(letra)) {
+        letrasFrase.push(letra);
+    }
+}
 
 let contador_consonantes = 0;
 function jugar(tecla) {
@@ -91,28 +110,25 @@ function jugar(tecla) {
         } else {
             fallo(tecla);
         }
-        reiniciarTemporizador();
-        mostrarEasterEgg();
+
     } else if (vocales.includes(lletra)) {
         const letrasPendientes = letrasFrase.filter(letraFrase => !acertadas.includes(letraFrase));
-        console.log("Frase:", frase);
-        console.log("Letras únicas:", letrasFrase);
-        console.log("Letras pendientes:", letrasPendientes);
-        console.log("Letras acertadas:", acertadas);
-        console.log("Vocal pulsada:", lletra);
         if (contador_consonantes >= 3) {
             contador_consonantes = 0;
             if (fraseBase.includes(lletra)) {
                 acierto(tecla, lletra);
-
             } else {
                 fallo(tecla);
             }
 
-        } else if (letrasPendientes.length === 1 && vocales.includes(letrasPendientes[0]) && letrasPendientes[0] === lletra) {
-            acierto(tecla, lletra);
+        } else if (letrasPendientes.length <= 3) {
+            if (fraseBase.includes(lletra)) {
+                acierto(tecla, lletra);
+            } else {
+                fallo(tecla);
+            }
         } else {
-            mostrarError("DEBE INGRESAR COMO MINIMO TRES CONSONANTES ANTES DE UNA VOCAL");
+            mostrarError();
             tecla.disabled = false;
         }
 
@@ -121,19 +137,25 @@ function jugar(tecla) {
     comprovarFinal();
 }
 
-function mostrarError(texto) {
-    const alerta = document.getElementById("mensaje-error");
-    const textoAlerta = document.getElementById("texto-alerta");
 
-    textoAlerta.textContent = texto;
-    alerta.classList.remove("oculto")
+/***********************************/
+/* - - - Mensaje de error de vocales - - - */
+/***********************************/
+
+function mostrarError() {
+    document.getElementById("mensaje-error").classList.remove("oculto");
+    document.querySelector(".btn-cerrar").focus();
 }
-
 
 function cerrarMensaje() {
-    const alerta = document.getElementById("mensaje-error");
-    alerta.classList.add("oculto");
+    document.getElementById("mensaje-error").classList.add("oculto");
 }
+
+
+
+/***********************************/
+
+/***********************************/
 
 function comprovarFinal() {
     if (errors == maxErrores) {
@@ -195,21 +217,16 @@ function calcularPunctuacion(guanyat) {
 
 
 
-// EASTER EGG 
-let temporizador;
-let yaSalio = false;
 
-function reiniciarTemporizador() {
-    clearTimeout(temporizador);
-    if (!yaSalio) temporizador = setTimeout(mostrarEasterEgg, 60000);
-}
-
+/***********************************/
+/* -  -  -  EASTER EGG  -  -  - */
+/***********************************/
 function mostrarEasterEgg() {
-    yaSalio = true;
+
     const egg = document.getElementById('egg');
     egg.classList.add('visible');
 
     setTimeout(() => {
         egg.classList.remove('visible');
-    }, 5000)
+    }, 9000);
 }
