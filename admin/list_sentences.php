@@ -48,7 +48,7 @@
             </thead>
             <tbody id="phrases-rows">
                 <?php
-                    $frasesStr = explode("\n", file_get_contents("../sentences_ca.txt"));
+                    $frasesStr = explode("\n", file_get_contents("../sentences_".getLang().".txt"));
                     require_once '../functions.php';
                     $frasesClasificadas = clasificar($frasesStr);
                     foreach ($frasesStr as $i => $frase) {
