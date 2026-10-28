@@ -83,6 +83,9 @@ $frase = mb_strtoupper($frase, "UTF-8");
     <audio><source src="assets/audio/riure-de-bruixa9.wav" type="audio/wav"></audio>
     <audio><source src="assets/audio/bach.wav"        type="audio/wav"></audio>
     <audio><source src="assets/audio/aplaudiment.wav" type="audio/wav"></audio>
+    <audio><source src="assets/audio/horror-shock.wav" type="audio/wav"></audio>
+    <audio><source src="assets/audio/skeleton-music-intro.wav" type="audio/wav"></audio>
+    <audio><source src="assets/audio/skeleton-music-loop.wav" type="audio/wav"></audio>    
 
     <div class="container" id="container-play">
         <h1>LA MANSIÓ EMBRUIXADA</h1>
@@ -109,12 +112,13 @@ $frase = mb_strtoupper($frase, "UTF-8");
             <input type="hidden" name="puntuacio" id="puntuacio" value="0">
         </form>
     </div>
-    <div id="mensaje-error" class="alerta oculto">
-        <span id="texto-alerta">REQUISITOS DE ENTRADA: <br>
-            El patrón debe contener tres consonantes consecutivas seguidas de una vocal (ejemplo: "trpA"). <br>
-            Por favor, ingrese o seleccione según el formato indicado.
-        </span>
-        <button onclick="cerrarMensaje()" class="btn-cerrar">X</button>
+    <div id="mensaje-error" class="fondo-alerta oculto">
+        <div class="alerta">
+            <span id="texto-alerta">    
+                Antes de poder elegir una vocal, debes elegir tres consonantes.
+            </span>
+            <button onclick="cerrarMensaje()" class="btn-cerrar">X</button>
+        </div>
     </div>
 
     <div id="egg" class="flex-center">

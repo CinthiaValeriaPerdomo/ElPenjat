@@ -17,6 +17,9 @@ const audiosError = Array.from(audios).slice(3, 6);
 const audiosRiure = Array.from(audios).slice(6, 15);
 const audioBach = audios[15];
 const audioAplaudiment = audios[16];
+// const audioEggIntro = audios[17];
+// const audioEggHorror = audios[18];
+// const audioEggLoop = audios[19];
 
 function lletraBase(lletra) {
     let pos = conAcento.indexOf(lletra);
@@ -69,7 +72,14 @@ function fallo(tecla) {
 
     errors++;
     pImg.src = "assets/images/penjat-" + errors + ".png";
-    if (errors === 2){
+    if (errors === 1) {
+        const audioEggIntro = new Audio("assets/audio/horror-shock.wav");
+        const audioEggHorror = new Audio("assets/audio/skeleton-music-intro.wav");
+        const audioEggLoop = new Audio("assets/audio/skeleton-music-loop.wav");
+        audioEggIntro.play();
+        audioEggHorror.play();
+        setTimeout(() => audioEggLoop.play(), audioEggIntro.duration);
+        setTimeout(() => audioEggLoop.pause(), 10000);
         mostrarEasterEgg();
     }
 }
@@ -118,7 +128,7 @@ function jugar(tecla) {
                 fallo(tecla);
             }
         } else {
-            mostrarError("DEBE INGRESAR COMO MINIMO TRES CONSONANTES ANTES DE UNA VOCAL");
+            mostrarError();
             tecla.disabled = false;
         }
 
@@ -127,19 +137,25 @@ function jugar(tecla) {
     comprovarFinal();
 }
 
-function mostrarError(texto) {
-    const alerta = document.getElementById("mensaje-error");
-    const textoAlerta = document.getElementById("texto-alerta");
 
-    textoAlerta.textContent = texto;
-    alerta.classList.remove("oculto")
+/***********************************/
+/* - - - Mensaje de error de vocales - - - */
+/***********************************/
+
+function mostrarError() {
+    document.getElementById("mensaje-error").classList.remove("oculto");
+    document.querySelector(".btn-cerrar").focus();
 }
-
 
 function cerrarMensaje() {
-    const alerta = document.getElementById("mensaje-error");
-    alerta.classList.add("oculto");
+    document.getElementById("mensaje-error").classList.add("oculto");
 }
+
+
+
+/***********************************/
+
+/***********************************/
 
 function comprovarFinal() {
     if (errors == maxErrores) {
@@ -201,19 +217,16 @@ function calcularPunctuacion(guanyat) {
 
 
 
-// EASTER EGG 
 
-
-
-
-
-
+/***********************************/
+/* -  -  -  EASTER EGG  -  -  - */
+/***********************************/
 function mostrarEasterEgg() {
-    
+
     const egg = document.getElementById('egg');
     egg.classList.add('visible');
 
     setTimeout(() => {
         egg.classList.remove('visible');
-    }, 5000);
+    }, 9000);
 }
