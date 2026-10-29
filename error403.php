@@ -9,14 +9,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= t("html-title") ?></title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body id="error403">
     <div class="container">
         <div class="flex-center">
-            <img class="error-image" src="./assets/images/stop-hand.svg" alt="STOP (mà)"/>
+            <img class="error-image" src="/assets/images/stop-hand.svg" alt="STOP (mà)"/>
             <h1><?= t("title") ?></h1>
-            <img class="error-image" src="./assets/images/stop-hand.svg" alt="STOP (mà)"/>
+            <img class="error-image" src="/assets/images/stop-hand.svg" alt="STOP (mà)"/>
         </div>
         <h6 class="gold-text"><?= t("subtitle") ?></h6>
         <div class="flex-center">
