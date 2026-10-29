@@ -96,6 +96,11 @@
             "ca": "JUGAR",
             "es": "JUGAR",
             "en": "PLAY"
+        },
+         "error-empty-name": {
+            "ca": "El camp està buit",
+            "es": "El campo está vacío",
+            "en": "The field is empty"
         }
     },
     "play.php": {

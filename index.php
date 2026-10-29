@@ -17,6 +17,9 @@
     <title><?= t("html-title") ?></title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style.css?v=2">
+     <script>
+        const msgNomBuit = "<?= t("error-empty-name") ?>";
+    </script>
     <script src="./scripts/index.js" defer></script> 
 </head>
 <body id="index">

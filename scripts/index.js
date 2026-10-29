@@ -18,7 +18,7 @@ formulario.addEventListener('submit', function (evento) {
     // validamos 
     if (nombre === '') {
         errorNombre.style.display = 'block';
-        errorNombre.textContent = 'El camp està buit';
+        errorNombre.textContent = msgNomBuit;
         esValido = false;
         nom.focus();  
     } else {
