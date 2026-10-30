@@ -1,0 +1,731 @@
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+/******************************/
+/* - - - Estils globals - - - */
+/******************************/
+
+/* - - - Document - - - */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    color: white;
+    float: left;
+    /* per prevenir que cap marge d'un element fill s'estengui més enllà del seu contorn (prevenir colapsament de marges)*/
+}
+
+/* - - - Títols - - - */
+
+h1 {
+    font-size: 60px;
+    margin: 24px 0;
+    font-family: 'UnifrakturCook', serif;
+    text-shadow: 1px 0 10px black;
+}
+
+h3 {
+    font-size: 40px;
+    margin: 24px 0;
+    font-family: 'UnifrakturCook', serif;
+    text-shadow: 1px 0 10px black;
+}
+
+h6 {
+    font-size: 20px;
+    font-weight: normal;
+    font-style: italic;
+    margin: 16px 0;
+}
+
+/* - - - Formularis - - - */
+
+label {
+    display: block;
+    /* posa les labels damunt dels inputs */
+    font-size: 25px;
+}
+
+input[type="text"],
+select {
+    width: 250px;
+    height: 50px;
+    border-radius: 5px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    /*vora fina*/
+    background-color: rgba(25, 20, 35, 0.9);
+    padding-left: 10px;
+}
+
+input[type="text"] {
+    color: #e8e8e8;
+    pointer-events: auto;
+}
+
+select {
+    color: #666;
+}
+
+/* - - - Botons - - - */
+
+button,
+a.link-button {
+    padding: 10px;
+    min-width: 120px;
+    border-radius: 4px;
+    border: 3px solid rgba(255, 255, 255, 0.46);
+    background-color: rgb(85, 0, 102);
+    color: white;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 23px;
+    margin-top: 50px;
+
+    &:hover {
+        background-color: purple;
+        cursor: pointer;
+    }
+}
+
+button.secondary,
+a.link-button.secondary {
+    background-color: rgb(51, 51, 51);
+
+    &:hover {
+        background-color: dimgray;
+        cursor: pointer;
+    }
+
+    /* colors grisos treuen ènfasi al botó */
+}
+
+button:disabled,
+a.link-button:disabled {
+    cursor: not-allowed;
+    color: silver;
+    border-color: silver;
+    background-color: dimgray;
+
+    &:hover {
+        background-color: dimgray;
+        cursor: not-allowed;
+    }
+
+    /* grisos amb contraste reduït treuen encara més ènfasi */
+}
+
+a.link-button {
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 16px;
+}
+
+/* - - - Taules - - - */
+
+table {
+    margin: 32px auto;
+    border-collapse: collapse;
+    font-size: 20px;
+}
+
+th,
+td {
+    border: 2px solid white;
+    padding: 8px;
+}
+
+thead {
+    background-color: rgb(85, 0, 102);
+    color: white;
+}
+
+tbody.zebra-rows tr:nth-child(odd) {
+    background-color: black;
+}
+
+tbody.zebra-rows tr:nth-child(even) {
+    background-color: #333;
+}
+
+thead {
+    background-color: rgb(85, 0, 102);
+    color: white;
+}
+
+tbody.zebra-rows tr:nth-child(odd) {
+    background-color: black;
+}
+
+tbody.zebra-rows tr:nth-child(even) {
+    background-color: #333;
+}
+
+
+/* - - - Altres - - - */
+
+noscript {
+    margin: 0;
+    min-width: 100%;
+    background-color: rgb(79, 0, 13);
+
+    & h3 {
+        color: red;
+    }
+}
+
+.flex-center {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.724);
+    width: 60%;
+    margin: 80px auto;
+    border-radius: 10px;
+    padding: 32px;
+    text-align: center;
+    margin-top: 130px;
+    box-shadow: 0 0 300px 50px rgb(0, 0, 0);
+}
+
+.gold-text {
+    color: goldenrod;
+}
+
+/*******************************/
+/* - - - Imatges de fons - - - */
+/*******************************/
+#index,
+#error403,
+#error404 {
+    background: url("assets/images/manor_outdoors.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+#play {
+    background: url("assets/images/manor_hallway.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+#gameover,
+#ranking {
+    background: url("assets/images/manor_foyer.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+.admin-page {
+    background: url("assets/images/bg_admin.png") no-repeat center center fixed;
+    background-size: 100% 100%;
+}
+
+/********************************/
+/* - - - Estils index.php - - - */
+/********************************/
+
+/* - - - Selecció d'idioma - - - */
+#lang-selection {
+    margin-bottom: 50px;
+    justify-content: space-evenly;
+    & a {
+        font-size: 18px;
+        min-width: 0;
+    }
+}
+#lang-ca { background-color: maroon; }
+#lang-es { background-color: darkgoldenrod }
+#lang-en { background-color: navy; }
+
+/* - - - Títol - - - */
+
+#game-title {
+    position: relative;
+    /*per a la imatge*/
+    display: inline-block;
+    /*s'ajusta a l'amplada de h1*/
+
+}
+
+#img-barret {
+    position: absolute;
+    /*es posicionarà segons el contenidor*/
+    top: -30px;
+    /*amunt*/
+    left: 80%;
+    /*espai a l'esquerra*/
+    width: 100px;
+}
+
+/* - - - Descripció - - - */
+
+#description {
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+#description p {
+    font-family: Georgia, "Times New Roman", serif;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: left;
+    padding: 0 100px 10px 100px;
+    /*marges esquerra/dreta*/
+    line-height: 1.5;
+    font-size: 25px;
+}
+
+#description .gold-text {
+    font-style: italic;
+    /*cursiva*/
+}
+
+#linea {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(85, 85, 80, 0.419);
+    margin-bottom: 20px;
+}
+
+/* - - - Formulari - - - */
+
+#nom:focus {
+    color: rgb(234, 226, 226);
+    outline: 2px solid red;
+}
+
+#nivell option {
+    background-color: #1a1423;
+    /* si no, el desplegable segueix en blancs */
+    color: #e8e8e8;
+}
+
+#error-nombre {
+    color: red;
+}
+
+#form-jugar button {
+    margin-top: 50px;
+    height: 50px;
+
+    &:hover {
+        background-color: purple;
+        cursor: pointer;
+    }
+}
+
+#jugar {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 23px;
+}
+
+/*******************************/
+/* - - - Estils play.php - - - */
+/*******************************/
+#container-play h1 {
+    color: #eccc91;
+}
+
+#container-play h6 {
+    color: #462d2a;
+    font-weight: bold;
+}
+
+/* - - - Frase - - - */
+#frase {
+    font-size: 28px;
+}
+
+.casilla {
+    display: inline-block;
+    width: 34px;
+    height: 42px;
+    border: 2px solid #422456;
+    color: #eccc91;
+    box-sizing: border-box;
+    line-height: 38px;
+    text-align: center;
+    margin: 6px 5px;
+    vertical-align: middle;
+}
+
+.signo {
+    display: inline-block;
+    margin: 0 6px;
+    color: #eccc91;
+    vertical-align: middle;
+}
+
+.espacio {
+    display: inline-block;
+    width: 30px;
+    vertical-align: middle;
+}
+
+/* - - - Teclat - - - */
+#teclat {
+    width: 50%;
+}
+
+#teclat td {
+    border: none;
+}
+
+#teclat button {
+    min-width: 0;
+    margin-top: 0;
+    width: 48px;
+    height: 48px;
+    background-color: #120918;
+    border: 1px solid #332A3A;
+    border-radius: 5px;
+    color: #eccc91;
+
+    &.correcta {
+        background-color: rgb(2, 53, 2);
+    }
+
+    &.incorrecta {
+        background-color: rgb(87, 3, 3);
+    }
+
+    &:disabled {
+        cursor: default;
+        position: relative;
+        top: 5px;
+    }
+}
+
+
+/* - - - Teclat - - - */
+
+#teclat {
+    width: 50%;
+}
+
+#teclat td {
+    border: none;
+}
+
+#teclat button {
+    min-width: 0;
+    margin-top: 0;
+    width: 48px;
+    height: 48px;
+    background-color: #120918;
+    border: 1px solid #332A3A;
+    border-radius: 5px;
+    color: #eccc91;
+
+    &.correcta {
+        background-color: rgb(2, 53, 2);
+    }
+
+    &.incorrecta {
+        background-color: rgb(87, 3, 3);
+    }
+
+    &:disabled {
+        cursor: default;
+        position: relative;
+        top: 5px;
+    }
+}
+
+
+
+
+/***********************************/
+/* - - - Estils gameover.php - - - */
+/***********************************/
+#game-win {
+    color: greenyellow;
+    text-shadow: 0 4px 8px forestgreen;
+}
+
+#game-loss {
+    color: darkred;
+    text-shadow: 0 4px 8px coral;
+}
+
+/**********************************/
+/* - - - Estils ranking.php - - - */
+/**********************************/
+
+#last-record {
+    background-color: rgba(255, 217, 0, 0.75);
+    box-shadow: 0 0 5px 5px darkgoldenrod;
+    color: black;
+    font-weight: bold;
+}
+
+/***********************************/
+/* - - - Estils error403.php - - - */
+/* - - - error404.php - - - */
+/***********************************/
+.error-image {
+    width: 100px;
+    height: 100px;
+}
+
+.note-from-witch {
+    background: url("assets/images/witch-note.png") no-repeat center center;
+    background-size: 100% 100%;
+    font-family: "Cookie";
+    font-size: 30px;
+    color: black;
+    width: fit-content;
+    padding: 32px;
+}
+
+
+/*****************************/
+/* - - - Estils admin/ - - - */
+/*****************************/
+
+#admin-header {
+    background-color: #224;
+    height: 80px;
+}
+
+#admin-header div {
+    width: 60%;
+    justify-content: space-between;
+}
+
+#admin-header p {
+    font-size: 24px;
+}
+
+#admin-header * {
+    margin: 0
+}
+
+#logout {
+    font-size: 18px;
+    min-width: 0;
+}
+
+/**************************************/
+/* - - - Estils admin/login.php - - - */
+/**************************************/
+
+#wrong-credentials {
+    color: red;
+    text-shadow: 0 0 16px darkred;
+}
+
+/***********************************************/
+/* - - - Estils admin/list_sentences.php - - - */
+/***********************************************/
+.admin-page h1 {
+    font-family: 'Grenze Gotisch', serif;
+    color: #70435F;
+
+}
+
+.admin-page .container {
+    box-shadow: none;
+    position: relative;
+    left: -120px;
+}
+
+.admin-page table,
+.admin-page th,
+.admin-page td,
+.admin-page #Eliminar,
+.admin-page tr:nth-child(odd) {
+    color: #FFF2F5;
+    border: 1px solid #A18191;
+}
+
+#phrases-header th {
+    border: 1px solid #89634D;
+    background-color: #48251F;
+    color: #D8B77A;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.admin-page table {
+    width: 100%;
+    table-layout: fixed;
+    background-color: #765579;
+}
+
+#phrases-header th {
+    background-color: #503652;
+}
+
+#phrases-rows tr {
+    height: 60px;
+}
+
+#phrases-rows td {
+    padding: 10px;
+    vertical-align: middle;
+}
+
+#phrases-header th:nth-child(1),
+#phrases-rows td:nth-child(1) {
+    width: 60%;
+}
+
+#phrases-header th:nth-child(2),
+#phrases-rows td:nth-child(2),
+#phrases-header th:nth-child(3),
+#phrases-rows td:nth-child(3) {
+    width: 20%;
+}
+
+#phrases-rows tr:nth-child(even) {
+    background-color: #96739C;
+}
+
+#Eliminar {
+    background-color: #70435F;
+    font-size: medium;
+    border-radius: 6px;
+    margin: 0;
+    padding: 12px;
+}
+
+#Eliminar:hover {
+    background-color: #976A8A;
+}
+#confirm-delete {
+    color: #976A8A;
+    text-shadow: 0 4px 8px #FFF2F5;
+}
+#confirm-input{
+    background-color: #96739C;
+    font-size: medium;
+    border-radius: 6px;
+    margin: 0;
+    padding: 12px;
+}
+#confirm-input:hover {
+    background-color: #70435F;
+}
+
+.feedback {
+    width: fit-content;
+    margin: 20px auto;
+    padding: 25px 8px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+.success {
+    background-color: #d4edda;
+    color: green;
+    border: 1px solid green;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: darkred;
+    border: 1px solid darkred;
+}
+/********************************** */
+/* - - - Estils play.php/EASTER EGG - - */
+/***********************************/
+
+
+#egg {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s;
+}
+
+#egg.visible {
+    opacity: 1;
+
+}
+
+.calavera {
+    width: 260px;
+    transform: scale(0.3);
+    transition: transform 5s;
+}
+
+#egg.visible .calavera {
+    transform: scale(1.15);
+}
+
+.calavera img {
+    width: 100%;
+}
+
+.ojo {
+    position: absolute;
+    top: 41%;
+    width: 14%;
+    height: 9%;
+    background: #ff1a1a;
+    border-radius: 50%;
+    box-shadow: 0 0 14px 6px #ff1a1a;
+}
+
+.ojo-izq {
+    left: 25%;
+}
+
+.ojo-der {
+    right: 25%;
+}
+
+
+/***********************************/
+/* - - - Estils MensajeDeVocal play.php - - - */
+/***********************************/
+
+.fondo-alerta {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.alerta {
+    background-color: #4640405e;
+    font-size: 20px;
+    color: white;
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 90%;
+    font-family: sans-serif;
+}
+
+.btn-cerrar {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.oculto {
+    display: none;
+}

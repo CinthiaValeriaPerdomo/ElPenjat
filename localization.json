@@ -1,0 +1,393 @@
+{
+    "_shared": {
+        "noscript-title": {
+            "ca": "! JavaScript desactivat !",
+            "es": "! JavaScript desactivado !",
+            "en": "! JavaScript disabled !"
+        },
+        "noscript-p1": {
+            "ca": "És necessari el JavaScript per jugar a aquest joc.",
+            "es": "Es necesario el JavaScript para jugar a este juego.",
+            "en": "JavaScript is necessary to play this game."
+        },
+        "noscript-p2": {
+            "ca": "Activa'l al teu navegador.",
+            "es": "Actívalo en tu navegador.",
+            "en": "Enable it in your browser."
+        },
+        "link-to-index": {
+            "ca": "Tornar a l'inici",
+            "es": "Volver al inicio",
+            "en": "Return to Homepage"
+        },
+        "link-to-ranking": {
+            "ca": "Veure rànking",
+            "es": "Ver ránking",
+            "en": "Check rankings"
+        },
+        "admin-header": {
+            "ca": "Admin",
+            "es": "Admin",
+            "en": "Admin"
+        },
+        "admin-greeting": {
+            "ca": "Hola, ",
+            "es": "Hola, ",
+            "en": "Hello, "
+        },
+        "link-to-logout": {
+            "ca": "Tancar sessió",
+            "es": "Cerrar sesión",
+            "en": "Log out"
+        },
+        "diff-easy": {
+            "ca": "Fàcil",
+            "es": "Fácil",
+            "en": "Easy"
+        },
+        "diff-normal": {
+            "ca": "Normal",
+            "es": "Normal",
+            "en": "Normal"
+        },
+        "diff-hard": {
+            "ca": "Difícil",
+            "es": "Difícil",
+            "en": "Hard"
+        }
+    }, 
+    "index.php": {
+        "html-title": {
+            "ca": "El Penjat",
+            "es": "El Ahorcado",
+            "en": "Hangman"
+        },
+        "game-title": {
+            "ca": "El Penjat",
+            "es": "El Ahorcado",
+            "en": "Hangman"
+        },
+        "desc-p1": {
+            "ca": "Estaves explorant una mansió encantada. De sobte, va aparèixer la bruixa, la mestressa de la mansió. T'ha acorralat i ha conjurat un encanteri per condemnar-te a viure junt amb els seus espirits per sempre.",
+            "es": "Estabas explorando una mansión encantada. De repente, apareció la bruja, la dueña de la mansión. Te ha acorralado y ha conjurado un hechizo para condenarte a vivir junto a sus espíritus para siempre.",
+            "en": "You were exploring a haunted mansion. Suddenly, the witch appeared, the owner of the mansion. After cornering you, she cast a spell in order to doom you to living among her spirits forevermore."
+        },
+        "desc-p2": {
+            "ca": "Podràs fer servir la teva habilitat lèxica per superar el seu joc malvat i escapar amb vida?",
+            "es": "¿Podrás utilizar tu habilidad léxica para superar su juego malvado y escapar con vida?",
+            "en": "Will you manage to use your lexical skills to overcome her wicked game and make it out alive?"
+        },
+        "label-name": {
+            "ca": "Nom:",
+            "es": "Nombre:",
+            "en": "Name:"
+        },
+        "input-name-placeholder": {
+            "ca": "El teu nom...",
+            "es": "Tu nombre...",
+            "en": "Your name..."
+        },
+        "label-diff": {
+            "ca": "Dificultat:",
+            "es": "Dificultad:",
+            "en": "Difficulty:"
+        },
+        "button-play": {
+            "ca": "JUGAR",
+            "es": "JUGAR",
+            "en": "PLAY"
+        },
+         "error-empty-name": {
+            "ca": "El camp està buit",
+            "es": "El campo está vacío",
+            "en": "The field is empty"
+        }
+    },
+    "play.php": {
+        "html-title": {
+            "ca": "Penjat - Partida",
+            "es": "Ahorcado - Partida",
+            "en": "Hangman - Game"
+        },
+        "title": {
+            "ca": "LA MANSIÓ EMBRUIXADA",
+            "es": "LA MANSIÓN EMBRUJADA",
+            "en": "THE HAUNTED MANSION"
+        },
+        "subtitle": {
+            "ca": "DESCOBREIX EL MISTERI",
+            "es": "DESCUBRE EL MISTERIO",
+            "en": "UNCOVER THE MYSTERY"
+        },
+        "alert": {
+            "ca": "Abans d'escollir una vocal, has d'escollir com a mínim 3 consonants.",
+            "es": "Antes de elegir una vocal, debes elegir al menos 3 consonantes.",
+            "en": "Before guessing a vowel, you must guess at least 3 consonants."
+        }
+    },
+    "gameover.php": {
+        "html-title": {
+            "ca": "Penjat - Fi de partida",
+            "es": "Ahorcado - Fin de partida",
+            "en": "Hangman - Game Over"
+        },
+        "title": {
+            "ca": "Fi de partida",
+            "es": "Fin de partida",
+            "en": "Game Over"
+        },
+        "subtitle-win": {
+            "ca": "Has escapat de la mansió!",
+            "es": "¡Has escapado de la mansión!",
+            "en": "You escaped the mansion!"
+        },
+        "subtitle-loss": {
+            "ca": "T'has convertit en un dels seus esperits.",
+            "es": "Te has convertido en uno de sus espíritus.",
+            "en": "You've turned into one of her spirits."
+        },
+        "log-record": {
+            "ca": "Vols enregistrar el teu récord?",
+            "es": "¿Quieres registrar tu récord?",
+            "en": "Do you wish to log your record?"
+        },
+        "submit-yes": {
+            "ca": "Sí",
+            "es": "Sí",
+            "en": "Yes"
+        },
+        "submit-no": {
+            "ca": "No, gràcies.",
+            "es": "No, gracias.",
+            "en": "No, thank you."
+        }
+    },
+    "ranking.php": {
+        "html-title": {
+            "ca": "Penjat - Rànking",
+            "es": "Ahorcado - Ránking",
+            "en": "Hangman - Rankings"
+        },
+        "title": {
+            "ca": "Taula de classificacions",
+            "es": "Tabla de clasificaciones",
+            "en": "Leaderboard"
+        },
+        "th1": {
+            "ca": "Nom",
+            "es": "Nombre",
+            "en": "Name"
+        },
+        "th2": {
+            "ca": "Puntuació",
+            "es": "Puntuación",
+            "en": "Score"
+        },
+        "th3": {
+            "ca": "Data",
+            "es": "Fecha",
+            "en": "Date"
+        }
+    },
+    "error403.php": {
+        "html-title": {
+            "ca": "Penjat - Error 403",
+            "es": "Ahorcado - Error 403",
+            "en": "Hangman - 403 Error"
+        },
+        "title": {
+            "ca": "Accés denegat",
+            "es": "Acceso denegado",
+            "en": "Access Denied"
+        },
+        "subtitle": {
+            "ca": "Prohibit el pas!",
+            "es": "¡Prohibido el paso!",
+            "en": "No Trespassing!"
+        },
+        "note-from-witch": {
+            "ca": "Però què fas aquí?! <br> A la meva mansió s'entra per la porta! <br> - Sincerament, Bruixa Penny Jatty",
+            "es": "¡¿Pero qué estás haciendo aquí?! <br> ¡A mi mansión se entra por la puerta! <br> - Sinceramente, Bruja Éléanore Cadot",
+            "en": "What are you doing here?! <br> For cauldron's sake, my mansion has a door! <br> - Sincerely, Witch Ángela Manzano"
+        }
+    },
+    "error404.php": {
+        "html-title": {
+            "ca": "Penjat - Error 404",
+            "es": "Ahorcado - Error 404",
+            "en": "Hangman - 404 Error"
+        },
+        "title": {
+            "ca": "No trobat",
+            "es": "No encontrado",
+            "en": "Not Found"
+        },
+        "subtitle": {
+            "ca": "No hi ha aquesta cambra a la mansió!",
+            "es": "¡No hay esa cámara en la mansión!",
+            "en": "That chamber's not in the mansion!"
+        },
+        "note-from-witch": {
+            "ca": "Que t'has perdut? <br> No et preocupis, et porto a la porta... <br> - Sincerament, Bruixa Penny Jatty",
+            "es": "¿Te has perdido? <br> No te preocupes, te llevo a la puerta... <br> - Sinceramente, Bruja Éléanore Cadot",
+            "en": "Are you lost? <br> Don't worry, I'll take you to the door... <br> - Sincerely, Witch Ángela Manzano"
+        }
+    },
+    "admin/login.php": {
+        "html-title": {
+            "ca": "ADMIN El Penjat - Iniciar sessió",
+            "es": "ADMIN El Ahorcado - Iniciar sesión",
+            "en": "Hangman ADMIN - Login"
+        },
+        "title": {
+            "ca": "Iniciar sessió",
+            "es": "Iniciar sesión",
+            "en": "Log in"
+        },
+        "wrong-credentials": {
+            "ca": "Crdencials incorrectes",
+            "es": "Credenciales incorrectas",
+            "en": "Wrong credentials"
+        },
+        "label-username": {
+            "ca": "Nom d'usuari",
+            "es": "Nombre de usuario",
+            "en": "Username"
+        },
+        "label-password": {
+            "ca": "Contrasenya",
+            "es": "Contraseña",
+            "en": "Password"
+        },
+        "submit": {
+            "ca": "Iniciar sessió",
+            "es": "Iniciar sesión",
+            "en": "Log in"
+        }
+    },
+    "admin/index.php": {
+        "html-title": {
+            "ca": "ADMIN El Penjat",
+            "es": "ADMIN Ahorcado",
+            "en": "Hangman ADMIN"
+        },
+        "title": {
+            "ca": "Panell de control",
+            "es": "Panel de control",
+            "en": "Control Panel"
+        },
+        "link-to-list-sentences": {
+            "ca": "Llistar frases",
+            "es": "Listar frases",
+            "en": "List sentences"
+        },
+        "link-to-create-sentence": {
+            "ca": "Afegir frase",
+            "es": "Añadir frase",
+            "en": "Add a sentence"
+        }
+    },
+    "admin/logout.php": {
+        "html-title": {
+            "ca": "ADMIN El Penjat - Tancar sessió",
+            "es": "ADMIN El Ahorcado - Cerrar sesión",
+            "en": "Hangman ADMIN - Logout"
+        },
+        "title": {
+            "ca": "Sessió tancada",
+            "es": "Sesión cerrada",
+            "en": "Logged out successfully"
+        },
+        "subtitle": {
+            "ca": "Ja pots tancar la pestanya.",
+            "es": "Ya puedes cerrar la pestaña.",
+            "en": "You may now close the tab."
+        }
+    },
+    "admin/create_sentence.php": {
+        "html-title": {
+            "ca": "ADMIN El Penjat - Crear frase",
+            "es": "ADMIN El Ahorcado - Crear frase",
+            "en": "Hangman ADMIN - Create sentence"
+        },
+        "title": {
+            "ca": "AFEGIR FRASE",
+            "es": "AÑADIR FRASE",
+            "en": "ADD A SENTENCE"
+        },
+        "p-difficulty": {
+            "ca": "Dificultat: ",
+            "es": "Dificultad: ",
+            "en": "Difficulty: "
+        },
+        "submit-add": {
+            "ca": "Afegir",
+            "es": "Añadir",
+            "en": "Add"
+        }
+    },
+    "admin/list_sentences.php": {
+        "html-title": {
+            "ca": "ADMIN El Penjat - Llistar frases",
+            "es": "ADMIN El Ahorcado - Listar frases",
+            "en": "Hangman ADMIN - List sentences"
+        },
+        "title": {
+            "ca": "LLISTAR FRASES",
+            "es": "LISTAR FRASES",
+            "en": "LIST SENTENCES"
+        },
+        "th1": {
+            "ca": "Frase",
+            "es": "Frase",
+            "en": "Sentence"
+        },
+        "th2": {
+            "ca": "Dificultat",
+            "es": "Dificultad",
+            "en": "Difficulty"
+        },
+        "th3": {
+            "ca": "Acció",
+            "es": "Acción",
+            "en": "Action"
+        }
+    },
+    "admin/delete_sentence.php": {
+        "html-title": {
+            "ca": "ADMIN El Penjat - Eliminar frase",
+            "es": "ADMIN El Ahorcado - Eliminar frase",
+            "en": "Hangman ADMIN - Delete sentence"
+        },
+        "title": {
+            "ca": "Vols eliminar aquesta frase?",
+            "es": "¿Quieres eliminar esta frase?",
+            "en": "Do you want to delete this sentence?"
+        },
+        "feedback-success-substr1": {
+            "ca": "La frase '",
+            "es": "¡La frase '",
+            "en": "The sentence '"
+        },
+        "feedback-success-substr2": {
+            "ca": "' s'ha esborrat correctament!",
+            "es": "' se ha borrado correctamente!'",
+            "en": "' has been deleted successfully!"
+        },
+        "feedback-error": {
+            "ca": "Error en eliminar la frase.",
+            "es": "Error en eliminar la frase.",
+            "en": "Error en eliminar la frase."
+        },
+        "button-confirm": {
+            "ca": "Eliminar",
+            "es": "Eliminar",
+            "en": "Delete"
+        },
+        "button-cancel": {
+            "ca": "Cancelar",
+            "es": "Cancelar",
+            "en": "Cancel"
+        }
+    }
+}
